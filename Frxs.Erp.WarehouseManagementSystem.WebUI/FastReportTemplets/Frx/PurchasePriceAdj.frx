@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Name="进价调价单" ReportInfo.Author="Sealy" ReportInfo.Version="1.0.1" ReportInfo.Created="03/23/2016 07:35:15" ReportInfo.Modified="06/23/2016 01:18:39" ReportInfo.CreatorVersion="2016.1.0.0">
+  <Dictionary>
+    <TableDataSource Name="Head" ReferenceName="Head" DataType="System.Int32" Enabled="true">
+      <Column Name="AdjID" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="CreateUserName" DataType="System.String"/>
+      <Column Name="CreateTime" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Detail" ReferenceName="Detail" DataType="System.Int32" Enabled="true">
+      <Column Name="SKU" DataType="System.String"/>
+      <Column Name="ProductName" DataType="System.String"/>
+      <Column Name="Unit" DataType="System.String"/>
+      <Column Name="OldPrice" DataType="System.Decimal"/>
+      <Column Name="Price" DataType="System.Decimal"/>
+      <Column Name="Barcode" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9">
+    <PageHeaderBand Name="ReportTitle1" Width="718.2" Height="94.5">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Text="进 价 调 价 单" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 20pt"/>
+      <TextObject Name="Text3" Width="179.55" Height="37.8" Text="单据号：[Head.AdjID]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text4" Left="538.65" Top="37.8" Width="179.55" Height="28.35" Text="制单日期：[Head.CreateTime]" Format="Custom" Format.Format="yyyy-MM-dd" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text7" Left="538.65" Top="66.15" Width="179.55" Height="28.35" Text="　制单人：[Head.CreateUserName]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text9" Top="66.15" Width="538.65" Height="28.35" Text="备　注：[Head.Remark]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text34" Left="538.65" Width="179.55" Height="37.8" Text="第 [Page#] 页/共 [TotalPages#] 页" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="98.5" Width="718.2" Height="28.35">
+      <TextObject Name="Text10" Width="37.8" Height="28.35" Border.Lines="All" Text="序号" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text12" Left="37.8" Width="56.7" Height="28.35" Border.Lines="All" Text="商品编码" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text13" Left="94.5" Width="170.1" Height="28.35" Border.Lines="All" Text="商品名称" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text14" Left="264.6" Width="37.8" Height="28.35" Border.Lines="All" Text="单位" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text15" Left="302.4" Width="66.15" Height="28.35" Border.Lines="All" Text="原进价" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text16" Left="368.55" Width="66.15" Height="28.35" Border.Lines="All" Text="新进价" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text17" Left="434.7" Width="75.6" Height="28.35" Border.Lines="All" Text="差价" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text19" Left="614.25" Width="103.95" Height="28.35" Border.Lines="All" Text="备注" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text37" Left="510.3" Width="103.95" Height="28.35" Border.Lines="All" Text="条码" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="130.85" Width="718.2" Height="28.35" DataSource="Detail">
+      <TextObject Name="Text11" Width="37.8" Height="28.35" Border.Lines="All" CanBreak="false" Text="[Row#]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text20" Left="37.8" Width="56.7" Height="28.35" Border.Lines="All" Text="[Detail.SKU]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text21" Left="94.5" Width="170.1" Height="28.35" Border.Lines="All" Text="[Detail.ProductName]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text22" Left="264.6" Width="37.8" Height="28.35" Border.Lines="All" Text="[Detail.Unit]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text23" Left="302.4" Width="66.15" Height="28.35" Border.Lines="All" Text="[Detail.OldPrice]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text24" Left="368.55" Width="66.15" Height="28.35" Border.Lines="All" Text="[Detail.Price]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text25" Left="434.7" Width="75.6" Height="28.35" Border.Lines="All" Text="[[Detail.OldPrice]-[Detail.Price]]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text27" Left="614.25" Width="103.95" Height="28.35" Border.Lines="All" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text38" Left="510.3" Width="103.95" Height="28.35" Border.Lines="All" Text="[Detail.Barcode]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

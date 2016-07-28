@@ -1,0 +1,121 @@
+
+[时间]2016-07-05 09:14:06,505
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:14:06,842
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:14:08,592
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:14:15,801
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:14:15,986
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:14:35,506
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:14:35,710
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:14:36,948
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:14:37,483
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:14:58,595
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:14:58,783
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:15:00,252
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:15:00,397
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:15:00,562
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:15:00,732
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:15:00,883
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:15:01,037
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]
+[行]0
+
+[时间]2016-07-05 09:16:43,320
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-07-05 09:16:46,205
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetSaleProductInfoSaleAll(String Value, String type, Nullable`1 ShopID, Nullable`1 saleBackFlag, Int32 rows, Int32 page, Nullable`1 SKULikeSearch, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 392
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-07-05 16:27:59,578
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.WorkContext.get_CurrentWarehouse() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Infrastructure\WorkContext.cs:行号 115
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetWCList() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 783
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151

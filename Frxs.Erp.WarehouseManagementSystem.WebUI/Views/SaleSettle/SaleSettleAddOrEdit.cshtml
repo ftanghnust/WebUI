@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "添加门店费用";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<fieldset style="margin: 0px 0px 2px 0px; border: 1px solid #95B8E7">
+    <legend style="color: #416AB7; font-weight: bold">操作按钮</legend>
+    @if (Authorize(520611, 52061105))
+    {
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-add" id="btnAdd2" onclick="add()">添加</a>
+    }
+    @if (Authorize(520611, 52061106))
+    {
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-edit" id="btnEdit" onclick="edit()">编辑</a>
+    }
+    @if (Authorize(520611, 52061101))
+    {
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" id="btnSure" onclick="sure()">确认</a>
+    }
+    @if (Authorize(520611, 52061102))
+    {
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-shengxiao" id="btnPost" onclick="posting()">过账</a>
+    }
+    @if (Authorize(520611, 52061103))
+    {
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-upf" id="reSure" onclick="noSure()">反确认</a>
+    }
+    @if (Authorize(520611, 52061105) || Authorize(520611, 52061106))
+    {
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-save" id="btnSave" onclick="saveData()">保存</a>
+    }
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-print" id="printBtn" onclick="print()">打印</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-daochu" id="exportBtn" onclick="exportData()">导出</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-no" id="btnClose" onclick="frxs.tabClose()">关闭</a>
+</fieldset>
+<form id="formAdd">
+    <fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+        <legend style="color: #416AB7; font-weight: bold">基本信息</legend>
+        <table id="tab" class="xstable" border="0">
+            <tr>
+                <td>结算单号：</td>
+                <th>
+                    <input type="text" name="SettleID" id="SettleID" readonly="readonly" class="readonly" /></th>
+                <td>开单仓库：</td>
+                <th>
+                    <input type="text" name="WName" id="WName" readonly="readonly" class="readonly" />
+                    <input type="hidden" name="WCode" id="WCode" />
+                    <input type="hidden" name="WID" id="WID" />
+                </th>
+                <td>单据状态：</td>
+                <th>
+                    <select id="Status" name="Status" class="easyui-combobox" data-options="panelHeight:'auto',editable:false" style="width: 140px" readonly="readonly" class="readonly">
+                        <option value='0'>录单</option>
+                        <option value='1'>确认</option>
+                        <option value='2'>过账</option>
+                    </select>
+                </th>
+                <td>录单人员：</td>
+                <th>
+                    <input type="text" name="CreateUserName" id="CreateUserName" readonly="readonly" class="readonly" />
+                </th>
+            </tr>
+            <tr>
+                <td>门店：</td>
+                <th colspan="3">
+                    <input type="hidden" name="ShopType" id="ShopType" />
+                    <input type="hidden" name="ShopID" id="ShopID" />
+                    <input type="hidden" name="hidShopCode" id="hidShopCode" />
+                    <input type="text" name="ShopCode" id="ShopCode" class="easyui-validatebox" style="width: 100px;" required="true">
+                    <input type="button" id="btnSelShop" value="..." onclick="selShop()" />
+                    <input type="text" name="ShopName" id="ShopName" class="easyui-validatebox" style="width: 220px" required="true" readonly="readonly" />
+                </th>
+                <td>结算方式：</td>
+                <th>
+                    <select id="SettleType" name="SettleType" class="easyui-combobox" data-options="panelHeight:'auto',editable:false" style="width: 140px" readonly="readonly">
+                    </select>
+                    <input type="hidden" name="SettleName" id="SettleName" />
+                </th>
+                <td>录单时间：
+                </td>
+                <th>
+                    <input type="text" name="CreateTime" id="CreateTime" readonly="readonly" class="readonly" />
+                </th>
+            </tr>
+            <tr>
+                <td>开户行：</td>
+                <th>
+                    <input type="text" name="BankType" id="BankType" readonly="readonly" class="readonly" /></th>
+                <td>开户名：</td>
+                <th>
+                    <input type="text" name="BankAccountName" id="BankAccountName" readonly="readonly" class="readonly" />
+                </th>
+                <td>银行账号：</td>
+                <th colspan="3">
+                    <input type="text" name="BankAccount" id="BankAccount" readonly="readonly" class="readonly" style="width: 99%" />
+                </th>
+            </tr>
+            <tr>
+                <td>备注：</td>
+                <th colspan="5">
+                    <input type="text" name="Remark" id="Remark" style="width: 99%" />
+                </th>
+                <td>信用额度：</td>
+                <th>
+                    <input type="text" name="CreditAmt" id="CreditAmt" readonly="readonly" class="readonly" />
+                </th>
+            </tr>
+            <tr>
+                <td>确认人员：</td>
+                <th>
+                    <input type="text" name="ConfUserName" id="ConfUserName" readonly="readonly" class="readonly" />
+                    <input type="hidden" name="ConfUserID" id="ConfUserID" />
+                </th>
+                <td>确认时间：</td>
+                <th>
+                    <input type="text" name="ConfTime" id="ConfTime" readonly="readonly" class="readonly" />
+                </th>
+                <td>过账人员：
+                </td>
+                <th>
+                    <input type="text" name="PostingUserName" id="PostingUserName" readonly="readonly" class="readonly" />
+                    <input type="hidden" name="PostingUserID" id="PostingUserID" />
+                </th>
+                <td>过账时间：</td>
+                <th>
+                    <input type="text" name="PostingTime" id="PostingTime" readonly="readonly" class="readonly">
+                </th>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<div id="gridDetail"></div>
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/saleSettle/saleSettleAddOrEdit.js")" type="text/javascript"></script>
+}
+

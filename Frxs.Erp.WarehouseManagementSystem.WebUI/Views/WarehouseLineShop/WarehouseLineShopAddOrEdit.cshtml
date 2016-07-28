@@ -1,0 +1,50 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.WarehouseLineShopModel
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+
+    <!--窗体结束-->
+<style>
+    ul#bu li { list-style-type:none; margin:0px; padding:0px; margin-bottom:10px }
+    ul#bu { float:left; margin:0px; padding:0px; padding-left:15px; padding-top:10px    }
+    ul#bu li { width:60px; text-align:center; background:#3B73E0; color:#fff; height:30px; line-height:30px; cursor:pointer
+    }
+        ul#bu li:hover { background:#f60
+        }
+</style>
+
+<div class="dialogMainbody">
+    @{
+        using (Html.BeginForm("warehouseLineShopHandle", "warehouseLineShop", FormMethod.Post))
+        {  
+            @Html.HiddenFor(model => Model.LineID)
+            @Html.HiddenFor(model => Model.idList)
+            <table width="380" border="0" style="margin-left:0px;float:left">
+                <tr>
+                
+                    <td>
+                        <select id="where" name="where" class="cc" name="state" style="width:280px;float:left; height:610px" size="5">
+                     
+                        </select>
+                        <ul id="bu">
+                            <li style="margin-top:-10px;">置顶</li>
+                            <li>上移</li>
+                            <li>下移</li>
+                            <li>置底</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    @*<td>
+                        <a id="aSubmit">确认</a>
+
+                    </td>*@
+                </tr>
+            </table>
+        }
+    }
+</div>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/warehouseLineShop/warehouseLineShopAddOrEdit.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/plugin/datepicker/WdatePicker.js")"></script>

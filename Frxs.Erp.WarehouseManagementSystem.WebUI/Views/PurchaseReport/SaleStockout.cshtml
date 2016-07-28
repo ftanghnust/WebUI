@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "SaleStockout";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<form id="myForm">
+<fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+    <legend style="color: #416AB7; font-weight: bold">报表查询</legend>
+    <table id="tab" class="xstable" border="0">
+        <tr>
+            <td>开始日期：</td>
+            <th>
+                <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '#F{$dp.$D(\'S2\')}' })" name="S1" id="S1" class="Wdate easyui-validatebox" required="true" />
+            </th>
+            <td>结束日期：</td>
+            <th>
+                <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', minDate: '#F{$dp.$D(\'S1\')}' })" name="S2" id="S2" class="Wdate easyui-validatebox" required="true" />
+            </th>
+            <td>仓库：</td>
+            <th>
+                <select id="SubWID" name="SubWID" class="easyui-combobox" style="width: 175px" panelheight="auto" editable="false"></select>
+            </th>
+        </tr>
+        <tr>
+            <td>过账日：</td>
+                <th>
+                    <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '#F{$dp.$D(\'S4\')}' })" name="S3" id="S3" class="Wdate" />
+                </th>
+                <td style="text-align: center">至</td>
+                <th>
+                    <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', minDate: '#F{$dp.$D(\'S3\')}' })" name="S4" id="S4" class="Wdate" />
+                </th>
+                <td colspan="2">
+                <input type="button" id="aSearch" class="aSearch" onclick="search()" value="查询" />
+                <input type="button" onclick="resetSearch()" class="reset" value="重置" />
+            </td>
+         </tr>
+    </table>
+</fieldset>
+</form>
+<div id="grid"></div>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/plugin/uploadify/FileSaver.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bussiness/report/salestockout.js")" type="text/javascript"></script>
+}

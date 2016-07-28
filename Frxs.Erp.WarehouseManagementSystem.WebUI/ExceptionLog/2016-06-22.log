@@ -1,0 +1,18 @@
+
+2016/6/22 14:06:53
+[异常内容]未将对象引用设置到对象的实例。
+[源]Frxs.Erp.WarehouseManagementSystem.WebUI
+[操作]/Common/GetWarehouseLineList
+[IP]192.168.3.242
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.WorkContext.get_CurrentWarehouse() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Infrastructure\WorkContext.cs:行号 115
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetWarehouseLineList() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 1028
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)

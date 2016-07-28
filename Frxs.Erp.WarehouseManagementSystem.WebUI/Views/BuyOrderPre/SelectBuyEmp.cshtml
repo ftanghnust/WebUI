@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "SelectBuyEmp";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<form id="searchForm">
+<fieldset style="margin: 0px 0px 2px 0px; border: 1px solid #999">
+        <legend>查询条件</legend>
+        <table id="tab" class="xstable" border="0">
+            <tr>
+                <th>
+                    姓名
+                </th>
+                <td>
+                    <input type="text" name="EmpName" id="EmpName">
+                </td>
+                <td>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" onclick="loadgrid()">查询</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-back" onclick="resetData()">清空</a>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<div id="grid"></div>
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/buyorder/selectBuyEmp.js")" type="text/javascript"></script>
+}

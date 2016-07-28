@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "PackStart";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<form id="packform">
+    <table id="tab" class="xstable">
+        <tr>
+            <td>装箱员：</td>
+            <th>
+                <select id="PackName" name="PackName" class="easyui-combobox" style="width: 170px" panelheight="auto" editable="false" data-options="required:true"></select>
+            </th>
+        </tr>
+        <tr>
+            <td>周转箱数：</td>
+            <th>
+                <input type="text" name="Package1Qty" id="Package1Qty" class="easyui-numberbox try" data-options="required:true,min:0,max:9999999999" style="width: 170px"></th>
+        </tr>
+        <tr>
+            <td>纸箱：</td>
+            <th>
+                <input type="text" name="Package2Qty" id="Package2Qty" class="easyui-numberbox try" data-options="required:true,min:0" style="width: 170px"></th>
+        </tr>
+        <tr>
+            <td>中包：</td>
+            <th>
+                <input type="text" name="Package3Qty" id="Package3Qty" class="easyui-numberbox try" data-options="required:true,min:0" style="width: 170px"></th>
+
+        </tr>
+        <tr>
+            <td>备注：</td>
+            <th>
+                <!-- <input type="text"   style="width: 170px">-->
+                <textarea name="Remark" style="width: 166px; height: 80px" id="Remark"></textarea>
+
+            </th>
+
+        </tr>
+    </table>
+
+</form>
+
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/warehouseOrder/packStart.js")" type="text/javascript"></script>
+}
+

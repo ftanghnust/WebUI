@@ -1,0 +1,277 @@
+
+[时间]2016-06-15 10:00:51,106
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:02:47,545
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:05:49,507
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:09:14,476
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:11:19,911
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:12:37,317
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:12:53,884
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:13:32,038
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:14:49,059
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:24:52,576
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:27:09,333
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:29:07,458
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:29:27,703
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:30:49,126
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:32:02,433
+[异常内容]System.Exception: Unexpected missing row when some rows already present, the file is wrong
+   在 NPOI.HSSF.UserModel.HSSFSheet.SetPropertiesFromSheet(InternalSheet sheet)
+   在 NPOI.HSSF.UserModel.HSSFWorkbook..ctor(DirectoryNode directory, Boolean preserveNodes)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 661
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:43:08,105
+[异常内容]System.Exception: 非Excel2003或2007格式，无法解析
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 709
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:44:50,749
+[异常内容]System.Exception: 非Excel2003或2007格式，无法解析
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 709
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:45:39,282
+[异常内容]System.Exception: 非Excel2003或2007格式，无法解析
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 709
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 103
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 88
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-15 10:48:49,244
+[异常内容]System.Exception: 非Excel2003或2007格式，无法解析
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url)
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]
+[行]0
+
+[时间]2016-06-15 10:50:50,167
+[异常内容]System.ArgumentNullException: 值不能为 null。
+参数名: destination
+   在 System.IO.Stream.CopyTo(Stream destination)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url)
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]
+[行]0
+
+[时间]2016-06-15 10:52:39,793
+[异常内容]System.ArgumentNullException: 值不能为 null。
+参数名: destination
+   在 System.IO.Stream.CopyTo(Stream destination)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url)
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]
+[行]0
+
+[时间]2016-06-15 10:55:47,317
+[异常内容]System.NotSupportedException: 流不支持写入。
+   在 System.IO.Stream.CopyTo(Stream destination)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url)
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]
+[行]0
+
+[时间]2016-06-15 10:59:26,362
+[异常内容]System.NotSupportedException: 流不支持写入。
+   在 System.IO.Stream.CopyTo(Stream destination)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url)
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]
+[行]0
+
+[时间]2016-06-15 11:18:02,338
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.WorkContext.get_CurrentWarehouse() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Infrastructure\WorkContext.cs:行号 115
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetWCList() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 782
+[源]
+[行]0
+
+[时间]2016-06-15 11:23:42,763
+[异常内容]System.ArgumentNullException: 值不能为 null。
+参数名: destination
+   在 System.IO.Stream.CopyTo(Stream destination)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url)
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]
+[行]0
+
+[时间]2016-06-15 11:32:13,833
+[异常内容]System.Exception: 非Excel2003或2007格式，无法解析
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(Stream excelFileStream)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderFromExcel(String url)
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1336
+[源]
+[行]0
+
+[时间]2016-06-15 17:41:40,948
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Models.BuyBackPreModel.GetBuyBackPrePageData(BuyBackSearch searchModel) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\BuyBackPreModel.cs:行号 424
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.BuyBackPreController.GetBuyBackPreList(BuyBackSearch searchModel) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\BuyBackPre\BuyBackPreController.cs:行号 216
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151

@@ -1,0 +1,78 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.Product.ProductsDescriptionModel
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+
+<link href="@Url.Content("~/Scripts/plugin/magiczoom/css/css.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Scripts/plugin/magiczoom/css/goodsDetails.css")" rel="stylesheet" type="text/css" />
+<style>
+    body
+    {
+        background: #fff;
+    }
+</style>
+<div class="detail-box" style="width: 100%; border-top: 0px">
+    <div class="detail-main" >
+        <div class="magnifier" >
+            <script type="text/javascript" src="@Url.Content("~/Scripts/plugin/magiczoom/MagicZoom.js")"></script>
+            <div id="tsShopContainer" style="width: 400px">
+                <div id="tsImgS" style="border: 1px solid #eee">
+                    @{
+                        if (Model.ProductsDescriptionPictureList != null && Model.ProductsDescriptionPictureList.Count > 0)
+                        {
+                        <a href="@Model.ProductsDescriptionPictureList[0].ImageUrlOrg" title="Images" class="MagicZoom" id="MagicZoom">
+                            <img alt="大图" width="400" height="400" src="@Model.ProductsDescriptionPictureList[0].ImageUrlOrg" />
+                        </a>
+                        }
+                    }
+                </div>
+                <div id="tsPicContainer">
+                    <div id="tsImgSArrL" onclick="tsScrollArrLeft()"></div>
+                    <div id="tsImgSCon">
+                        <ul>
+                            @{
+                                if (Model.ProductsDescriptionPictureList != null && Model.ProductsDescriptionPictureList.Count > 0)
+                                {
+                                    for (int i = 0; i < Model.ProductsDescriptionPictureList.Count; i++)
+                                    {
+
+                                        if (i == 0)
+                                        {
+                                <li onclick="showPic(0)" rel="MagicZoom" class="tsSelectImg">
+                                    <img alt="小图" src="@Model.ProductsDescriptionPictureList[i].ImageUrlOrg" 
+                                                         tsimgs="@Model.ProductsDescriptionPictureList[i].ImageUrlOrg" />
+                                </li>
+                                        }
+                                        else
+                                        {
+                                <li onclick="showPic(@i)" rel="MagicZoom">
+                                    <img alt="小图" src="@Model.ProductsDescriptionPictureList[i].ImageUrlOrg" 
+                                            tsimgs="@Model.ProductsDescriptionPictureList[i].ImageUrlOrg" />
+                                </li>
+                                        }
+
+                                    }
+                                }
+                            }
+                        </ul>
+                    </div>
+                    <div id="tsImgSArrR" onclick="tsScrollArrRight()"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-main-right" style="float: left; margin-left: 10px; width:300px; padding:10px; padding-top:0px">
+
+            @Html.TextAreaFor(model => model.Description, new
+                                                                  {
+                                                                      @readonly = "true",
+                                                                      @class = "easyui-validatebox",
+                                                                      @style = "width: 280px; height: auto; min-height: 200px; border:1px solid #eee;padding:9px",
+                                                                  })
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/plugin/magiczoom/ShopShow.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/plugin/magiczoom/Piccontent.js")"></script>
+

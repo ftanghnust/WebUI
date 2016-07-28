@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Name="销售结算单" ReportInfo.Author="Sealy" ReportInfo.Version="1.0.1" ReportInfo.Created="03/23/2016 07:35:15" ReportInfo.Modified="06/23/2016 01:40:47" ReportInfo.CreatorVersion="2016.1.0.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+    /// &lt;summary&gt;The amount of conversion to Chinese&lt;/summary&gt; 
+    /// &lt;param name=&quot;dInput&quot;&gt;Money&lt;/param&gt; 
+    /// &lt;returns&gt;Chinese Money&lt;/returns&gt; 
+    public static string GetChineseMoney(double dInput)
+    {
+      const string sBig = &quot;零壹贰叁肆伍陆柒捌玖&quot;; //0-9所对应的汉字              
+      var sNum = &quot;万仟佰拾亿仟佰拾万仟佰拾元角分&quot;; //数字位所对应的汉字 
+      var s5 = &quot;&quot;;    //人民币大写金额形式 
+      int nI;               //循环变量 
+               
+      var sCh2 = &quot;&quot;;     //数字位的汉字读法 
+      var nZero = 0;       //用来计算连续的零值是几个
+
+      dInput = Math.Round(Math.Abs(dInput), 2);    //将num取绝对值并四舍五入取2位小数 
+      var s4 = string.Format(&quot;{0}&quot;, (long)(dInput * 100));        //将num乘100并转换成字符串形式 
+      var nJ = s4.Length;      //找出最高位 
+      if (nJ &gt; 15) { return &quot;溢出&quot;; }
+      sNum = sNum.Substring(15 - nJ);   //取出对应位数的strNum的值。如：200.55,j为5所以strNum=佰拾元角分 
+
+      //循环取出每一位需要转换的值 
+      for (nI = 0; nI &lt; nJ; nI++)
+      {
+                   
+        string sCh1;     //数字的汉语读法 
+        var s3 = s4.Substring(nI, 1);          //取出需转换的某一位的值 
+        var intTemp = Convert.ToInt32(s3);      //转换为数字 
+        if (nI != (nJ - 3) &amp;&amp; nI != (nJ - 7) &amp;&amp; nI != (nJ - 11) &amp;&amp; nI != (nJ - 15))
+        {
+          //当所取位数不为元、万、亿、万亿上的数字时 
+          if (s3 == &quot;0&quot;)
+          {
+            sCh1 = &quot;&quot;;
+            sCh2 = &quot;&quot;;
+            nZero = nZero + 1;
+          }
+          else
+          {
+            if (s3 != &quot;0&quot; &amp;&amp; nZero != 0)
+            {
+              sCh1 = &quot;零&quot; + sBig.Substring(intTemp * 1, 1);
+              sCh2 = sNum.Substring(nI, 1);
+              nZero = 0;
+            }
+            else
+            {
+              sCh1 = sBig.Substring(intTemp * 1, 1);
+              sCh2 = sNum.Substring(nI, 1);
+              nZero = 0;
+            }
+          }
+        }
+        else
+        {
+          //该位是万亿，亿，万，元位等关键位 
+          if (s3 != &quot;0&quot; &amp;&amp; nZero != 0)
+          {
+            sCh1 = &quot;零&quot; + sBig.Substring(intTemp * 1, 1);
+            sCh2 = sNum.Substring(nI, 1);
+            nZero = 0;
+          }
+          else
+          {
+            if (s3 != &quot;0&quot; &amp;&amp; nZero == 0)
+            {
+              sCh1 = sBig.Substring(intTemp * 1, 1);
+              sCh2 = sNum.Substring(nI, 1);
+              nZero = 0;
+            }
+            else
+            {
+              if (s3 == &quot;0&quot; &amp;&amp; nZero &gt;= 3)
+              {
+                sCh1 = &quot;&quot;;
+                sCh2 = &quot;&quot;;
+                nZero = nZero + 1;
+              }
+              else
+              {
+                if (nJ &gt;= 11)
+                {
+                  sCh1 = &quot;&quot;;
+                  nZero = nZero + 1;
+                }
+                else
+                {
+                  sCh1 = &quot;&quot;;
+                  sCh2 = sNum.Substring(nI, 1);
+                  nZero = nZero + 1;
+                }
+              }
+            }
+          }
+        }
+        if (nI == (nJ - 11) || nI == (nJ - 3))
+        {
+          //如果该位是亿位或元位，则必须写上 
+          sCh2 = sNum.Substring(nI, 1);
+        }
+        s5 = s5 + sCh1 + sCh2;
+
+        if (nI == nJ - 1 )
+        {
+          //最后一位（分）为0时，加上“整” 
+          s5 = s5 + '整';
+        }
+      }
+      if (dInput == 0)
+      {
+        s5 = &quot;零元整&quot;;
+      }
+      return s5;
+    }
+
+    ///大写金额
+    private void Text36_AfterData(object sender, EventArgs e)
+    {
+      Text36.Text=&quot;总金额：&quot;+GetChineseMoney(double.Parse( Report.GetColumnValue(&quot;Head.SettleAmt&quot;).ToString()));
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="Head" ReferenceName="Head" DataType="System.Int32" Enabled="true">
+      <Column Name="OrderId" DataType="System.String"/>
+      <Column Name="SettleID" DataType="System.String"/>
+      <Column Name="WID" DataType="System.String"/>
+      <Column Name="ShopID" DataType="System.String"/>
+      <Column Name="ShopType" DataType="System.String"/>
+      <Column Name="ShopCode" DataType="System.String"/>
+      <Column Name="ShopName" DataType="System.String"/>
+      <Column Name="Status" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="CreateTime" DataType="System.String"/>
+      <Column Name="CreateUserID" DataType="System.String"/>
+      <Column Name="CreateUserName" DataType="System.String"/>
+      <Column Name="ModifyTime" DataType="System.String"/>
+      <Column Name="ModifyUserID" DataType="System.String"/>
+      <Column Name="ModifyUserName" DataType="System.String"/>
+      <Column Name="SaleAmt" DataType="System.String"/>
+      <Column Name="BackAmt" DataType="System.String"/>
+      <Column Name="FeeAmt" DataType="System.String"/>
+      <Column Name="SettleAmt" DataType="System.String"/>
+      <Column Name="SettleTime" DataType="System.String"/>
+      <Column Name="CreditAmt" DataType="System.String"/>
+      <Column Name="BankAccount" DataType="System.String"/>
+      <Column Name="BankAccountName" DataType="System.String"/>
+      <Column Name="BankType" DataType="System.String"/>
+      <Column Name="SettleType" DataType="System.String"/>
+      <Column Name="SettleName" DataType="System.String"/>
+      <Column Name="ConfTime" DataType="System.String"/>
+      <Column Name="ConfUserID" DataType="System.String"/>
+      <Column Name="ConfUserName" DataType="System.String"/>
+      <Column Name="PostingTime" DataType="System.String"/>
+      <Column Name="PostingUserID" DataType="System.String"/>
+      <Column Name="PostingUserName" DataType="System.String"/>
+      <Column Name="WName" DataType="System.String"/>
+      <Column Name="WCode" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Detail" ReferenceName="Detail" DataType="System.Int32" Enabled="true">
+      <Column Name="Id" DataType="System.Int32"/>
+      <Column Name="WID" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="ModifyTime" DataType="System.String"/>
+      <Column Name="ModifyUserID" DataType="System.String"/>
+      <Column Name="ModifyUserName" DataType="System.String"/>
+      <Column Name="SettleID" DataType="System.String"/>
+      <Column Name="BillType" DataType="System.String"/>
+      <Column Name="BillID" DataType="System.String"/>
+      <Column Name="BillDetailsID" DataType="System.String"/>
+      <Column Name="BillDate" DataType="System.String"/>
+      <Column Name="BillAmt" DataType="System.String"/>
+      <Column Name="BillAddAmt" DataType="System.String"/>
+      <Column Name="BillPayAmt" DataType="System.String"/>
+      <Column Name="FeeCode" DataType="System.String"/>
+      <Column Name="FeeName" DataType="System.String"/>
+      <Column Name="BillTypeStr" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9">
+    <PageHeaderBand Name="ReportTitle1" Width="718.2" Height="94.5">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Text="销 售 结 算 单" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 20pt"/>
+      <TextObject Name="Text2" Top="37.8" Width="359.1" Height="28.35" Text="门　店：[Head.ShopName]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text3" Width="179.55" Height="37.8" Text="单据号：[Head.SettleID]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text4" Left="538.65" Top="37.8" Width="179.55" Height="28.35" Text="制单日期：[Head.CreateTime]" Format="Custom" Format.Format="yyyy-MM-dd HH:mm" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text5" Left="359.1" Top="37.8" Width="179.55" Height="28.35" Text="仓　库：[Head.WName]" Format="Custom" Format.Format="yyyy-MM-dd" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text7" Left="538.65" Top="66.15" Width="179.55" Height="28.35" Text="　制单人：[Head.CreateUserName]" Format="Custom" Format.Format="yyyy-MM-dd" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text9" Top="66.15" Width="538.65" Height="28.35" Text="备　注：[Head.Remark]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text34" Left="538.65" Width="179.55" Height="37.8" Text="第 [Page#] 页/共 [TotalPages#] 页" Format="Custom" Format.Format="yyyy-MM-dd" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="98.5" Width="718.2" Height="28.35">
+      <TextObject Name="Text10" Width="37.8" Height="28.35" Border.Lines="All" Text="序号" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text12" Left="37.8" Width="94.5" Height="28.35" Border.Lines="All" Text="单据类型" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text13" Left="132.3" Width="113.4" Height="28.35" Border.Lines="All" Text="单据编号" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text15" Left="359.1" Width="85.05" Height="28.35" Border.Lines="All" Text="类型" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text17" Left="444.15" Width="94.5" Height="28.35" Border.Lines="All" Text="金额" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text19" Left="538.65" Width="179.55" Height="28.35" Border.Lines="All" Text="备注" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text37" Left="245.7" Width="113.4" Height="28.35" Border.Lines="All" Text="发生日期" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="130.85" Width="718.2" Height="28.35" DataSource="Detail">
+      <TextObject Name="Text11" Width="37.8" Height="28.35" Border.Lines="All" CanBreak="false" Text="[Row#]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text20" Left="37.8" Width="94.5" Height="28.35" Border.Lines="All" Text="[Detail.BillTypeStr]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text21" Left="132.3" Width="113.4" Height="28.35" Border.Lines="All" Text="[Detail.BillID]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text23" Left="245.7" Width="113.4" Height="28.35" Border.Lines="All" Text="[Detail.BillDate]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text25" Left="359.1" Width="85.05" Height="28.35" Border.Lines="All" Text="[Detail.FeeName]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text27" Left="538.65" Width="179.55" Height="28.35" Border.Lines="All" Text="[Detail.Remark]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text38" Left="444.15" Width="94.5" Height="28.35" Border.Lines="All" Text="[Detail.BillPayAmt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="195.55" Width="718.2" Height="28.35">
+      <TextObject Name="Text36" Left="292.95" Width="425.25" Height="28.35" AfterDataEvent="Text36_AfterData" VertAlign="Center" Font="微软雅黑, 9pt"/>
+    </ReportSummaryBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="163.2" Width="718.2" Height="28.35">
+      <TextObject Name="Text28" Width="444.15" Height="28.35" Border.Lines="All" Text="合计" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text30" Left="444.15" Width="94.5" Height="28.35" Border.Lines="All" Text="[Head.SettleAmt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text31" Left="538.65" Width="179.55" Height="28.35" Border.Lines="All" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </ColumnFooterBand>
+  </ReportPage>
+</Report>

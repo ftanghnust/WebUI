@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "配送价格导入";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<style type="text/css">
+    .textstyle1
+    {
+        color: Red;
+        font-weight: bold;
+    }
+    .textstyle2
+    {
+        color: Green;
+        font-weight: bold;
+    }
+    .uploadifyQueue{ float: left;}
+    object {
+        margin-top: 20px;float: left;margin-right: 10px;
+    }
+    #tab th,#tab td{ padding: 0px;margin: 0px;}
+</style>
+
+<fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+    <legend style="color: #416AB7; font-weight: bold">导入配送价格调整单</legend>
+    <table id="tab" class="xstable">
+        <tr>
+            <th style="padding-top: 15px;">
+                上传Excel：
+            </th>
+            <th>
+                <input type="hidden" id="GUID" name="GUID" />
+                <input id="file_upload" name="file_upload" type="file"/>
+            </th>
+        </tr>
+        <tr>
+            <td>操作：</td>
+            <th style="padding-top: 8px;">
+                <p style="margin-top: 5px; font-size: 14px; font-weight: bold;">
+                    <a href="javascript:void(0)" onclick="$('#file_upload').uploadifyUpload();" class="easyui-linkbutton" iconcls="icon-save" id="btnUpload" style="margin-right: 18px">
+                        上传文件
+                    </a>
+                    <a href="~/FileUpload/配送价格调整导入模板.xls" target="_blank">下载模板</a>
+                    &nbsp; &nbsp; &nbsp; &nbsp;<span id="result"></span>
+                </p>
+            </th>
+        </tr>
+
+    </table>
+</fieldset>
+<div id="grid"></div>
+@section scripts
+{
+    <link href="@Url.Content("~/Scripts/plugin/uploadify/uploadify.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/plugin/uploadify/jquery.uploadify.v2.1.0.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/plugin/uploadify/swfobject.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bussiness/product/importShippPrice.js")"  type="text/javascript"></script>
+
+}

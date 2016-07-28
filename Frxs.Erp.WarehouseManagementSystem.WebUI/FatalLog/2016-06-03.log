@@ -1,0 +1,58 @@
+
+[时间]2016-06-03 14:56:01,635
+[异常内容]System.Exception:  不是 Int32 的有效值。 ---> System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 Frxs.Platform.Utility.Json.JsonHelper.FromJson[T](String sJasonData) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Json\JsonHelper.cs:行号 161
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.BuyOrderPreController.BuyOrderPreAddOrEditeNewHandle(String jsonData, String jsonDetails) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\BuyOrderPre\BuyOrderPreController.cs:行号 526
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-03 14:56:51,228
+[异常内容]System.Exception:  不是 Int32 的有效值。 ---> System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 Frxs.Platform.Utility.Json.JsonHelper.FromJson[T](String sJasonData) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Json\JsonHelper.cs:行号 161
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.BuyOrderPreController.BuyOrderPreAddOrEditeNewHandle(String jsonData, String jsonDetails) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\BuyOrderPre\BuyOrderPreController.cs:行号 526
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-03 14:57:54,975
+[异常内容]System.Exception:  不是 Int32 的有效值。 ---> System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 Frxs.Platform.Utility.Json.JsonHelper.FromJson[T](String sJasonData) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Json\JsonHelper.cs:行号 161
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.BuyOrderPreController.BuyOrderPreAddOrEditeNewHandle(String jsonData, String jsonDetails) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\BuyOrderPre\BuyOrderPreController.cs:行号 526
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-03 16:08:39,306
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.WorkContext.get_CurrentWarehouse() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Infrastructure\WorkContext.cs:行号 115
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetWCList() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 782
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151

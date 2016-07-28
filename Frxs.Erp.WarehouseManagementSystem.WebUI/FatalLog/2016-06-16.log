@@ -1,0 +1,53 @@
+
+[时间]2016-06-16 11:49:19,130
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.WorkContext.get_CurrentWarehouse() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Infrastructure\WorkContext.cs:行号 115
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetWCList() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 782
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-16 11:49:19,139
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Models.WarehouseOrderModel.GetWarehouseOrderPageData(WarehouseOrderSearch searchModel) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\WarehouseOrderModel.cs:行号 127
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetWarehouseOrderList(WarehouseOrderSearch searchModel) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1715
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-16 12:24:26,455
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1442
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-16 12:25:34,940
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1442
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-16 12:25:54,475
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.GetImportData(String fileName, String folderPath, Int32 shopid, Int32 subWId) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 1442
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-16 14:35:17,669
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.WorkContext.get_CurrentWarehouse() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Infrastructure\WorkContext.cs:行号 115
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetWCList() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 782
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-16 15:24:46,269
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.WorkContext.get_CurrentWarehouse() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Infrastructure\WorkContext.cs:行号 115
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.Common.CommonController.GetWCList() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Common\CommonController.cs:行号 782
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-16 15:56:55,327
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Models.BuyBackPreModel.GetBuyBackPrePageData(BuyBackSearch searchModel) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\BuyBackPreModel.cs:行号 424
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.BuyBackPreController.GetBuyBackPreList(BuyBackSearch searchModel) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\BuyBackPre\BuyBackPreController.cs:行号 216
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151

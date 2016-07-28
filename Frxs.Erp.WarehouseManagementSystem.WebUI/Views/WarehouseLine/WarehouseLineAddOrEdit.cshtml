@@ -1,0 +1,104 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.WarehouseLineModel
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<style>
+    span.red { color:#f00
+    }
+</style>
+
+    <!--窗体结束-->
+
+    <div class="dialogMainbody" style="width: 380px">
+        <div class="box">
+        @{
+            using (Html.BeginForm("warehouseLineHandle", "WarehouseLine", FormMethod.Post))
+            {  
+                 @Html.HiddenFor(model => Model.LineID)
+            <table width="350" border="0" class="xstable">
+                <tr>
+                    <td ><span class="red">*</span> @Html.LabelFor(model => Model.LineCode)：</td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.LineCode, new { @class = "easyui-validatebox al onlymath", @maxlength="4" })</th>
+                </tr>
+                <tr>
+                    <td><span class="red">*</span>  @Html.LabelFor(model => Model.LineName)：</td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.LineName, new { @class = "easyui-validatebox al" ,@maxlength="20"})</th>
+                </tr>
+              
+                <tr>
+                    <td><span class="red">*</span> @Html.LabelFor(model => Model.EmpName)：</td>
+                    <th>
+                        @Html.DropDownListFor(model => Model.EmpID, Model.EmpIDList, new { @class = "easyui-combobox", @style = "width: 143px;",@editable=false })
+
+                    </th>
+                </tr>
+                
+                <tr>
+                    <td ><span class="red">*</span>  @Html.LabelFor(model => Model.SendW)：</td>
+                    <th>
+                        @Html.CheckBoxFor(model => Model.SendW1, new { @class = "week" })
+                        周一
+                @Html.CheckBoxFor(model => Model.SendW2, new { @class = "week" })
+                        周二 
+                @Html.CheckBoxFor(model => Model.SendW3, new { @class = "week" })
+                        周三 
+                 @Html.CheckBoxFor(model => Model.SendW4, new { @class = "week" })
+                        周四<br />
+                 @Html.CheckBoxFor(model => Model.SendW5, new { @class = "week" })
+                        周五
+                 @Html.CheckBoxFor(model => Model.SendW6, new { @class = "week" })
+                        周六
+                 @Html.CheckBoxFor(model => Model.SendW7, new { @class = "week" })
+                        周日 
+                    </th>
+                </tr>
+                <tr>
+                    <td  style="margin-left: 0px;"><span class="red">*</span> @Html.LabelFor(model => Model.OrderEndTime)：</td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.OrderEndTime, new { @class = "Wdate easyui-validatebox", @onfocus = "WdatePicker({dateFmt:'HH:mm'})", @required = "true",@style = "width: 141px;" }) 
+
+                    </th>               
+                </tr>
+                <tr>
+                    <td >&nbsp; &nbsp;&nbsp;@Html.LabelFor(model => Model.Distance)：</td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.Distance, new { @class = "easyui-validatebox al onlymath", @maxlength="4" })
+                        &nbsp;公里</th>
+                </tr>
+                <tr>
+                    <td  >@Html.LabelFor(model => Model.SendNeedTime)：</td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.SendNeedTime, new { @class = "easyui-validatebox al onlymath" , @maxlength="2" })  
+                        
+                        &nbsp;小时</th>
+                </tr>
+                <tr>
+                    <td ><span class="red">*</span> @Html.LabelFor(model => Model.SerialNumber)：</td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.SerialNumber, new { @class = "easyui-validatebox easyui-numberbox al onlymath",@min="1",@max="99"})</th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.Remark)：</td>
+                    <th>
+                        @Html.TextAreaFor(model => Model.Remark, new { @class = "easyui-validatebox", @style = "width:200px; height: 30px;", @maxlength="40" })
+                    </th>
+                </tr>
+                <tr>
+                    <td></td>
+                   @* <td class="space " colspan="3">
+                        <a id="aSubmit" >确认</a>   
+                        <a id="cancel"  >取消</a>                
+                    </td>*@
+                </tr>
+            </table>
+            }
+        }
+            </div>
+    </div>
+    
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/warehouseLine/warehouseLineAddOrEdit.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/plugin/datepicker/WdatePicker.js")"></script>
+

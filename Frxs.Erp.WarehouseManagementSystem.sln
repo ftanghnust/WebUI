@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frxs.Erp.WarehouseManagementSystem.WebUI", "Frxs.Erp.WarehouseManagementSystem.WebUI\Frxs.Erp.WarehouseManagementSystem.WebUI.csproj", "{47AF36F6-4585-4135-8C35-ADFFD491AE6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frxs.Platform", "Frxs.Platform", "{AFE84F06-4A0D-4D80-ACB9-BD852C29C127}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frxs.Platform.Utility", "..\..\Frxs.Platform\Frxs.Platform.Utility\Frxs.Platform.Utility.csproj", "{0C08602C-3A43-48BA-AC95-D18C21217165}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frxs.Platform.IOCFactory", "..\..\Frxs.Platform\Frxs.Platform.IOCFactory\Frxs.Platform.IOCFactory.csproj", "{E30D3ED3-975C-4D4F-A69B-2CD2725614A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frxs.Platform.Cache", "Frxs.Platform.Cache", "{E2542331-E981-4FAD-A173-5F81212C7035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frxs.Platform.Cache", "..\..\Frxs.Platform\Frxs.Platform.Cache\Frxs.Platform.Cache.csproj", "{2F916B02-E40D-4338-8BD4-87284060BADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frxs.Platform.Cache.Model", "..\..\Frxs.Platform\Frxs.Platform.Cache.Model\Frxs.Platform.Cache.Model.csproj", "{3159095C-7E84-4EE9-B98B-D4949D30D2B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frxs.Platform.Cache.MSSQLDAL", "..\..\Frxs.Platform\Frxs.Platform.Cache.MSSQLDAL\Frxs.Platform.Cache.MSSQLDAL.csproj", "{4B9725C0-0624-4F23-8824-0F4D575F9719}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frxs.Platform.Cache.IDAL", "..\..\Frxs.Platform\Frxs.Platform.Cache.IDAL\Frxs.Platform.Cache.IDAL.csproj", "{1F590036-85CF-4317-9F23-627577929FA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frxs.Platform.Cache.BLL", "..\..\Frxs.Platform\Frxs.Platform.Cache.BLL\Frxs.Platform.Cache.BLL.csproj", "{A4D7CDB1-A832-497C-A6E3-19CBCA6ECD6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frxs.Platform.Cache.Provide", "..\..\Frxs.Platform\Frxs.Platform.Cache.Provide\Frxs.Platform.Cache.Provide.csproj", "{934E227E-2A38-46EE-B09A-F4709E0E58BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47AF36F6-4585-4135-8C35-ADFFD491AE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47AF36F6-4585-4135-8C35-ADFFD491AE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47AF36F6-4585-4135-8C35-ADFFD491AE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47AF36F6-4585-4135-8C35-ADFFD491AE6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C08602C-3A43-48BA-AC95-D18C21217165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C08602C-3A43-48BA-AC95-D18C21217165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C08602C-3A43-48BA-AC95-D18C21217165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C08602C-3A43-48BA-AC95-D18C21217165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E30D3ED3-975C-4D4F-A69B-2CD2725614A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E30D3ED3-975C-4D4F-A69B-2CD2725614A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E30D3ED3-975C-4D4F-A69B-2CD2725614A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E30D3ED3-975C-4D4F-A69B-2CD2725614A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F916B02-E40D-4338-8BD4-87284060BADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F916B02-E40D-4338-8BD4-87284060BADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F916B02-E40D-4338-8BD4-87284060BADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F916B02-E40D-4338-8BD4-87284060BADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3159095C-7E84-4EE9-B98B-D4949D30D2B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3159095C-7E84-4EE9-B98B-D4949D30D2B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3159095C-7E84-4EE9-B98B-D4949D30D2B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3159095C-7E84-4EE9-B98B-D4949D30D2B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B9725C0-0624-4F23-8824-0F4D575F9719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B9725C0-0624-4F23-8824-0F4D575F9719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B9725C0-0624-4F23-8824-0F4D575F9719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B9725C0-0624-4F23-8824-0F4D575F9719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F590036-85CF-4317-9F23-627577929FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F590036-85CF-4317-9F23-627577929FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F590036-85CF-4317-9F23-627577929FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F590036-85CF-4317-9F23-627577929FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D7CDB1-A832-497C-A6E3-19CBCA6ECD6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D7CDB1-A832-497C-A6E3-19CBCA6ECD6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D7CDB1-A832-497C-A6E3-19CBCA6ECD6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D7CDB1-A832-497C-A6E3-19CBCA6ECD6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{934E227E-2A38-46EE-B09A-F4709E0E58BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{934E227E-2A38-46EE-B09A-F4709E0E58BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{934E227E-2A38-46EE-B09A-F4709E0E58BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{934E227E-2A38-46EE-B09A-F4709E0E58BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C08602C-3A43-48BA-AC95-D18C21217165} = {AFE84F06-4A0D-4D80-ACB9-BD852C29C127}
+		{E30D3ED3-975C-4D4F-A69B-2CD2725614A1} = {AFE84F06-4A0D-4D80-ACB9-BD852C29C127}
+		{2F916B02-E40D-4338-8BD4-87284060BADC} = {E2542331-E981-4FAD-A173-5F81212C7035}
+		{3159095C-7E84-4EE9-B98B-D4949D30D2B8} = {E2542331-E981-4FAD-A173-5F81212C7035}
+		{4B9725C0-0624-4F23-8824-0F4D575F9719} = {E2542331-E981-4FAD-A173-5F81212C7035}
+		{1F590036-85CF-4317-9F23-627577929FA4} = {E2542331-E981-4FAD-A173-5F81212C7035}
+		{A4D7CDB1-A832-497C-A6E3-19CBCA6ECD6F} = {E2542331-E981-4FAD-A173-5F81212C7035}
+		{934E227E-2A38-46EE-B09A-F4709E0E58BC} = {E2542331-E981-4FAD-A173-5F81212C7035}
+	EndGlobalSection
+EndGlobal

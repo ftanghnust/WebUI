@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "PromotionOrderList";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<form id="searchform">
+    <fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+        <legend style="color: #416AB7; font-weight: bold">信息查询</legend>
+        <table id="tab" class="xstable">
+            <tr>
+                <td>订单编号：</td>
+                <th>
+                    <input type="text" name="OrderId" id="OrderId" style="width:172px"></th>
+                <td>门店编号：</td>
+                <th>
+                    <input type="text" name="ShopCode" id="ShopCode" style="width:172px"></th>
+                <td>门店名称：</td>
+                <th>
+                    <input type="text" name="ShopName" id="ShopName" style="width:172px"></th>
+
+            </tr>
+            <tr>
+                <td>配送线路：</td>
+                <th>
+                    <select id="LineName" name="LineName" class="easyui-combobox" style="width: 172px" data-options="panelHeight:'auto',editable:false  ">
+                    </select>
+                </th>
+                <td>状态：</td>
+                <th>
+                    <select id="Status" name="Status" class="easyui-combobox" style="width: 172px" data-options="panelHeight:'auto',editable:false  ">
+                        <option value='1'>等待确认</option>
+                        <option value='100'>交易关闭</option>
+                    </select>
+                </th>
+                <td>门店类型：</td>
+                <th>
+                    <select id="ShopType" name="ShopType" class="easyui-combobox" style="width: 175px" data-options="panelHeight:'auto',editable:false  ">
+                        <option value=''>-全部-</option>
+                        <option value='0'>加盟店</option>
+                        <option value='1'>签约店</option>
+                    </select></th>
+                
+                <th>
+                    仓库： <select id="WName" name="WName" class="easyui-combobox" style="width: 175px" data-options="panelHeight:'auto',editable:false  "></select></th>
+            </tr>
+            <tr>
+                <th>预计配送日期：</th>
+                <td>
+                    <input onfocus="WdatePicker({dateFmt:'yyyy-M-d'})" class="Wdate" name="SendStartDate" id="SendStartDate" style="width:78px"/>至<input onfocus="WdatePicker({dateFmt:'yyyy-M-d',minDate:'#F{$dp.$D(\'SendStartDate\')}'})" class="Wdate" name="SendEndDate" id="SendEndDate" style="width:78px"></td>
+                <td>下单时间：</td>
+                <th>
+                    <input onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" class="Wdate" name="OrderStartDate" id="OrderStartDate" style="width:170px"/>
+                </th>
+                <td>至&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <th><input onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'#F{$dp.$D(\'OrderStartDate\')}'})" class="Wdate" name="OrderEndDate" id="OrderEndDate" style="width:170px"></th>
+               
+                <th>
+                    <input type="button" onclick="search()" id="aSearch" class="aSearch" value="查询"><input type="button" class="reset" value="重置" onclick="    resetSearch()"></th>
+
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<div id="grid"></div>
+
+@section scripts
+{
+     <script type="text/javascript">
+         //工具栏
+         var toolbarArray = new Array();
+         $(function () {
+             //取消
+            @if (Authorize(520311, 52031101))
+            {
+                @:toolbarArray.push({ id: 'btnNosure', text: '取消', iconCls: 'icon-remove', handler: cancel });
+            }
+
+            //查看
+            toolbarArray.push({ id: 'btnQuery', text: '查看', iconCls: 'icon-search', handler: view });
+
+            //确认
+            @if (Authorize(520311, 52031102))
+            {
+                @:toolbarArray.push({ id: 'btnSure', text: '确认', iconCls: 'icon-ok', handler: sure });
+            }
+        });
+    </script>
+    <script src="@Url.Content("~/Scripts/bussiness/promotionOrder/promotionOrderList.js")" type="text/javascript"></script>
+}

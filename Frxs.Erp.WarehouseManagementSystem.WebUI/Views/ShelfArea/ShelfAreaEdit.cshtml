@@ -1,0 +1,55 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.ShelfAreaModel
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<style>
+
+    span.red { color:#f00
+    }
+</style>
+	
+    <div class="dialogMainbody" style="width:340px">
+         <div class="box">
+         @{
+             using (Html.BeginForm("ShelfAreaHandle", "ShelfArea", FormMethod.Post))
+             {
+                 @Html.HiddenFor(model => Model.ShelfAreaID)
+                <table style="width:300px" border="0" class="xstable">
+                  <tr>
+                    <td ><span class="red">*</span>@Html.LabelFor(model => Model.ShelfAreaCode)：</td>
+                    <th>@Html.TextBoxFor(model => Model.ShelfAreaCode, new { @class = "easyui-validatebox cls jump onlymath",@maxlength="2", @onKeypress="return (/[\\d.]/.test(String.fromCharCode(event.keyCode)))" }) </th>     
+                  </tr>                  
+                  <tr>
+                    <td ><span class="red">*</span>@Html.LabelFor(model => Model.ShelfAreaName)：</td>
+                    <th>@Html.TextBoxFor(model => Model.ShelfAreaName, new { @class = "easyui-validatebox cls jump",@maxlength="10" }) </th>  
+                  </tr>
+                   <tr>
+                    <td ><span class="red">*</span>@Html.LabelFor(model => Model.SerialNumber)：</td>
+                    <th>@Html.TextBoxFor(model => Model.SerialNumber, new { @class = "easyui-validatebox easyui-numberbox cls jump onlymath",@maxlength="2",@min="1",@max="99"}) </th>   
+                  </tr>
+                   @*<tr>
+                    <td ><span class="red">*</span>@Html.LabelFor(model => Model.PickingMaxRecord)：</td>
+                    <th>@Html.TextBoxFor(model => Model.PickingMaxRecord, new { @class = "easyui-validatebox easyui-numberbox cls jump onlymath",@maxlength="1",@min="1",@max="8"}) </th>
+                  </tr>*@
+                   <tr>
+                   <td >@Html.LabelFor(model => Model.Remark)：</td>
+                    <th> @Html.TextAreaFor(model => Model.Remark, new { @class = "easyui-validatebox", @maxlength="40" })</th>   
+                  </tr>
+                    <tr>
+                    <td></td>
+                   @* <td class="space ">
+                        <a id="aSubmit" >确认</a>   
+                        <a id="cancel">取消</a>            
+                    </td>   *@             
+                  </tr>
+               </table> 
+             }
+             }
+             </div>                 
+            </div>  
+    
+        
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/ShelfArea/ShelfAreaAddOrEdit.js")"></script>
+    <script>
+        
+    </script>

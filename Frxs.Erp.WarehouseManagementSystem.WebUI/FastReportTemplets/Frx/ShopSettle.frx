@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Name="门店结算单" ReportInfo.Author="Sealy" ReportInfo.Version="1.0.1" ReportInfo.Created="03/23/2016 07:35:15" ReportInfo.Modified="06/23/2016 01:29:31" ReportInfo.CreatorVersion="2016.1.0.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+    
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="Head" ReferenceName="Head" DataType="System.Int32" Enabled="true">
+      <Column Name="SettleID" DataType="System.String"/>
+      <Column Name="ShopCode" DataType="System.String"/>
+      <Column Name="ShopName" DataType="System.String"/>
+      <Column Name="CreateTime" DataType="System.String"/>
+      <Column Name="CreateUserName" DataType="System.String"/>
+      <Column Name="WName" DataType="System.String"/>
+      <Column Name="WCode" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Detail" ReferenceName="Detail" DataType="System.Int32" Enabled="true">
+      <Column Name="BillID" DataType="System.String"/>
+      <Column Name="BillDate" DataType="System.DateTime"/>
+      <Column Name="BillTypeStr" DataType="System.String"/>
+      <Column Name="FeeName" DataType="System.String"/>
+      <Column Name="BillAmt" DataType="System.String"/>
+      <Column Name="BillAddAmt" DataType="System.String"/>
+      <Column Name="BillPayAmt" DataType="System.String"/>
+    </TableDataSource>
+    <Total Name="TotalAmt" Expression="[Detail.BillAmt]" Evaluator="Data1"/>
+    <Total Name="TotalAddAmt" Expression="[Detail.BillAddAmt]" Evaluator="Data1"/>
+    <Total Name="TotalPayAmt" Expression="[Detail.BillPayAmt]" Evaluator="Data1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="94.5">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Text="门 店 结 算 单" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 20pt"/>
+      <TextObject Name="Text2" Top="37.8" Width="359.1" Height="28.35" Text="门　店：[Head.ShopCode]-[Head.ShopName]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text3" Width="179.55" Height="37.8" Text="单据号：[Head.SettleID]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text4" Left="538.65" Top="37.8" Width="179.55" Height="28.35" Text="制单日期：[Head.CreateTime]" Format="Custom" Format.Format="yyyy-MM-dd HH:mm" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text5" Left="359.1" Top="37.8" Width="179.55" Height="28.35" Text="仓　库：[Head.WName]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text7" Left="538.65" Top="66.15" Width="179.55" Height="28.35" Text="　制单人：[Head.CreateUserName]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text9" Top="66.15" Width="538.65" Height="28.35" Text="备　注：[Head.Remark]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text34" Left="538.65" Width="179.55" Height="37.8" Text="第 [Page#] 页/共 [TotalPages#] 页" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </ReportTitleBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="98.5" Width="718.2" Height="28.35">
+      <TextObject Name="Text10" Width="37.8" Height="28.35" Border.Lines="All" Text="序号" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text12" Left="37.8" Width="75.6" Height="28.35" Border.Lines="All" Text="单据类型" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text13" Left="113.4" Width="103.95" Height="28.35" Border.Lines="All" Text="单据编号" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text15" Left="302.4" Width="103.95" Height="28.35" Border.Lines="All" Text="二级项目名称" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text17" Left="406.35" Width="103.95" Height="28.35" Border.Lines="All" Text="金额" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text37" Left="217.35" Width="85.05" Height="28.35" Border.Lines="All" Text="账单日期" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text39" Left="510.3" Width="103.95" Height="28.35" Border.Lines="All" Text="平台费" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text40" Left="614.25" Width="103.95" Height="28.35" Border.Lines="All" Text="小计" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="130.85" Width="718.2" Height="28.35" DataSource="Detail">
+      <TextObject Name="Text11" Width="37.8" Height="28.35" Border.Lines="All" CanBreak="false" Text="[Row#]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text20" Left="37.8" Width="75.6" Height="28.35" Border.Lines="All" Text="[Detail.BillTypeStr]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text21" Left="113.4" Width="103.95" Height="28.35" Border.Lines="All" Text="[Detail.BillID]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text23" Left="217.35" Width="85.05" Height="28.35" Border.Lines="All" Text="[Detail.BillDate]" Format="Custom" Format.Format="yyyy-MM-dd" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text25" Left="302.4" Width="103.95" Height="28.35" Border.Lines="All" Text="[Detail.FeeName]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text38" Left="406.35" Width="103.95" Height="28.35" Border.Lines="All" Text="[Detail.BillAmt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text41" Left="510.3" Width="103.95" Height="28.35" Border.Lines="All" Text="[Detail.BillAddAmt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text42" Left="614.25" Width="103.95" Height="28.35" Border.Lines="All" Text="[Detail.BillPayAmt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="163.2" Width="718.2" Height="28.35">
+      <TextObject Name="Text28" Width="406.35" Height="28.35" Border.Lines="All" Text="合计" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text30" Left="406.35" Width="103.95" Height="28.35" Border.Lines="All" Text="[TotalAmt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text43" Left="510.3" Width="103.95" Height="28.35" Border.Lines="All" Text="[TotalAddAmt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text44" Left="614.25" Width="103.95" Height="28.35" Border.Lines="All" Text="[TotalPayAmt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </ColumnFooterBand>
+  </ReportPage>
+</Report>

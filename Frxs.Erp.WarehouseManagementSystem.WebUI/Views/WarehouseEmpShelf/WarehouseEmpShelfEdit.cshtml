@@ -1,0 +1,77 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.WarehouseEmpShelfModel
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<style>
+    span.red { color:#f00
+    }
+    ul#bu { float:left; margin:0px; padding:0px; padding-left:30px; width:70px
+    }
+        ul#bu li { margin:0px; padding:0px; list-style:none; text-align:center;  margin-bottom:10px
+        }
+    select.cc { height:150px; width:120px
+    }
+</style>
+    <!--窗体结束-->
+    <div class="dialogMainbody" style="width: 440px">
+        @{
+            using (Html.BeginForm("WarehouseEmpShelfHandle", "WarehouseEmpShelf", FormMethod.Post))
+            {  
+                 @Html.HiddenFor(model => Model.EmpID)
+                 @Html.HiddenFor(model => Model.ShelfIDs)
+            <table width="425" border="0" class="xstable">
+                <tr>
+                    <td >@Html.LabelFor(model => Model.EmpName)：</td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.EmpName, new { @class = "al readonly",@readonly = true,@style="width:100px; margin-right:20px" })@Html.LabelFor(model => Model.UserAccount)： @Html.TextBoxFor(model => Model.UserAccount, new { @class = "al readonly",@readonly = true,@style="width:100px;margin-left:5px" })
+                   </th>
+                       
+                </tr>
+                <tr>
+                    <td ><span class="red">*</span> @Html.LabelFor(model => Model.ShelfAreaName)：</td>
+                    <th>
+                        @Html.DropDownListFor(model => Model.ShelfAreaID, Model.ShelfAreaList, new { @class =" easyui-combobox  cls w250",@editable=false,@style="width:320px"})                       
+                    </th>
+                </tr>
+                <tr>
+                    <td ><span ></span> 拣货货位：</td>
+                    <th>
+                        <input id="ShelfCodeStart" type="text" maxlength="10"  style="width:100px"/>
+                        &nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;
+                        <input id="ShelfCodeEnd" type="text" maxlength="10" style="width:100px"/>
+                        &nbsp;&nbsp;<input type="button" value="添 加" id="bSubmit" class="easyui-linkbutton" style="padding:2px 12px;color:#308bee; margin-top:-2px" />
+                    </th>
+                </tr>
+                <tr>
+                    <td ></td>
+                    <th>  
+                        <div style="float:left">   
+                        @Html.DropDownListFor(model => Model.ShelfID, Model.shelfList, new { @class ="cc",@multiple="multiple",@id="where",@style="width:220px; height:400px"})  
+                            </div>
+                                           
+                        @*<select id="select" size="4"  class="cc">
+                            <option>309291</option>
+                            <option>309292</option>
+                            <option>309293</option>
+                            <option>309294</option>
+                        </select>*@
+                        <ul  id="bu">
+                            <li class="easyui-linkbutton" style="padding:2px 5px;color:#308bee;">
+                                删除选中</li>
+                            <li class="easyui-linkbutton" style="padding:2px 5px;color:#308bee;">
+                                全部清空</li>
+                            
+                        </ul>
+                    </th>
+                </tr>
+                @*<tr>
+                    <td colspan="2">
+                        <a id="aSubmit" style="margin-left:124px;">保 存</a>
+                    </td>
+                </tr>*@
+            </table>
+            }
+        }
+    </div>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/warehouseEmpShelf/warehouseEmpShelfAddOrEdit.js")"></script>

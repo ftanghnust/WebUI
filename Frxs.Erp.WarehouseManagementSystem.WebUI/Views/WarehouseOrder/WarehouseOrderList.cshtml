@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "WarehouseOrderList";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<form id="searchform">
+    <fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+        <legend style="color: #416AB7; font-weight: bold">信息查询</legend>
+        <table id="tab" class="xstable">
+            <tr>
+                <td>订单编号：</td>
+                <th>
+                    <input type="text" name="OrderId" id="OrderId" style="width: 162px"></th>
+
+                <td>门店编号：</td>
+                <th>
+                    <input type="text" name="ShopCode" id="ShopCode" style="width: 162px"></th>
+                <td>门店名称：</td>
+                <th>
+                    <input type="text" name="ShopName" id="ShopName" style="width: 162px"></th>
+                <td>状态：</td>
+                <th>
+                    <select id="Status" name="Status" class="easyui-combobox" style="width: 162px" panelheight="auto" editable="false">
+                        <option value=''>-全部-</option>
+                        <option value='1'>等待确认</option>
+                        <option value='2'>等待拣货</option>
+                        <option value='3'>正在拣货</option>
+                        <option value='4'>等待装箱</option>
+                        <option value='5'>等待配送</option>
+                        <option value='6'>正在配送</option>
+                        <option value='7'>交易完成</option>
+                        <option value='8'>客户交易取消</option>
+                        <option value='9'>客服交易关闭</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <td>仓库：</td>
+                <th>
+                    <select id="WName" name="WName" class="easyui-combobox" style="width: 162px" data-options="panelHeight:'auto',editable:false  "></select></th>
+                <td>配送线路：</td>
+                <th>
+                    <select id="LineName" name="LineName" class="easyui-combobox" style="width: 162px" data-options="panelHeight:'auto',editable:false  "></select></th>
+                <th>预计配送日期：</th>
+                <td style="text-align: left" colspan="3">
+                    <input onfocus="WdatePicker({dateFmt:'yyyy-M-d'})" class="Wdate" name="SendStartDate" id="SendStartDate" style="width: 162px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input onfocus="WdatePicker({dateFmt:'yyyy-M-d',minDate:'#F{$dp.$D(\'SendStartDate\')}'})" class="Wdate" name="SendEndDate" id="SendEndDate" style="width: 162px"></td>
+            </tr>
+            <tr>
+                <td>下单时间：</td>
+                <th colspan="3">
+                    <input onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" class="Wdate" name="OrderStartDate" id="OrderStartDate" style="width: 162px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'#F{$dp.$D(\'OrderStartDate\')}'})" class="Wdate" name="OrderEndDate" id="OrderEndDate" style="width: 162px">
+                </th>
+                <td>待装区编号：</td>
+                <th>
+                    <input type="text" name="StationNumber" id="StationNumber" style="width: 162px"></th>
+                <td>订单来源：</td>
+                <th colspan="3">
+                    <select id="OrderType" name="OrderType" class="easyui-combobox" style="width: 162px" data-options="panelHeight:'auto',editable:false  ">
+                        <option value=''>-全部-</option>
+                        <option value='0'>订货平台</option>
+                        <option value='1'>仓库后台</option>
+                    </select></th>
+            </tr>
+            <tr>
+                <td>确认时间：</td>
+                <th colspan="3">
+                    <input onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" class="Wdate" name="ConfStartDate" id="ConfStartDate" style="width: 162px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'#F{$dp.$D(\'ConfStartDate\')}'})" class="Wdate" name="ConfEndDate" id="ConfEndDate" style="width: 162px">
+                </th>
+                <td>门店类型：</td>
+                <th>
+                    <select id="ShopType" name="ShopType" class="easyui-combobox" style="width: 162px" data-options="panelHeight:'auto',editable:false  ">
+                        <option value=''>-全部-</option>
+                        <option value='0'>加盟店</option>
+                        <option value='1'>签约店</option>
+                    </select></th>
+                <td>商品编码：</td>
+                <th>
+                    <input type="text" name="SKU" id="SKU" style="width: 162px"></th>
+                <th>
+                    <input type="button" onclick="search()" id="aSearch" class="aSearch" value="查询"><input type="button" class="reset" value="重置" onclick="    resetSearch()"></th>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<div id="grid"></div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        //权限
+        var permission = {
+            cancel: "@Authorize(520312, 52031204)".toLocaleLowerCase() == "true" ? true : false,  //取消订单
+            shippingfinish: "@Authorize(520312, 52031205)".toLocaleLowerCase() == "true" ? true : false,  //配送完成
+            dealfinish: "@Authorize(520312, 52031206)".toLocaleLowerCase() == "true" ? true : false,  //交易完成
+            sure: "@Authorize(520312, 52031203)".toLocaleLowerCase() == "true" ? true : false,  //确认
+            startpick: "@Authorize(520312, 52031208)".toLocaleLowerCase() == "true" ? true : false,  //开始拣货
+            pickfinish: "@Authorize(520312, 52031209)".toLocaleLowerCase() == "true" ? true : false,  //拣货完成
+            startpack: "@Authorize(520312, 52031210)".toLocaleLowerCase() == "true" ? true : false,  //装箱
+            shipping: "@Authorize(520312, 52031211)".toLocaleLowerCase() == "true" ? true : false   //装车
+        };
+
+        //工具栏
+        var toolbarArray = new Array();
+        $(function () {
+            //添加
+            @if (Authorize(520312, 52031201))
+            {
+                @:toolbarArray.push({ id: 'btnAdd', text: '添加', iconCls: 'icon-add', handler: add });
+            }
+
+            //查看
+            toolbarArray.push({ id: 'btnQuery', text: '查看', iconCls: 'icon-search', handler: view });
+
+            //详情
+            toolbarArray.push({ id: 'btnDetails', text: '详情', iconCls: 'icon-xiangqing', handler: details });
+
+            //修改当次线路
+            toolbarArray.push({ id: 'btnLineChange', text: '修改当次线路', iconCls: 'icon-updataxl', handler: linechange });
+
+        });
+    </script>
+    <script src="@Url.Content("~/Scripts/bussiness/warehouseOrder/warehouseOrderList.js")" type="text/javascript"></script>
+}

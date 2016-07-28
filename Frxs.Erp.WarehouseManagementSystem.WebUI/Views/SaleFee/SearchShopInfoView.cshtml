@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "SearchShopInfoView";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+ <fieldset style="margin: 0px 0px 2px 0px; border: 1px solid #999">
+        <legend>查询条件</legend>
+        <table id="tab" class="xstable" border="0">
+            <tr>
+                <th>
+                    门店编码
+                </th>
+                <td>
+                    <input type="text" name="ShopCode" id="ShopCode" >
+                </td>  
+                <th>
+                    门店名称
+                </th>
+                <td>
+                    <input type="text" name="ShopName" id="ShopName" >
+                </td>
+                <td>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" onclick="loadgrid()">查询</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-back" onclick="$('#ShopCode').val('');$('#ShopName').val('');">清空</a>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+<div id="shopGrid"></div>
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/saleFee/searchShopInfo.js")" type="text/javascript"></script>
+}

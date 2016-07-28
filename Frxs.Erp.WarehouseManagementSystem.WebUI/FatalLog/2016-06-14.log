@@ -1,0 +1,46 @@
+
+[时间]2016-06-14 08:48:08,150
+[异常内容]System.Runtime.Serialization.SerializationException: ValueType“System.Int32”不能为 Null。
+   在 ReadPickCheckProductsFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )
+   在 System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator xmlReader, Int32 id, RuntimeTypeHandle declaredTypeHandle, String name, String ns)
+   在 ReadArrayOfPickCheckProductsFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString , CollectionDataContract )
+   在 System.Runtime.Serialization.Json.JsonCollectionDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 Frxs.Platform.Utility.Json.JsonHelper.GetObjectIList[T](String jsonStr) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Json\JsonHelper.cs:行号 292
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.PickCheckHandle(String OrderID, String Products) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 854
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-14 08:49:23,264
+[异常内容]System.Runtime.Serialization.SerializationException: ValueType“System.Int32”不能为 Null。
+   在 ReadPickCheckProductsFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )
+   在 System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator xmlReader, Int32 id, RuntimeTypeHandle declaredTypeHandle, String name, String ns)
+   在 ReadArrayOfPickCheckProductsFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString , CollectionDataContract )
+   在 System.Runtime.Serialization.Json.JsonCollectionDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 Frxs.Platform.Utility.Json.JsonHelper.GetObjectIList[T](String jsonStr) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Json\JsonHelper.cs:行号 292
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.PickCheckHandle(String OrderID, String Products) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 854
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151
+
+[时间]2016-06-14 09:13:07,552
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.PickCheckHandle(String OrderID, String Products) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 900
+[源]e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Log\Logger.cs
+[行]151

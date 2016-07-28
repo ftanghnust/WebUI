@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "芙蓉兴盛ERP管理系统";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<div class="easyui-layout" data-options="fit:true">
+    <div>
+        <table>
+            <tr>
+                <td>商品编号：</td>
+                <th>
+                    <input type="text" name="SKU" id="SKU"/>
+                </th>
+                <td>商品名称：</td>
+                <th >
+                    <input type="text" name="ProductName" id="ProductName"/>
+                </th>
+                <td>条码：</td>
+                <th>
+                    <input type="text" name="BarCode" id="BarCode"/>
+                </th>
+                <td style="padding-left: 2px; text-align: left">
+                    <a id="aSearch" href="javascript:void(0)" class=" l-btn " style="padding: 4px 15px">查询</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="gridproduct" style="height:490px;"></div>
+</div>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/stockCheck/stockAdjDetailProducts.js")" type="text/javascript"></script>
+}

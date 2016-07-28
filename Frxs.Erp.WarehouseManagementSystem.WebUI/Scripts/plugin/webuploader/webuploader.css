@@ -1,0 +1,33 @@
+.webuploader-container {
+	position: relative;
+}
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	background: #00b7ee;
+	padding: 7px 15px;
+	color: #333;
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden; -moz-border-radius:5px;-webkit-border-radius:5px; border:1px solid #bbb; background: -webkit-linear-gradient(top,#ffffff 0,#eeeeee 100%);
+  background: -moz-linear-gradient(top,#ffffff 0,#eeeeee 100%);
+  background: -o-linear-gradient(top,#ffffff 0,#eeeeee 100%);
+  background: linear-gradient(to bottom,#ffffff 0,#eeeeee 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#eeeeee,GradientType=0);
+}
+.webuploader-pick-hover {
+	
+}
+
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events:none;
+}
+

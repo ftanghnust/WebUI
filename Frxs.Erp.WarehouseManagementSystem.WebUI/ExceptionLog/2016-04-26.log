@@ -1,0 +1,110 @@
+
+2016/4/26 13:57:48
+[异常内容]未将对象引用设置到对象的实例。
+[源]NPOI
+[操作]/BuyOrderPre/DataExport?Buyid=105000001255
+[IP]192.168.3.242
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 NPOI.Util.IOUtils.ReadFully(Stream stream, Byte[] b, Int32 off, Int32 len)
+   在 NPOI.POIXMLDocument.HasOOXMLHeader(Stream inp)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 648
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderToExcel[T](IList`1 list, Int32 maxRows) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 382
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.ExportExcel[T](IList`1 list, Int32 maxRows, String directoryPath, String fileName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 39
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.BuyOrderPreController.DataExport(String Buyid) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\BuyOrderPre\BuyOrderPreController.cs:行号 269
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+2016/4/26 13:58:15
+[异常内容]未将对象引用设置到对象的实例。
+[源]NPOI
+[操作]/BuyOrderPre/DataExport?Buyid=105000001255
+[IP]192.168.3.242
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 NPOI.Util.IOUtils.ReadFully(Stream stream, Byte[] b, Int32 off, Int32 len)
+   在 NPOI.POIXMLDocument.HasOOXMLHeader(Stream inp)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 648
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderToExcel[T](IList`1 list, Int32 maxRows) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 382
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.ExportExcel[T](IList`1 list, Int32 maxRows, String directoryPath, String fileName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 39
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.BuyOrderPreController.DataExport(String Buyid) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\BuyOrderPre\BuyOrderPreController.cs:行号 269
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+2016/4/26 14:01:23
+[异常内容]未将对象引用设置到对象的实例。
+[源]NPOI
+[操作]/BuyOrderPre/DataExport?Buyid=105000001256
+[IP]192.168.3.242
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 NPOI.Util.IOUtils.ReadFully(Stream stream, Byte[] b, Int32 off, Int32 len)
+   在 NPOI.POIXMLDocument.HasOOXMLHeader(Stream inp)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 648
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderToExcel[T](IList`1 list, Int32 maxRows) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 382
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.ExportExcel[T](IList`1 list, Int32 maxRows, String directoryPath, String fileName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 39
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.BuyOrderPreController.DataExport(String Buyid) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\BuyOrderPre\BuyOrderPreController.cs:行号 269
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+2016/4/26 14:03:37
+[异常内容]未将对象引用设置到对象的实例。
+[源]NPOI
+[操作]/BuyOrderPre/DataExport?Buyid=105000001256
+[IP]192.168.3.242
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 NPOI.Util.IOUtils.ReadFully(Stream stream, Byte[] b, Int32 off, Int32 len)
+   在 NPOI.POIXMLDocument.HasOOXMLHeader(Stream inp)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 648
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderToExcel[T](IList`1 list, Int32 maxRows) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 382
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.ExportExcel[T](IList`1 list, Int32 maxRows, String directoryPath, String fileName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 39
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.BuyOrderPreController.DataExport(String Buyid) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\BuyOrderPre\BuyOrderPreController.cs:行号 269
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+2016/4/26 14:05:51
+[异常内容]未将对象引用设置到对象的实例。
+[源]NPOI
+[操作]/BuyOrderPre/DataExport?Buyid=105000001256
+[IP]192.168.3.242
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 NPOI.Util.IOUtils.ReadFully(Stream stream, Byte[] b, Int32 off, Int32 len)
+   在 NPOI.POIXMLDocument.HasOOXMLHeader(Stream inp)
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.GetWorkbookByStream(Stream excelFileStream) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 648
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.RenderToExcel[T](IList`1 list, Int32 maxRows) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 382
+   在 Frxs.Platform.Utility.Excel.NpoiExcelhelper.ExportExcel[T](IList`1 list, Int32 maxRows, String directoryPath, String fileName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Platform\Frxs.Platform.Utility\Excel\NpoiExcelhelper.cs:行号 39
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.BuyOrderPreController.DataExport(String Buyid) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\BuyOrderPre\BuyOrderPreController.cs:行号 269
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)

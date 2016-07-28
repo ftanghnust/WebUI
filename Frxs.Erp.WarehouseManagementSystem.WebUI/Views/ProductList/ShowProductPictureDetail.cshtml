@@ -1,0 +1,73 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.Product.ProductPictureDetailsDataModel
+@{
+    ViewBag.Title = "查看商品图片";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+@*<link href="@Url.Content("~/Style/easyui.css")" rel="stylesheet"/>
+<link href="@Url.Content("~/Style/Item/Item.css")" rel="stylesheet" />*@
+
+<style>
+    /*图片展示页面*/
+    .backcolors{ background:#fff; width:auto;height:auto; overflow-y:auto; overflow-x:hidden;margin:0 25px; }
+    .photo-list-show{ display:block; overflow:hidden; width:99.5%; float:left; border:1px dotted #999; margin-bottom:5px;}
+    .photo-list-show ul{padding:10px 0 10px 10px;height:90px;}
+    .photo-list-show ul li{ float:left; margin-right:10px; width:100px; height:100px; position:relative; color:#000; font-size:0; display:inline; margin-bottom:10px; margin-left:4px}
+    .photo-list-show ul li img {width:100px;height:100px;z-index:1;position:absolute;cursor:pointer;}
+    .photo-list-show ul li a{width:15px; height:15px; position:absolute;right:0;top:0; cursor:pointer; background:#fff url(images/delete.png) no-repeat center center; z-index:2; border:2px solid #fff;}
+    .goupload span {
+        height:40px;line-height:40px;display:block;font-size:14px;text-indent:2em;
+    }
+    #showbig {
+        width:90%;height:auto;padding:20px 50px;float:left;
+    }
+    #showbig img {width:100%;background:#F0F0F0;}
+    .ylbt {width:100%;color:#06C;float:left;height:35px;text-indent:5px; padding-top:10px;}
+    .img-box img {display:block;margin:auto;}
+</style>
+@{
+         
+    <div id="div_albums_container" style="padding: 2px">
+        <input type="hidden" name="hidFocusPhoto" id="hidFocusPhoto" runat="server" class="focus-photo" />
+        <div style="margin: 2px 0 0 0">
+            <div class="photo-list-show" style="float: left; padding: 0px; width: 300px; height: 530px; overflow: hidden">
+                <ul style="height: 530px">
+                    @{
+                        if (Model != null && Model.ProductsPictureDetailList != null
+                            && Model.ProductsPictureDetailList != null
+                            && Model.ProductsPictureDetailList.Count > 0)
+                        {
+
+                            for (int i = 0; i < Model.ProductsPictureDetailList.Count; i++)
+                            {
+                        <li style="width: 80px; height: 80px; margin-bottom: 7px">
+                            <div class="img-box" onclick="setImg(this);">
+                                <img src=@Model.ProductsPictureDetailList[i].ImageUrlOrg style="width:80px; height:80px" />
+                            </div>
+                        </li>
+                            }
+
+                        }
+                    }
+                </ul>
+            </div>
+            <div id="showBigImg" style="float: left; width: 500px; padding-top: 40px; overflow: hidden; padding-left: 10px">
+                <div class="img-box">
+                    @{
+                        if (Model != null && Model.ProductsPictureDetailList != null && Model.ProductsPictureDetailList.Count > 0)
+                        {
+                        <img src=@Model.ProductsPictureDetailList[0].ImageUrlOrg id="bigImg" style="width:460px; height:460px; "/>
+                        }
+                        else
+                        {
+                        <img alt="没有图片" src="" id="bigImg" />
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript"  src="@Url.Content("~/Scripts/bussiness/product/showProductPictureDetail.js")"></script>

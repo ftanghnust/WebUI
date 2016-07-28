@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "芙蓉兴盛ERP管理系统";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+
+<fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+    <legend style="color: #416AB7; font-weight: bold">信息查看</legend>
+    <table id="tab" class="xstable">
+        <tr>
+            <td>供应商：</td>
+            <th>
+                <label style="width: 250px" id="lblVendorName" />
+            </th>
+        </tr>
+    </table>
+</fieldset>
+
+<div id="grid"></div>
+
+<div id="toolbar" style="padding: 2px 5px;">
+    <a id="btnAdd" href="#" class="easyui-linkbutton" iconcls="icon-add" plain="true">添加</a>
+    <a id="btnDel" href="#" class="easyui-linkbutton" iconcls="icon-remove" plain="true">删除</a>
+    <a id="btnSave" href="#" class="easyui-linkbutton" iconcls="icon-save" plain="true">设置主供应商</a>
+    <select id="SelIsMaster" class="easyui-combobox" data-options="panelHeight:'auto',editable:false" style="width: 120px">
+        <option value="">-请选择-</option>
+        <option value="1">主供应商</option>
+        <option value="0">非主供应商</option>
+    </select>
+    <input type="text" id="KeyWord">
+    <a id="aSearch" href="#" class="easyui-linkbutton" iconcls="icon-search">查找</a>
+</div>
+
+@section scripts
+{
+
+    <script src="@Url.Content("~/Scripts/bussiness/vendor/vendorProductsListNew.js")" type="text/javascript"></script>
+
+}

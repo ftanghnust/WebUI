@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "采购收货明细报表";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<form id="myForm">
+    <fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+        <legend style="color: #416AB7; font-weight: bold">报表查询</legend>
+        <table id="tab" class="xstable" border="0">
+            <tr>
+                <td>基本分类：</td>
+                <th>
+                    <select id="CategoriesId1" name="CategoriesId1" class="easyui-combobox" style="width: 120px" editable="false" panelheight="auto">
+                    </select>
+                    <select id="CategoriesId2" name="CategoriesId2" class="easyui-combobox" style="width: 120px" editable="false" panelheight="auto">
+                    </select>
+                    <select id="CategoriesId3" name="CategoriesId3" class="easyui-combobox" style="width: 120px" editable="false" panelheight="auto">
+                    </select>
+                </th>
+                <td>开单员：</td>
+                <th>
+                    <input type="text" name="CreateUserName" id="CreateUserName" style="width: 143px" />
+                </th>
+                <td>仓库：</td>
+                <th>
+                    <select id="SubWID" name="SubWID" class="easyui-combobox" style="width: 175px" panelheight="auto" editable="false"></select>
+                </th>
+            </tr>
+            <tr>
+                <td>供应商：</td>
+                <th>
+                    <input type="hidden" name="VendorID" id="VendorID" />
+                    <input type="text" name="VendorCode" id="VendorCode" style="width: 100px;">
+                    <input type="button" value="..." onclick="selVendor()" />
+                    <input type="text" name="VendorName" id="VendorName" style="width: 224px" readonly="readonly" />
+                </th>
+
+                <td>录单开始时间：</td>
+                <th>
+                    <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm', maxDate: '#F{$dp.$D(\'CreateTime2\')}' })" name="CreateTime1" id="CreateTime1" class="Wdate easyui-validatebox" required="false" /></th>
+                <td>录单截止时间：</td>
+                <th>
+                    <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm', minDate: '#F{$dp.$D(\'CreateTime1\')}' })" name="CreateTime2" id="CreateTime2" class="Wdate easyui-validatebox" required="false" style="width: 173px" />
+                </th>
+            </tr>
+            <tr>
+
+                <td>商品编码：</td>
+                <th>
+                    <input type="text" name="SKU" id="SKU" style="width: 118px;" />
+                    &nbsp;&nbsp;&nbsp;
+                    商品名称：
+                    <input type="text" name="ProductName" id="ProductName" style="width: 158px;" />
+                </th>
+                <td>过账开始时间：</td>
+                <th>
+                    <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm', maxDate: '#F{$dp.$D(\'PostingTime2\')}' })" name="PostingTime1" id="PostingTime1" class="Wdate easyui-validatebox" required="false" /></th>
+                <td>过账截止时间：</td>
+                <th>
+                    <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm', minDate: '#F{$dp.$D(\'PostingTime1\')}' })" name="PostingTime2" id="PostingTime2" class="Wdate easyui-validatebox" required="false" style="width: 173px" />
+                </th>
+                <td style="text-align: center">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>过账日：</td>
+                <th>
+                    <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '#F{$dp.$D(\'SettDateEnd\')}' })" name="SettDateStart" id="SettDateStart" class="Wdate" />
+                     至 
+                    <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', minDate: '#F{$dp.$D(\'SettDateStart\')}' })" name="SettDateEnd" id="SettDateEnd" class="Wdate" />
+                </th>
+                <td style="text-align: center"></td>
+                <th></th>
+                <th></th>
+                <td>
+                    <input type="button" id="aSearch" class="aSearch" onclick="search()" value="查询">
+                    <input type="button" onclick="resetSearch()" class="reset" value="重置">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<div id="grid"></div>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/plugin/uploadify/FileSaver.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bussiness/report/BuyOrderDetails.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bussiness/product/getCategoriesCom.js")" type="text/javascript"></script>
+}

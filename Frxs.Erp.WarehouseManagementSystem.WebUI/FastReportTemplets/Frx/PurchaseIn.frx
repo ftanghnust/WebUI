@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Name="代购入库单" ReportInfo.Author="Sealy" ReportInfo.Version="1.0.1" ReportInfo.Created="03/23/2016 07:35:15" ReportInfo.Modified="06/23/2016 01:38:18" ReportInfo.CreatorVersion="2016.1.0.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+    /// &lt;summary&gt;The amount of conversion to Chinese&lt;/summary&gt; 
+    /// &lt;param name=&quot;dInput&quot;&gt;Money&lt;/param&gt; 
+    /// &lt;returns&gt;Chinese Money&lt;/returns&gt; 
+    public static string GetChineseMoney(double dInput)
+    {
+      const string sBig = &quot;零壹贰叁肆伍陆柒捌玖&quot;; //0-9所对应的汉字              
+      var sNum = &quot;万仟佰拾亿仟佰拾万仟佰拾元角分&quot;; //数字位所对应的汉字 
+      var s5 = &quot;&quot;;    //人民币大写金额形式 
+      int nI;               //循环变量 
+               
+      var sCh2 = &quot;&quot;;     //数字位的汉字读法 
+      var nZero = 0;       //用来计算连续的零值是几个
+
+      dInput = Math.Round(Math.Abs(dInput), 2);    //将num取绝对值并四舍五入取2位小数 
+      var s4 = string.Format(&quot;{0}&quot;, (long)(dInput * 100));        //将num乘100并转换成字符串形式 
+      var nJ = s4.Length;      //找出最高位 
+      if (nJ &gt; 15) { return &quot;溢出&quot;; }
+      sNum = sNum.Substring(15 - nJ);   //取出对应位数的strNum的值。如：200.55,j为5所以strNum=佰拾元角分 
+
+      //循环取出每一位需要转换的值 
+      for (nI = 0; nI &lt; nJ; nI++)
+      {
+                   
+        string sCh1;     //数字的汉语读法 
+        var s3 = s4.Substring(nI, 1);          //取出需转换的某一位的值 
+        var intTemp = Convert.ToInt32(s3);      //转换为数字 
+        if (nI != (nJ - 3) &amp;&amp; nI != (nJ - 7) &amp;&amp; nI != (nJ - 11) &amp;&amp; nI != (nJ - 15))
+        {
+          //当所取位数不为元、万、亿、万亿上的数字时 
+          if (s3 == &quot;0&quot;)
+          {
+            sCh1 = &quot;&quot;;
+            sCh2 = &quot;&quot;;
+            nZero = nZero + 1;
+          }
+          else
+          {
+            if (s3 != &quot;0&quot; &amp;&amp; nZero != 0)
+            {
+              sCh1 = &quot;零&quot; + sBig.Substring(intTemp * 1, 1);
+              sCh2 = sNum.Substring(nI, 1);
+              nZero = 0;
+            }
+            else
+            {
+              sCh1 = sBig.Substring(intTemp * 1, 1);
+              sCh2 = sNum.Substring(nI, 1);
+              nZero = 0;
+            }
+          }
+        }
+        else
+        {
+          //该位是万亿，亿，万，元位等关键位 
+          if (s3 != &quot;0&quot; &amp;&amp; nZero != 0)
+          {
+            sCh1 = &quot;零&quot; + sBig.Substring(intTemp * 1, 1);
+            sCh2 = sNum.Substring(nI, 1);
+            nZero = 0;
+          }
+          else
+          {
+            if (s3 != &quot;0&quot; &amp;&amp; nZero == 0)
+            {
+              sCh1 = sBig.Substring(intTemp * 1, 1);
+              sCh2 = sNum.Substring(nI, 1);
+              nZero = 0;
+            }
+            else
+            {
+              if (s3 == &quot;0&quot; &amp;&amp; nZero &gt;= 3)
+              {
+                sCh1 = &quot;&quot;;
+                sCh2 = &quot;&quot;;
+                nZero = nZero + 1;
+              }
+              else
+              {
+                if (nJ &gt;= 11)
+                {
+                  sCh1 = &quot;&quot;;
+                  nZero = nZero + 1;
+                }
+                else
+                {
+                  sCh1 = &quot;&quot;;
+                  sCh2 = sNum.Substring(nI, 1);
+                  nZero = nZero + 1;
+                }
+              }
+            }
+          }
+        }
+        if (nI == (nJ - 11) || nI == (nJ - 3))
+        {
+          //如果该位是亿位或元位，则必须写上 
+          sCh2 = sNum.Substring(nI, 1);                                                                      
+        }
+        s5 = s5 + sCh1 + sCh2;
+
+        if (nI == nJ - 1 )
+        {
+          //最后一位（分）为0时，加上“整” 
+          s5 = s5 + '整';
+        }
+      }
+      if (dInput == 0)                                                                        
+      {
+        s5 = &quot;零元整&quot;;
+      }
+      return s5;
+    }
+
+    ///大写金额
+    private void Text36_AfterData(object sender, EventArgs e)
+    {
+      Text36.Text=&quot;总金额：&quot;+GetChineseMoney(Report.GetTotalValue(&quot;TotalAmount&quot;));
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="Head" ReferenceName="Head" DataType="System.Int32" Enabled="true">
+      <Column Name="BuyID" DataType="System.String"/>
+      <Column Name="VendorCode" DataType="System.String"/>
+      <Column Name="VendorName" DataType="System.String"/>
+      <Column Name="WName" DataType="System.String"/>
+      <Column Name="SubWCode" DataType="System.String"/>
+      <Column Name="SubWName" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="CreateUserName" DataType="System.String"/>
+      <Column Name="CreateTime" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Detail" ReferenceName="Detail" DataType="System.Int32" Enabled="true">
+      <Column Name="SKU" DataType="System.String"/>
+      <Column Name="ProductName" DataType="System.String"/>
+      <Column Name="BuyUnit" DataType="System.String"/>
+      <Column Name="BuyQty" DataType="System.Decimal"/>
+      <Column Name="BuyPrice" DataType="System.Double"/>
+      <Column Name="SubAmt" DataType="System.Double"/>
+      <Column Name="BuyPackingQty" DataType="System.String"/>
+      <Column Name="Barcode" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </TableDataSource>
+    <Total Name="TotalQty" Expression="[Detail.BuyQty]" Evaluator="Data1"/>
+    <Total Name="TotalAmount" Expression="[Detail.SubAmt]" Evaluator="Data1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9">
+    <PageHeaderBand Name="ReportTitle1" Width="718.2" Height="94.5">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Text="代 购 入 库 单" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 20pt"/>
+      <TextObject Name="Text2" Top="37.8" Width="359.1" Height="28.35" Text="供应商：[Head.VendorCode]-[Head.VendorName]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text3" Width="179.55" Height="37.8" Text="单据号：[Head.BuyID]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text4" Left="538.65" Top="37.8" Width="179.55" Height="28.35" Text="制单日期：[Head.CreateTime]" Format="Custom" Format.Format="yyyy-MM-dd" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text5" Left="359.1" Top="37.8" Width="179.55" Height="28.35" Text="仓　库：[Head.SubWCode]-[Head.WName][Head.SubWName]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text7" Left="538.65" Top="66.15" Width="179.55" Height="28.35" Text="　制单人：[Head.CreateUserName]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text9" Top="66.15" Width="538.65" Height="28.35" Text="备　注：[Head.Remark]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text34" Left="538.65" Width="179.55" Height="37.8" Text="第 [Page#] 页/共 [TotalPages#] 页" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="98.5" Width="718.2" Height="28.35">
+      <TextObject Name="Text10" Width="37.8" Height="28.35" Border.Lines="All" Text="序号" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text12" Left="37.8" Width="56.7" Height="28.35" Border.Lines="All" Text="商品编码" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text13" Left="94.5" Width="170.1" Height="28.35" Border.Lines="All" Text="商品名称" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text14" Left="264.6" Width="37.8" Height="28.35" Border.Lines="All" Text="单位" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text15" Left="302.4" Width="47.25" Height="28.35" Border.Lines="All" Text="数量" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text16" Left="349.65" Width="56.7" Height="28.35" Border.Lines="All" Text="单价" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text17" Left="406.35" Width="66.15" Height="28.35" Border.Lines="All" Text="金额" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text18" Left="472.5" Width="47.25" Height="28.35" Border.Lines="All" Text="包装数" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text19" Left="614.25" Width="103.95" Height="28.35" Border.Lines="All" Text="备注" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text37" Left="519.75" Width="94.5" Height="28.35" Border.Lines="All" Text="条码" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="130.85" Width="718.2" Height="28.35" DataSource="Detail">
+      <TextObject Name="Text11" Width="37.8" Height="28.35" Border.Lines="All" CanBreak="false" Text="[Row#]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text20" Left="37.8" Width="56.7" Height="28.35" Border.Lines="All" Text="[Detail.SKU]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text21" Left="94.5" Width="170.1" Height="28.35" Border.Lines="All" Text="[Detail.ProductName]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text22" Left="264.6" Width="37.8" Height="28.35" Border.Lines="All" Text="[Detail.BuyUnit]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text23" Left="302.4" Width="47.25" Height="28.35" Border.Lines="All" Text="[Detail.BuyQty]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text24" Left="349.65" Width="56.7" Height="28.35" Border.Lines="All" Text="[Detail.BuyPrice]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text25" Left="406.35" Width="66.15" Height="28.35" Border.Lines="All" Text="[Detail.SubAmt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text26" Left="472.5" Width="47.25" Height="28.35" Border.Lines="All" Text="[Detail.BuyPackingQty]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="1" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text27" Left="614.25" Width="103.95" Height="28.35" Border.Lines="All" Text="[Detail.Remark]" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text38" Left="519.75" Width="94.5" Height="28.35" Border.Lines="All" Text="[Detail.Barcode]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="195.55" Width="718.2" Height="28.35">
+      <TextObject Name="Text36" Left="349.65" Width="425.25" Height="28.35" AfterDataEvent="Text36_AfterData" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text46" Width="718.2" Height="28.35" Text="供应商签名：" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </ReportSummaryBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="163.2" Width="718.2" Height="28.35">
+      <TextObject Name="Text28" Width="264.6" Height="28.35" Border.Lines="All" Text="合计" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text29" Left="264.6" Width="85.05" Height="28.35" Border.Lines="All" Text="[TotalQty]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text30" Left="349.65" Width="122.85" Height="28.35" Border.Lines="All" Text="[TotalAmount]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+      <TextObject Name="Text31" Left="472.5" Width="245.7" Height="28.35" Border.Lines="All" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="微软雅黑, 9pt"/>
+    </ColumnFooterBand>
+  </ReportPage>
+</Report>

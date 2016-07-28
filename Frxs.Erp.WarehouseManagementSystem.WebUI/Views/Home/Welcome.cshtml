@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<div style="margin: 20px">
+    <H1 style="margin:10px;color:red;font-size: 16px">HELLO WORLD！！<BR /><BR />兴盛为人人，人人都兴盛！！</H1>
+    电话：<input type="text" class="easyui-validatebox" required="true" data-options="validType:['telFormat']"/><br />
+    手机：<input type="text" class="easyui-validatebox" required="true" data-options="validType:['mobileFormat']"/><br />
+    非空：<input type="text" class="easyui-validatebox" required="true" data-options="validType:['trim']"/><br />
+    多个一起验证：<input type="text" class="easyui-validatebox" required="true" data-options="validType:['chineseLength[6]','trim','riskStr']"/><br />
+    <input type="text" class="onlymath"/>
+</div>

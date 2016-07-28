@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "添加采购单";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<fieldset style="margin: 0px 0px 2px 0px; border: 1px solid #95B8E7">
+    <legend style="color: #416AB7; font-weight: bold">操作按钮</legend>   
+     
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-no"  onclick="frxs.tabClose()">关闭</a>
+
+</fieldset>
+<form id="ShopGroupForm">
+    <fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+        <legend style="color: #416AB7; font-weight: bold">基本信息</legend>
+        <table id="tab" class="xstable" border="0">
+            <tr>
+                <td>群组编号：</td>
+                <th>
+                    <input type="text" name="GroupCode" id="GroupCode" required="true" class="onlymath"></th>
+                <td>群组名称：</td>
+                <th>
+               <input type="text" name="GroupName" id="GroupName" required="true"></th>
+                <td>创建用户名称：</td>
+                <th>
+                    <input type="text" name="CreateUserName" id="CreateUserName" readonly="readonly" class="readonly"></th>
+                <td>创建时间：</td>
+                <th>
+                    <input type="text" name="CreateTime" id="CreateTime" readonly="readonly" class="readonly"></th>
+            </tr>
+            <tr>
+                <td>备注：</td>
+                <th>
+                <input type="text" name="Remark" id="Remark" ></th>
+
+               
+            </tr>
+        </table>
+        <input type="hidden" name="GroupID" id="GroupID" >
+    </fieldset>
+</form>
+<div id="grid"></div>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/shopgroup/shopgroupShow.js")" type="text/javascript"></script>
+}

@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "盘点计划单";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<fieldset style="margin: 0px 0px 2px 0px; border: 1px solid #95B8E7">
+    <legend style="color: #416AB7; font-weight: bold">操作按钮</legend>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-add" id="btnAddProductLimit" onclick="add()">添加</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-edit" id="btnEdit" onclick="edit()">编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" id="btnSure" onclick="sure()">确认</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-upf" id="btnUnsure" onclick="unsure()">反确认</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-save" id="btnSave" onclick="save()">保存</a>
+    <a id="btnClose" href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-no" onclick="frxs.tabClose()">关闭</a>
+</fieldset>
+<form id="formAdd">
+    <fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+        <legend style="color: #416AB7; font-weight: bold">基本信息</legend>
+        <table id="tab" class="xstable" border="0">
+            <tr>
+                <td>开单日期：</td>
+                <th>
+                    <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm', minDate: '%y-%M-%d' })" class="Wdate easyui-validatebox" style="width: 170px" name="" id="" required="true">
+                </th>
+                <td>盘点仓库：</td>
+                <th>
+                    <select id="SubWID" name="SubWID" class="easyui-combobox" style="width: 170px" panelheight="auto"></select>
+                </th>
+                <td>盘点计划单：</td>
+                <th>
+                    <input type="text" name="" id="" style="width: 170px" readonly="readonly" class="readonly" >
+                </th>
+                <td>状态：</td>
+                <th>
+                    <select id="" name="" class="easyui-combobox" editable="false" style="width: 170px" panelheight="auto" readonly="readonly" class="readonly">
+                        <option value="0">未开始盘点</option>
+                        <option value="1">盘点中</option>
+                        <option value="2">盘点录入完成</option>
+                        <option value="3">生成盈亏</option>
+                        <option value="4">盘点中止</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <td>盘点范围：</td>
+                <th colspan="7">
+                    <select id="CheckType" name="CheckType" class="easyui-combobox" editable="false" style="width: 170px" panelheight="auto">
+                        <option value="0">全盘</option>
+                        <option value="1">指定货位</option>
+                        <option value="2">指定货区</option>
+                    </select>
+                </th>
+            </tr>
+            <tr id="trStockCheckPlanDetail">
+                <td style="vertical-align:top;">选择盘点项：</td>
+                <td colspan="7">
+                    @*<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-add" id="btnAdd" onclick="addStockCheckPlanDetail()">添加</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-remove" id="btnDel" onclick="delStockCheckPlanDetail()">删除</a>*@
+                    <div id="gridStockCheckPlanDetail" style="width:300px; height:300px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>备注：</td>
+                <th colspan="7">
+                    <input name="Remark" id="Remark" style="width: 400px" />
+                </th>
+            </tr>
+            <tr>
+                <td colspan="8"><hr /></td>
+            </tr>
+            <tr>
+                <td>录单人员：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>开始时间：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>结束时间：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>是否锁库：</td>
+                <th>
+                    
+                </th>
+            </tr>
+            <tr>
+                <td>确认人员：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>确认时间：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>库存数量：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>盘点数量：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+            </tr>
+            <tr>
+                <td>库存金额：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>盘盈单：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>盘盈数量：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>盘盈金额：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+            </tr>
+            <tr>
+                <td>盘亏单：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>盘亏数量：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td>盘亏金额：</td>
+                <th>
+                    <input name="" id=""/>
+                </th>
+                <td></td>
+                <th>
+                    
+                </th>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/stockCheck/stockCheckPlanAddOrEdit.js")" type="text/javascript"></script>
+}

@@ -1,0 +1,122 @@
+
+[时间]2016-05-27 17:43:27,402
+[异常内容]System.Exception: Message：接口方法:Frxs.Erp.Product.WProducts.Get.ToB2B , 类型：Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction，执行Execute()方法错误，详细信息：CategoryId1，StackTrace：   在 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   在 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(String sql, SqlParameter[] sp) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 1319
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(IDictionary`2 conditionDict) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 667
+   在 Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.Actions\商品\WProductsGetToB2BAction.cs:行号 204
+   在 Frxs.ServiceCenter.Api.Core.ActionBase`2.Frxs.ServiceCenter.Api.Core.IAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\ActionBase.cs:行号 317
+   在 Frxs.ServiceCenter.Api.Core.DefaultActionInvoker.Execute(IAction action) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\DefaultActionInvoker.cs:行号 117
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.OrderPartsServer.GetWProductsInfo(Int32 Wid, IList`1 productIds, Int32 shopid, Int32 userId, String userName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\OrderPartsServer.cs:行号 240
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.OrderSure(String OrderID) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 322
+[源]
+[行]0
+
+[时间]2016-05-27 17:43:29,625
+[异常内容]System.Exception: Message：接口方法:Frxs.Erp.Product.WProducts.Get.ToB2B , 类型：Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction，执行Execute()方法错误，详细信息：CategoryId1，StackTrace：   在 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   在 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(String sql, SqlParameter[] sp) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 1319
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(IDictionary`2 conditionDict) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 667
+   在 Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.Actions\商品\WProductsGetToB2BAction.cs:行号 204
+   在 Frxs.ServiceCenter.Api.Core.ActionBase`2.Frxs.ServiceCenter.Api.Core.IAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\ActionBase.cs:行号 317
+   在 Frxs.ServiceCenter.Api.Core.DefaultActionInvoker.Execute(IAction action) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\DefaultActionInvoker.cs:行号 117
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.OrderPartsServer.GetWProductsInfo(Int32 Wid, IList`1 productIds, Int32 shopid, Int32 userId, String userName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\OrderPartsServer.cs:行号 240
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.OrderSure(String OrderID) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 322
+[源]
+[行]0
+
+[时间]2016-05-27 17:43:31,546
+[异常内容]System.Exception: Message：接口方法:Frxs.Erp.Product.WProducts.Get.ToB2B , 类型：Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction，执行Execute()方法错误，详细信息：CategoryId1，StackTrace：   在 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   在 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(String sql, SqlParameter[] sp) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 1319
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(IDictionary`2 conditionDict) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 667
+   在 Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.Actions\商品\WProductsGetToB2BAction.cs:行号 204
+   在 Frxs.ServiceCenter.Api.Core.ActionBase`2.Frxs.ServiceCenter.Api.Core.IAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\ActionBase.cs:行号 317
+   在 Frxs.ServiceCenter.Api.Core.DefaultActionInvoker.Execute(IAction action) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\DefaultActionInvoker.cs:行号 117
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.OrderPartsServer.GetWProductsInfo(Int32 Wid, IList`1 productIds, Int32 shopid, Int32 userId, String userName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\OrderPartsServer.cs:行号 240
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.OrderSure(String OrderID) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 322
+[源]
+[行]0
+
+[时间]2016-05-27 17:43:59,854
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.PackStartHandle(String OrderId, Int32 ShopID, Int32 Package1Qty, Int32 Package2Qty, Int32 Package3Qty, String Remark) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 889
+[源]
+[行]0
+
+[时间]2016-05-27 17:44:02,953
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.PackStartHandle(String OrderId, Int32 ShopID, Int32 Package1Qty, Int32 Package2Qty, Int32 Package3Qty, String Remark) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 889
+[源]
+[行]0
+
+[时间]2016-05-27 17:44:14,896
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.PackStartHandle(String OrderId, Int32 ShopID, Int32 Package1Qty, Int32 Package2Qty, Int32 Package3Qty, String Remark) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 889
+[源]
+[行]0
+
+[时间]2016-05-27 17:44:51,141
+[异常内容]System.Exception: Message：接口方法:Frxs.Erp.Product.WProducts.Get.ToB2B , 类型：Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction，执行Execute()方法错误，详细信息：CategoryId1，StackTrace：   在 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   在 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(String sql, SqlParameter[] sp) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 1319
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(IDictionary`2 conditionDict) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 667
+   在 Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.Actions\商品\WProductsGetToB2BAction.cs:行号 204
+   在 Frxs.ServiceCenter.Api.Core.ActionBase`2.Frxs.ServiceCenter.Api.Core.IAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\ActionBase.cs:行号 317
+   在 Frxs.ServiceCenter.Api.Core.DefaultActionInvoker.Execute(IAction action) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\DefaultActionInvoker.cs:行号 117
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.OrderPartsServer.GetWProductsInfo(Int32 Wid, IList`1 productIds, Int32 shopid, Int32 userId, String userName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\OrderPartsServer.cs:行号 240
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.OrderSure(String OrderID) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 322
+[源]
+[行]0
+
+[时间]2016-05-27 17:44:58,129
+[异常内容]System.Exception: Message：接口方法:Frxs.Erp.Product.WProducts.Get.ToB2B , 类型：Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction，执行Execute()方法错误，详细信息：CategoryId1，StackTrace：   在 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   在 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(String sql, SqlParameter[] sp) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 1319
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(IDictionary`2 conditionDict) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 667
+   在 Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.Actions\商品\WProductsGetToB2BAction.cs:行号 204
+   在 Frxs.ServiceCenter.Api.Core.ActionBase`2.Frxs.ServiceCenter.Api.Core.IAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\ActionBase.cs:行号 317
+   在 Frxs.ServiceCenter.Api.Core.DefaultActionInvoker.Execute(IAction action) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\DefaultActionInvoker.cs:行号 117
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.OrderPartsServer.GetWProductsInfo(Int32 Wid, IList`1 productIds, Int32 shopid, Int32 userId, String userName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\OrderPartsServer.cs:行号 240
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.OrderSure(String OrderID) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 322
+[源]
+[行]0
+
+[时间]2016-05-27 17:46:00,545
+[异常内容]System.Exception: Message：接口方法:Frxs.Erp.Product.WProducts.Get.ToB2B , 类型：Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction，执行Execute()方法错误，详细信息：CategoryId1，StackTrace：   在 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   在 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(String sql, SqlParameter[] sp) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 1319
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(IDictionary`2 conditionDict) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 667
+   在 Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.Actions\商品\WProductsGetToB2BAction.cs:行号 204
+   在 Frxs.ServiceCenter.Api.Core.ActionBase`2.Frxs.ServiceCenter.Api.Core.IAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\ActionBase.cs:行号 317
+   在 Frxs.ServiceCenter.Api.Core.DefaultActionInvoker.Execute(IAction action) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\DefaultActionInvoker.cs:行号 117
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.OrderPartsServer.GetWProductsInfo(Int32 Wid, IList`1 productIds, Int32 shopid, Int32 userId, String userName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\OrderPartsServer.cs:行号 240
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.OrderSure(String OrderID) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 322
+[源]
+[行]0
+
+[时间]2016-05-27 17:46:34,785
+[异常内容]System.Exception: Message：接口方法:Frxs.Erp.Product.WProducts.Get.ToB2B , 类型：Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction，执行Execute()方法错误，详细信息：CategoryId1，StackTrace：   在 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   在 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(String sql, SqlParameter[] sp) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 1319
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(IDictionary`2 conditionDict) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 667
+   在 Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.Actions\商品\WProductsGetToB2BAction.cs:行号 204
+   在 Frxs.ServiceCenter.Api.Core.ActionBase`2.Frxs.ServiceCenter.Api.Core.IAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\ActionBase.cs:行号 317
+   在 Frxs.ServiceCenter.Api.Core.DefaultActionInvoker.Execute(IAction action) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\DefaultActionInvoker.cs:行号 117
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.OrderPartsServer.GetWProductsInfo(Int32 Wid, IList`1 productIds, Int32 shopid, Int32 userId, String userName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\OrderPartsServer.cs:行号 240
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.OrderSure(String OrderID) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 322
+[源]
+[行]0
+
+[时间]2016-05-27 17:49:07,116
+[异常内容]System.Exception: Message：接口方法:Frxs.Erp.Product.WProducts.Get.ToB2B , 类型：Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction，执行Execute()方法错误，详细信息：CategoryId1，StackTrace：   在 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   在 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(String sql, SqlParameter[] sp) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 1319
+   在 Frxs.Erp.ServiceCenter.Product.MSSQLDAL.WProductsDAO.GetListToB2B(IDictionary`2 conditionDict) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.MSSQLDAL\WProductsDAO.cs:行号 667
+   在 Frxs.Erp.ServiceCenter.Product.Actions.WProductsGetToB2BAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.Erp.ServiceCenter.Product.Actions\商品\WProductsGetToB2BAction.cs:行号 204
+   在 Frxs.ServiceCenter.Api.Core.ActionBase`2.Frxs.ServiceCenter.Api.Core.IAction.Execute() 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\ActionBase.cs:行号 317
+   在 Frxs.ServiceCenter.Api.Core.DefaultActionInvoker.Execute(IAction action) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.ServiceCenter\Frxs.ServiceCenter.Api.Core.V20\DefaultActionInvoker.cs:行号 117
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.OrderPartsServer.GetWProductsInfo(Int32 Wid, IList`1 productIds, Int32 shopid, Int32 userId, String userName) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\OrderPartsServer.cs:行号 240
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.WarehouseOrderController.OrderSure(String OrderID) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\Order\WarehouseOrderController.cs:行号 322
+[源]
+[行]0

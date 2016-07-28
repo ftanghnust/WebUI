@@ -1,0 +1,63 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.WProductViewModel
+@{
+    ViewBag.Title = "商品编辑";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<script>
+    var iframeload2 = false;
+    var iframeload3 = false;
+    $(function () {
+        
+        $("#mytabs").height($(window).height() - 20);
+
+        $("#mytabs").tabs({
+            height: $(window).height()-20,
+            onSelect: function (title, index) {
+                var tab = $('#mytabs').tabs('getSelected');
+                var url;
+                var html;
+                if (index == 1 && iframeload2 == false) {
+                    url = "../WProductsVendor/ProductsVendorList?productid=@Model.ProductId";
+                    html = "<iframe width=\"100%\" height=\"99%\" scrolling=\"auto\" frameborder=\"0\" src=\"" + url + "\" style=\"display:block\" ></iframe>";
+                    $('#mytabs').tabs('update', {
+                        tab: tab,
+                        options: {
+                            title: '供应商',
+                            content: html
+                        }
+                    });
+
+                    iframeload2 = true;
+                }
+
+                if (index == 2 && iframeload3 == false) {
+                    url = "../ProductsDescription/ProductsDescriptionView?productid=@Model.ProductId";
+                    html = "<iframe width=\"100%\" height=\"99%\" scrolling=\"auto\" frameborder=\"0\" src=\"" + url + "\" style=\"display:block\" ></iframe>";
+                    $('#mytabs').tabs('update', {
+                        tab: tab,
+                        options: {
+                            title: '图文详情',
+                            content: html
+                        }
+                    });
+
+                    iframeload3 = true;
+                }
+            }
+        });
+    });
+    
+</script>
+<div id="mytabs" style="background: #fff; ">
+    <div title="基本信息" >
+        <iframe width="100%" height="99%" scrolling="auto" frameborder="0" src="../WProduct/WProductAddNew?productId=@Model.ProductId&addOrEdit=1" id="ProductBasic" ></iframe>
+    </div>
+    <div title="供应商">
+    </div>
+    <div title="图文详情">
+    </div>
+</div>
+
+
+
+

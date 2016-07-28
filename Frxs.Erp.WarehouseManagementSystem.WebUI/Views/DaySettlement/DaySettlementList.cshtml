@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "日结";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<form id="searchForm">
+<fieldset style="margin:0px 0px 5px 0px; border: 1px solid #95B8E7">
+    <legend style="color:#416AB7; font-weight:bold">信息查询</legend>
+    <table id="tab" class="xstable" border="0">
+        <tr>
+            <td>过帐日：</td>
+            <th>
+                <input onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" class="Wdate" name="SerchTime" id="SerchTime" />
+            </th>
+           
+            <td>
+                执行仓库：
+            </td>
+            <th>
+                <select id="WID" class="easyui-combobox" panelheight="auto" editable="false" style="width:170px"></select>
+            </th>
+            <td>
+                <input type="button" id="aSearch" class="aSearch" onclick="search()" value="查询"><input id="aReset" type="button" class="reset" value="重置"></td>
+        </tr>
+    </table>
+</fieldset>
+</form>
+<div id="grid"></div>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/plugin/uploadify/FileSaver.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bussiness/daySettlement/daySettlementList.js")" type="text/javascript"></script>
+}

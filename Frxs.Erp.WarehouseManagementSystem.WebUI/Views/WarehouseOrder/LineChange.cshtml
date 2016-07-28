@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "LineChange";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<form id="lineChangeform">
+    <table id="tab" class="xstable">
+        <tr>
+            <th style="width: 86px; padding-right: 0px;">当前配送线路：</th>
+            <th style="padding-left: 0px; color: #5889E4;">
+                <span id="currentLine"></span>
+            </th>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <input type="text" name="lineName" id="lineName" style="width: 170px">
+                <input type="button" value="搜索" id="btSearch" class="aSearch" onclick="search()" /></th>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <select size="4" name="lineNameList" multiple="multiple" id="lineNameList" style="height: 200px; width: 220px;">
+                </select>
+            </th>
+        </tr>
+    </table>
+</form>
+
+
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/warehouseOrder/lineChange.js")" type="text/javascript"></script>
+}

@@ -1,0 +1,273 @@
+﻿@{
+    ViewBag.Title = "GetOrderDetails";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<style>
+   
+
+</style>
+
+<div class="easyui-tabs" style="height: 460px;">
+    <div title="订单详情" style="height: 460px;">
+        <div class="detailes1">
+            <div class="left">
+                <table class="tabledetailes" style="width: 100%">
+                    <thead>
+                        <tr style="background: #eee">
+                            <td colspan="2">门店信息</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width: 70px">门店编号</td>
+                            <td>@Model.Order.ShopCode</td>
+                        </tr>
+                        <tr>
+                            <td>门店名称</td>
+                            <td>@Model.Order.ShopName</td>
+                        </tr>
+                        <tr>
+                            <td>联系电话</td>
+                            <td>@Model.Order.RevTelephone</td>
+                        </tr>
+                        <tr>
+                            <td>联系人</td>
+                            <td>@Model.Order.RevLinkMan</td>
+                        </tr>
+                        <tr>
+                            <td>门店地址</td>
+                            <td>@Model.Order.FullAddress</td>
+                        </tr>
+                        <tr>
+                            <td>所属路线</td>
+                            <td>>@Model.Order.LineName</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table class="tabledetailes" style="width: 100%">
+
+                    <tbody>
+                        <tr style="background: #eee">
+                            <td style="width: 70px">订单编号</td>
+                            <td colspan="3">@Model.Order.OrderId</td>
+
+                        </tr>
+                        <tr>
+                            <td>订单总额</td>
+                            <td style="text-align: right">@Model.Order.PayAmount</td>
+                            <td>平台费用</td>
+                            <td style="text-align: right">@Model.Order.TotalAddAmt</td>
+                        </tr>
+                        <tr>
+                            <td>门店积分</td>
+                            <td style="text-align: right">@Model.Order.TotalPoint</td>
+                            <td>绩效分</td>
+                            <td style="text-align: right">@Model.Order.TotalBasePoint</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+                <div class="liuyan">
+                    <h1>备注</h1>
+                    @Model.Order.Remark
+                </div>
+
+            </div>
+            <div class="right">
+                <div class="t">订单详情</div>
+                <div class="c">
+                    <ul>
+                        @foreach (var track in @Model.Track)
+                        {
+                            <li><span>@track.CreateTime</span>@track.Remark</li>
+                        }
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div title="商品详情" style="height: 460px;">
+        <div id="gridProduct" style="height: 389px;"></div>
+        <div style="width: 740px; text-align: center; line-height: 30px; padding-top: 5px" id="ProductFoot"></div>
+    </div>
+    <div title="装箱结算" style="height: 460px;">
+
+        <div class="detailes1">
+            <h2>待装区编号：@Model.Order.StationNumber</h2>
+            <table class="tabledetailes" style="width: 100%">
+
+                <tbody>
+                    <tr style="background: #eee">
+                        <td style="width: 155px">缺货率</td>
+                        <td colspan="3" style="color: #f00">@Convert.ToDouble(Model.Order.StockOutRate)%</td>
+
+                    </tr>
+                    <tr>
+                        <td>订货数量</td>
+                        <td style="width: 183px">@Model.sumPreQty</td>
+                        <td style="width: 185px">实际发货数量</td>
+                        <td>@Model.sumQty</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="tabledetailes" style="width: 100%">
+                <tbody>
+                    <tr style="background: #eee">
+                        <td colspan="4">装箱信息</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 155px">周转箱数</td>
+                        <td style="width: 183px">@Model.DeliverOrder.Package1Qty</td>
+                        <td style="width: 185px">纸箱</td>
+                        <td>@Model.DeliverOrder.Package2Qty</td>
+                    </tr>
+                    <tr>
+                        <td>易碎品</td>
+                        <td>@Model.DeliverOrder.Package3Qty</td>
+                        <td>装箱员</td>
+                        <td>@Model.DeliverOrder.PackingEmpName</td>
+                    </tr>
+                    <tr>
+                        <td>其他备注</td>
+                        <td colspan="3">@Model.DeliverOrder.Remark</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="gridSettle" style="height: 200px"></div>
+        </div>
+
+
+
+    </div>
+</div>
+<style>
+    span.span1 {
+        color: #333;
+    }
+</style>
+
+<script type="text/javascript">
+    var settleData = '@Html.Raw(Model.SaleSettle)';
+    $('#gridSettle').datagrid({
+        title: '结算单号：' + '@Model.SettleID',
+        iconCls: 'icon-view',
+        methord: 'post',
+        data: $.parseJSON(settleData),
+        idField: 'SKU',
+        fit: false,
+        pagination: false,
+        rownumbers: true,
+        fitColumns: false,
+        striped: false,
+        checkOnSelect: true,
+        selectOnCheck: true,
+        showFooter: true,
+        onLoadSuccess: function () {
+            var rows = $("#gridSettle").datagrid("getRows");
+            var totalPayAmt = 0.0000;
+            for (var i = 0; i < rows.length; i++) {
+                var BillPayAmt = parseFloat(rows[i].BillPayAmt);
+                totalPayAmt += BillPayAmt;
+            }
+            $('#gridSettle').datagrid('reloadFooter', [
+               { "BillPayAmt": "合计：" + parseFloat(totalPayAmt).toFixed(4) }
+            ]);
+        },
+        columns: [[
+            { title: '单据类型', field: 'BillTypeStr', width: 130, align: 'center' },
+            { title: '二级项目名称', field: 'FeeName', width: 130, align: 'center' },
+            { title: '单据编号', field: 'BillID', width: 80, align: 'center' },
+            {
+                title: '金额', field: 'BillPayAmt', width: 160, align: 'right',
+                formatter: function (value, rec) {
+                    if (isNaN(value)) {
+                        return value;
+                    } else {
+                        return parseFloat(value).toFixed(4);
+                    }
+                }
+            },
+            { title: '费用产生时间', field: 'ModifyTime', width: 180 }
+        ]]
+    });
+
+    var deliverProductsData = '@Html.Raw(Model.DeliverProducts)';
+
+    $('#gridProduct').datagrid({
+        data: $.parseJSON(deliverProductsData),
+        singleSelect: true,
+        collapsible: true,
+        rownumbers: true,
+        fitColumns: false,
+        //width: 1300,
+        //showFooter: true,
+        view: groupview,
+        groupField: 'ShelfAreaName',
+        groupFormatter: function (value, rows) {
+            var count = 0;
+            for (var i = 0; i < rows.length; i++) {
+                count = count + rows[i].SaleQty;
+            }
+            if (value != "") {
+                return '<span class=span1>' + value + ' (' + parseFloat(count).toFixed(2) + ')</span>';
+            } else {
+                return '<span class=span1>总计 (' + parseFloat(count).toFixed(2) + ')</span>';
+            }
+        },
+        onLoadSuccess: function () {
+            var rows = $("#gridProduct").datagrid("getRows");
+            var totalPayAmt = 0.0000;
+            var totalCount = 0;
+            var totalAddAmt = 0.0000;
+            var total = 0.0000;
+            for (var i = 0; i < rows.length; i++) {
+                var SubAmt = parseFloat(rows[i].SubAmt);
+                var SaleQty = rows[i].SaleQty;
+                var SubAddAmt = parseFloat(rows[i].SubAddAmt);
+                totalPayAmt += SubAmt;
+                totalCount += SaleQty;
+                totalAddAmt += SubAddAmt;
+                total += (SubAmt + SubAddAmt);
+            }
+            var str = "合计：数量　" + parseFloat(totalCount).toFixed(2) + "　订单总金额　" + total.toFixed(4) + "（ 商品金额：" + totalPayAmt.toFixed(4) + "，平台费：" + totalAddAmt.toFixed(4) + "）";
+            $("#ProductFoot").empty();
+            $("#ProductFoot").append(str);
+        },
+        frozenColumns: [[
+          //冻结列
+            { title: '分类', field: 'ShopCategoryId2Name', width: 100, align: 'center' },
+            { title: '商品编码', field: 'SKU', width: 80, align: 'center' },
+        ]],
+        columns: [[
+            { title: '商品名称', field: 'ProductName', width: 200 },
+            { title: '货位号', field: 'ShelfCode', width: 70 },
+            { title: '单位', field: 'SaleUnit', width: 60 },
+            { title: '价格', field: 'SalePrice', width: 60 },
+            { title: '订货数量', field: 'PreQty', width: 70 },
+            { title: '发货数量', field: 'SaleQty', width: 70 },
+            { title: '拣货员', field: 'PickUserName', width: 100 },
+            { title: '平台费率', field: 'ShopAddPerc', width: 70 },
+            {
+                title: '小计', field: 'PayAmt', width: 60, align: 'right',
+                formatter: function (value, rec) {
+                    return parseFloat(rec.SubAddAmt + rec.SubAmt).toFixed(4);
+                }
+            },
+            { title: '门店积分', field: 'SubPoint', width: 70 },
+            { title: '绩效积分', field: 'SubBasePoint', width: 70 },
+            { title: 'SubAddAmt', field: 'SubAddAmt', width: 70, hidden: true },
+            { title: 'SubAmt', field: 'SubAmt', width: 70, hidden: true },
+            { title: '备注', field: 'Remark', width: 60, formatter: frxs.formatText }
+        ]]
+    });
+</script>
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/warehouseOrder/datagrid-groupview.js")" type="text/javascript"></script>
+}

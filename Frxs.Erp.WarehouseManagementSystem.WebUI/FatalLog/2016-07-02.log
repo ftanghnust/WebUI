@@ -1,0 +1,7 @@
+
+[时间]2016-07-02 09:55:03,574
+[异常内容]System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Models.ShopSchedulingModel.GetShopSchedulingPageData(ShopSchedulingQuery cpm) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Models\ShopSchedulingModel.cs:行号 154
+   在 Frxs.Erp.WarehouseManagementSystem.WebUI.Controllers.ShopSchedulingController.GetShopSchedulingList(ShopSchedulingQuery cpm) 位置 e:\MyWork\Code\ERP\trunk\Frxs.Erp.Project\Frxs.Erp.WarehouseManagementSystem\Frxs.Erp.WarehouseManagementSystem.WebUI\Controllers\ShopScheduling\ShopSchedulingController.cs:行号 45
+[源]
+[行]0

@@ -1,0 +1,526 @@
+﻿@{
+    ViewBag.Title = "Direction";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<style>
+    .dan1
+    {
+        position: relative;
+    }
+
+        .dan1 a
+        {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            width: 120px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+            .dan1 a.a1
+            {
+                top: 38px;
+                left: 20px;
+            }
+
+            .dan1 a.a2
+            {
+                top: 38px;
+                left: 194px;
+            }
+
+            .dan1 a.a3
+            {
+                top: 38px;
+                left: 378px;
+            }
+
+            .dan1 a.a4
+            {
+                top: 148px;
+                left: 20px;
+            }
+
+            .dan1 a.a5
+            {
+                top: 148px;
+                left: 194px;
+            }
+
+            .dan1 a.a6
+            {
+                top: 148px;
+                left: 378px;
+            }
+
+            .dan1 a.a7
+            {
+                top: 270px;
+                left: 194px;
+            }
+
+            .dan1 a.a8
+            {
+                top: 270px;
+                left: 378px;
+            }
+
+            .dan1 a.a9
+            {
+                top: 270px;
+                left: 578px;
+            }
+
+
+
+    .dan2
+    {
+        position: relative;
+    }
+
+        .dan2 a
+        {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            width: 120px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+            .dan2 a.a1
+            {
+                top: 98px;
+                left: 20px;
+            }
+
+            .dan2 a.a2
+            {
+                top: 38px;
+                left: 194px;
+            }
+
+            .dan2 a.a3
+            {
+                top: 158px;
+                left: 194px;
+            }
+
+            .dan2 a.a4
+            {
+                top: 308px;
+                left: 194px;
+            }
+
+            .dan2 a.a5
+            {
+                top: 368px;
+                left: 374px;
+            }
+
+            .dan2 a.a6
+            {
+                top: 20px;
+                left: 454px;
+                height: 46px;
+                width: 144px;
+            }
+
+            .dan2 a.a7
+            {
+                top: 95px;
+                left: 454px;
+                height: 46px;
+                width: 144px;
+            }
+
+            .dan2 a.a8
+            {
+                top: 170px;
+                left: 454px;
+                height: 46px;
+                width: 144px;
+            }
+
+            .dan2 a.a9
+            {
+                top: 235px;
+                left: 454px;
+                height: 46px;
+                width: 190px;
+            }
+
+    .dan3
+    {
+        position: relative;
+    }
+
+        .dan3 a
+        {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            width: 120px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+            .dan3 a.a1
+            {
+                top: 148px;
+                left: 20px;
+            }
+
+            .dan3 a.a2
+            {
+                top: 38px;
+                left: 194px;
+            }
+
+            .dan3 a.a3
+            {
+                top: 148px;
+                left: 194px;
+            }
+
+            .dan3 a.a4
+            {
+                top: 260px;
+                left: 194px;
+            }
+
+            .dan3 a.a5
+            {
+                top: 148px;
+                left: 374px;
+            }
+
+            .dan3 a.a6
+            {
+                top: 258px;
+                left: 374px;
+            }
+
+
+
+    .dan4
+    {
+        position: relative;
+    }
+
+        .dan4 a
+        {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            width: 120px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+            .dan4 a.a1
+            {
+                top: 38px;
+                left: 20px;
+            }
+
+            .dan4 a.a2
+            {
+                top: 38px;
+                left: 194px;
+            }
+
+            .dan4 a.a3
+            {
+                top: 38px;
+                left: 368px;
+            }
+
+    .dan5
+    {
+        position: relative;
+    }
+
+        .dan5 a
+        {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            width: 120px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+            .dan5 a.a1
+            {
+                top: 38px;
+                left: 20px;
+            }
+
+            .dan5 a.a2
+            {
+                top: 38px;
+                left: 194px;
+            }
+
+            .dan5 a.a3
+            {
+                top: 153px;
+                left: 20px;
+            }
+
+            .dan5 a.a4
+            {
+                top: 159px;
+                left: 194px;
+            }
+
+    .dan6
+    {
+        position: relative;
+    }
+
+        .dan6 a
+        {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            width: 120px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+            .dan6 a.a1
+            {
+                top: 38px;
+                left: 20px;
+            }
+
+            .dan6 a.a2
+            {
+                top: 38px;
+                left: 194px;
+            }
+
+    .dan7
+    {
+        position: relative;
+    }
+
+        .dan7 a
+        {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            width: 120px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+            .dan7 a.a1
+            {
+                top: 38px;
+                left: 20px;
+            }
+
+            .dan7 a.a2
+            {
+                top: 38px;
+                left: 194px;
+            }
+</style>
+<div class="easyui-tabs" id="tab03" style="margin-top: 3px">
+    <div title="基本资料">
+        <div class="dan1">
+            @if (Authorize(520114, null))
+            {
+                <a class="a1" onclick="frxs.openNewTab('1D 门店分组管理', '../ShopGroup/EasyuiShopGroupList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520112, null))
+            {
+                <a class="a2" onclick="frxs.openNewTab('1B 门店管理', '../Shop/EasyuiShopList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520113, null))
+            {
+                <a class="a3" onclick="frxs.openNewTab('1C 送货线路管理', '../WarehouseLine/EasyuiWarehouseLineList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520119, null))
+            {
+                <a class="a4" onclick="frxs.openNewTab('1Z 业务参数设定', '../sysparams/index', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520110, null))
+            {
+                <a class="a5" onclick="frxs.openNewTab('1A  仓库基本资料', '../Warehouse/WarehouseView', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520118, null))
+            {
+                <a class="a6" onclick="frxs.openNewTab('1G 帐户管理', '../WarehouseEmp/EasyuiWarehouseEmpList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520115, null))
+            {
+                <a class="a7" onclick="frxs.openNewTab('1E 货区管理', '../ShelfArea/EasyuiShelfAreaList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520116, null))
+            {
+                <a class="a8" onclick="frxs.openNewTab('1F 货位管理', '../Shelf/EasyuiShelfList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520117, null))
+            {
+                <a class="a9" onclick="frxs.openNewTab('1H 拣货员管理', '../WarehouseEmpShelf/EasyuiWarehouseEmpShelfList', 'icon icon-page')"></a>
+            }
+            <img src="~/Content/images/baseinfo.png" />
+        </div>
+    </div>
+    <div title="商品管理">
+        <div class="dan2">
+            @if (Authorize(520221, null))
+            {
+                <a class="a1" onclick="frxs.openNewTab('2A 商品加入', '../ProductList/Index', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520222, null))
+            {
+                <a class="a2" onclick="frxs.openNewTab('2B 供应商管理', '../Vendor/EasyuiVendorList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520223, null))
+            {
+                <a class="a3" onclick="frxs.openNewTab('2C 商品管理', '../WProduct/WProductList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520229, null))
+            {
+                <a class="a4" onclick="frxs.openNewTab('2I 商品货位调整单', '../WProductAdjShelf/WProductAdjShelfList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520228, null))
+            {
+                <a class="a5" onclick="frxs.openNewTab('2H 门店商品限购单', '../ProductLimit', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520224, null))
+            {
+                <a class="a6" onclick="frxs.openNewTab('2D 配送价格调整单', '../ProductList/ProductPriceChange', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520225, null))
+            {
+                <a class="a7" onclick="frxs.openNewTab('2E 进货价格调整单', '../InsertPriceChange/InsertPriceOrder', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520226, null))
+            {
+                <a class="a8" onclick="frxs.openNewTab('2F 费率积分调整单', '../InsertPriceChange/PlatformOrder', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520227, null))
+            {
+                <a class="a9" onclick="frxs.openNewTab('2G 门店平台费率调整单', '../PlatformRate', 'icon icon-page')"></a>
+            }
+            <img src="~/Content/images/productinfo.png" />
+        </div>
+    </div>
+    <div title="订单管理">
+        <div class="dan3">
+            @if (Authorize(520311, null))
+            {
+                <a class="a1" onclick="frxs.openNewTab('3A 订货平台预订单', '../PromotionOrder/PromotionOrderList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520315, null))
+            {
+                <a class="a2" onclick="frxs.openNewTab('3E 门店排单', '../ShopScheduling/ShopScheduling', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520312, null))
+            {
+                <a class="a3" onclick="frxs.openNewTab('3B 销售订单', '../WarehouseOrder/WarehouseOrderList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520313, null))
+            {
+                <a class="a4" onclick="frxs.openNewTab('3C 商品批量推荐', '../BatchRecommend/BatchRecommendList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520314, null))
+            {
+                <a class="a5" onclick="frxs.openNewTab('3D 待装区管理', '../WStationNumber/EasyuiWStationNumberList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520316, null))
+            {
+                <a class="a6" onclick="frxs.openNewTab('3F 发货顺序调整', '../SaleOrderSend', 'icon icon-page')"></a>
+            }
+            <img src="~/Content/images/ordinginfo.png" />
+        </div>
+
+    </div>
+    <div title="促销管理">
+        <div class="dan4">
+            @if (Authorize(520411, null))
+            {
+                <a class="a1" onclick="frxs.openNewTab('4A 橱窗推荐', '../Wadvertisement/WAdvertisementList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520412, null))
+            {
+                <a class="a2" onclick="frxs.openNewTab('4B 信息管理', '../WarehouseMessage/WarehouseMessageList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520413, null))
+            {
+                <a class="a3" onclick="frxs.openNewTab('4C 门店积分促销单', '../ScorePromotion', 'icon icon-page')"></a>
+            }
+            <img src="~/Content/images/cuxiaoinfo.png" />
+        </div>
+    </div>
+    <div title="采购管理">
+        <div class="dan5">
+            @if (Authorize(520511, null))
+            {
+                <a class="a1" onclick="frxs.openNewTab('5E 补货申请单', '../Again/RepairApply', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520512, null))
+            {
+                <a class="a2" onclick="frxs.openNewTab('5D 返配申请单', '../Again/AgainApply', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520513, null))
+            {
+                <a class="a3" onclick="frxs.openNewTab('5B 采购收货单', '../BuyOrderPre/BuyOrderPreList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520514, null))
+            {
+                <a class="a4" onclick="frxs.openNewTab('5C 采购退货单', '../BuyBackPre/BuyBackPreList', 'icon icon-page')"></a>
+            }
+            <img src="~/Content/images/caigouinfo.png" />
+        </div>
+    </div>
+    <div title="财务管理">
+        <div class="dan6">
+            @if (Authorize(520612, null))
+            {
+                <a class="a1" onclick="frxs.openNewTab('6B 门店费用单', '../SaleFee/SaleFeeList', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520611, null))
+            {
+                <a class="a2" onclick="frxs.openNewTab('6A 门店结算单', '../SaleSettle/SaleSettleList', 'icon icon-page')"></a>
+            }
+            <img src="~/Content/images/caiwuinfo.png" />
+        </div>
+    </div>
+    <div title="库存盘点">
+        <div class="dan7">
+            @if (Authorize(520716, null))
+            {
+                <a class="a1" onclick="frxs.openNewTab('7E 盘盈单', '../StockCheckOver', 'icon icon-page')"></a>
+            }
+            @if (Authorize(520717, null))
+            {
+                <a class="a2" onclick="frxs.openNewTab('7F 盘亏单', '../StockCheckLoss', 'icon icon-page')"></a>
+            }
+            <img src="~/Content/images/pandianinfo.png" />
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        TabBottom();
+    });
+    function TabBottom() {
+        var h = ($(window).height() - 6);
+        $('#tab03').tabs({
+            tabPosition: 'bottom',
+            height: h,
+        });
+    }
+
+    $(window).resize(function () {
+        TabBottom();
+    });
+</script>

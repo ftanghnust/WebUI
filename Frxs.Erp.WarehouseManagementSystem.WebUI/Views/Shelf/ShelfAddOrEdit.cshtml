@@ -1,0 +1,62 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.ShelfModel
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<style>
+    .red {color:#f00;
+    }
+    table.xstable {margin:15px 15px;
+    }
+    .xstable th{padding:0px;
+    }
+ 
+</style>
+	
+    <div class="dialogMainbody" style="width:270px;">
+        <div class="box">
+         @{
+             using (Html.BeginForm("ShelfHandle", "Shelf", FormMethod.Post))
+             {
+                 @Html.HiddenFor(model => Model.ShelfID)
+                <table border="0" class="xstable" style="width:260px;">
+                  <tr>
+                    <td class="textright"><span class="red">* </span>@Html.LabelFor(model => Model.ShelfCode)：</td>
+                    <th>@Html.TextBoxFor(model => Model.ShelfCode, new { @class = "easyui-validatebox cls jump onlymath",@maxlength="6"}) </th>     
+                  </tr>
+                  <tr>
+                    <td class="textright"><span class="red">* </span>@Html.LabelFor(model => Model.WName)：</td>
+                    <th>@Html.TextBoxFor(model => Model.WName, new { @class = "easyui-validatebox cls jump",@maxlength="20",@readonly = true }) </th>     
+                  </tr>
+                  <tr>
+                    <td class="textright"><span class="red">* </span>@Html.LabelFor(model => Model.ShelfAreaName)：</td>
+                    <th>@Html.DropDownListFor(model => Model.ShelfAreaID, Model.ShelfAreaList, new { @class ="easyui-combobox  cls w140",@editable=false,@style="width:143px"}) </th>     
+                  </tr>
+                   <tr>
+                    <td class="textright">@Html.LabelFor(model => Model.ShelfType)：</td>
+                    <th>@Html.DropDownListFor(model => Model.ShelfType, Model.ShelfTypeList, new { @class ="easyui-combobox  cls w140",@editable=false,@style="width:143px"}) </th>     
+                  </tr>
+                   <tr>
+                    <td class="textright">@Html.LabelFor(model => Model.Status)：</td>
+                    <th>@Html.DropDownListFor(model => Model.Status, Model.StatusList, new { @class ="easyui-combobox  cls w140",@editable=false,@style="width:143px"}) </th>    
+                  </tr>
+                   <tr>
+                   <td class="textright">@Html.LabelFor(model => Model.Remark)：</td>
+                    <th> @Html.TextAreaFor(model => Model.Remark, new { @class = "easyui-validatebox",  @maxlength="40" })</th>   
+                  </tr>
+                    <tr>
+                    <td></td>
+                   @* <td class="space ">
+                        <a id="aSubmit" ></a>   
+                        <a id="cancel" >取消</a>                
+                    </td>*@
+                  </tr>
+               </table> 
+             }
+             }
+             </div>  
+               
+            </div>   
+          
+    
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/shelf/ShelfAddOrEdit.js")"></script>
+

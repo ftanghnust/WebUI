@@ -1,0 +1,75 @@
+﻿<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+    <!--meta标签是iphone设备中的safari私有meta标签，它表示：允许全屏模式浏览-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--meta标签也是iphone的私有标签，它指定的iphone中safari顶端的状态条的样式-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--告诉设备忽略将页面中的数字识别为电话号码-->
+    <meta content="telephone=no" name="format-detection">
+    <!--如何去除Android平台中对邮箱地址的识别-->
+    <meta content="email=no" name="format-detection" />
+    <!--解决iOS 4.3版本中safari对页面中5位数字的自动识别和自动添加样式-->
+    <meta name="format-detection" content="telphone=no" />
+    <link rel="stylesheet" href="Content/css/cssapk.css">
+    <script src="Content/easyui-1.4.3/jquery-1.7.1.js"></script>
+    <title>芙蓉兴盛拣货APP下载</title>
+</head>
+<body>
+    <header>
+        <img src="Content/images/jh.png" />
+    </header>
+    <div class="c">
+        <img src="Content/images/jh2.png">
+    </div>
+    <a id="down">
+        <img src="Content/images/down.png" class="down" /></a>
+    <footer>芙蓉兴盛拣货平台</footer>
+    <div class="bg"></div>
+    <div class="pop">
+        <img src="Content/images/pop.jpg">
+    </div>
+</body>
+
+<script>
+    $(function () {
+        var h = $(window).height();
+        $(".bg").height(h);
+        if (isWeiXin()) { //微信打开
+            $("#down").click(function () {
+                $(".pop").show();
+                $(".bg").show();
+            });
+        } else {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                alert("抱歉！目前没有苹果版的拣货APP");
+            } else {
+                $("#down").attr("href", "http://wh.erp.frxs.cn/frxs_pick_1.0.x.apk"); //安卓的下载地址
+            }
+        }
+    });
+
+    function isWeiXin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    $(".bg").click(function () {
+        $(this).hide();
+        $(".pop").hide();
+    });
+
+    $(".pop").click(function () {
+        $(".bg").hide();
+        $(".pop").hide();
+    });
+
+</script>
+</html>
+

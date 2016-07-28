@@ -1,0 +1,276 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.WProductAddModel
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<style>
+    span.red
+    {
+        color: #f00;
+    }
+</style>
+<body style="width: 100%; height: 100%;" class="easyui-layout">
+    <div class="dialogMainbody" style="width: 100%">
+        @{
+            using (Html.BeginForm("WProductAddHandle", "WProduct", FormMethod.Post))
+            { 
+            <table class="xstable">
+                <tr>
+                    <td>@Html.LabelFor(model => Model.Sku)：
+                    </td>
+                    <th>
+                        @Html.DisplayFor(model => Model.Sku)
+                    </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.ProductName)：
+                    </td>
+                    <th>
+                        @Html.DisplayFor(model => Model.ProductName)
+                    </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.ProductName2)：
+                    </td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.ProductName2, new
+                                                                              {
+                                                                                  @class = "easyui-validatebox",
+                                                                                  @data_options = "validType:['chineseLength[40]','trim','riskStr']",
+                                                                                  @style = "width:250px;"
+                                                                              })
+                    </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.Mnemonic)：
+                    </td>
+                    <th>
+                        @Html.DisplayFor(model => Model.Mnemonic)
+                    </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.BrandName)：
+                    </td>
+                    <th>
+                        @Html.DisplayFor(model => Model.BrandName)
+                    </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.CategoriesName)：
+                    </td>
+                    <th>
+                        @Html.DisplayFor(model => Model.CategoriesName)
+                    </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.ShopCategoriesName)：
+                    </td>
+                    <th>
+                        @Html.DisplayFor(model => Model.ShopCategoriesName)
+                    </th>
+                </tr>
+                <tr>
+                    <td>库存单位价格管理：</td>
+                    <th>
+                        <table>
+                            <tr>
+                                <td><span class="red">*</span>@Html.LabelFor(model => Model.BuyPrice)：</td>
+                                <td>
+                                    @Html.TextBoxFor(model => Model.BuyPrice, new
+                                                                                      {
+                                                                                          @class = "easyui-numberbox",
+                                                                                          @data_options = "min:0.0001,max:99999.9999,precision:4,required:true",
+                                                                                          @style = "width:150px;"
+                                                                                      })
+                                </td>
+                                <td><span class="red">*</span>@Html.LabelFor(model => Model.SalePrice)：</td>
+                                <td>
+                                    @Html.TextBoxFor(model => Model.SalePrice, new
+                                                                                       {
+                                                                                           @class = "easyui-numberbox",
+                                                                                           @data_options = "min:0.0001,max:99999.9999,precision:4,required:true",
+                                                                                           @style = "width:150px;"
+                                                                                       })
+
+                                </td>
+
+
+                                <td><span class="red">*</span>@Html.LabelFor(model => Model.VendorPerc1)：</td>
+                                <td>
+                                    @Html.TextBoxFor(model => Model.VendorPerc1, new
+                                                                                         {
+                                                                                             @class = "easyui-numberbox",
+                                                                                             @data_options = "min:0.0000,max:1,precision:4,required:true",
+                                                                                             @style = "width:150px;"
+                                                                                         })
+                                </td>
+                                <td>
+                                    <input id="btnAddProductUnitPrice" type="button" class="my-btn aSubmit aSearch" value="确认" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">*</span>@Html.LabelFor(model => Model.VendorPerc2)：</td>
+                                <td>
+                                    @Html.TextBoxFor(model => Model.VendorPerc2, new
+                                                                                         {
+                                                                                             @class = "easyui-numberbox",
+                                                                                             @data_options = "min:0.0000,max:1,precision:4,required:true",
+                                                                                             @style = "width:150px;"
+                                                                                         })
+                                </td>
+                                <td><span class="red">*</span>@Html.LabelFor(model => Model.ShopAddPerc)：</td>
+                                <td>
+                                    @Html.TextBoxFor(model => Model.ShopAddPerc, new
+                                                                                         {
+                                                                                             @class = "easyui-numberbox",
+                                                                                             @data_options = "min:0.0000,max:1,precision:4,required:true",
+                                                                                             @style = "width:150px;"
+                                                                                         })
+                                </td>
+                                <td><span class="red">*</span>@Html.LabelFor(model => Model.ShopPoint)：</td>
+                                <td>
+                                    @Html.TextBoxFor(model => Model.ShopPoint, new
+                                                                                       {
+                                                                                           @class = "easyui-numberbox",
+                                                                                           @data_options = "min:0.00,precision:2,required:true",
+                                                                                           @style = "width:150px;"
+                                                                                       })
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </th>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                    <td>多单位：</td>
+                    <th>
+                        <table id="tblUnit" style="width: 850px; border: 1px solid #A9A9A9;" border="1" rules="none">
+                            <thead>
+                                <tr>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].ProductsUnitId)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].Unit)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitTypeName)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].Spec)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].PackingQty)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitVolume)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitWeight)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitBuyPrice)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitMarketPrice)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitSalePrice)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitVendorPerc1)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitVendorPerc1Money)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitVendorPerc2)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitVendorPerc2Money)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitShopAddPerc)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitShopAddPercMoney)</th>
+                                    <th>@Html.LabelFor(model => Model.WProductUnitList[0].UnitShopPoint)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.WProductUnitList != null)
+                                {
+                                    for (int i = 0; i < Model.WProductUnitList.Count; i++)
+                                    {
+                                    <tr name="trUnit">
+                                        <td>
+                                            <input type="radio" name="ck" onchange="changeUnit(this)"  value="@Model.WProductUnitList[i].ProductsUnitId" />
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => Model.WProductUnitList[i].Unit)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => Model.WProductUnitList[i].UnitTypeName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => Model.WProductUnitList[i].Spec)
+                                        </td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].PackingQty)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitVolume)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitWeight)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitBuyPrice)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitMarketPrice)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitSalePrice)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitVendorPerc1)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitVendorPerc1Money)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitVendorPerc2)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitVendorPerc2Money)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitShopAddPerc)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitShopAddPercMoney)</td>
+                                        <td>@Html.DisplayFor(model => Model.WProductUnitList[i].UnitShopPoint)</td>
+                                    </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.BasePoint)：</td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.BasePoint, new
+                                                                           {
+                                                                               @class = "easyui-numberbox",
+                                                                               @data_options = "min:0.01,precision:2,required:true",
+                                                                               @style = "width:140px;"
+                                                                           })
+                    </th>
+                </tr>
+                <tr>
+                    <td><span class="red">*</span>@Html.LabelFor(model => Model.MarketUnit)：</td>
+                    <th>
+                        @Html.DropDownListFor(model => Model.MarketUnit, Model.WProductMarketUnitList, new { @class = "easyui-combobox  cls w250", @editable = false })
+                    </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.MarketPrice)：</td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.MarketPrice, new
+                                                                             {
+                                                                                 @class = "easyui-numberbox",
+                                                                                 @data_options = "min:0.0001,max:99999.9999,precision:4,required:true",
+                                                                                 @style = "width:140px;"
+                                                                             })
+                    </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.SaleBackFlag)：</td>
+                    <th>
+                        @Html.DropDownListFor(model => Model.SaleBackFlag, Model.ProductSaleBackFlagList, new { @class = "easyui-combobox  cls w250", @editable = false })
+                    </th>
+                </tr>
+                <tr>
+                    <td><span class="red">*</span> @Html.LabelFor(model => Model.ShelfCode)：</td>
+                    <th>
+                        @Html.TextBoxFor(model => Model.ShelfCode, new
+                                                                           {
+                                                                               @required = "true",
+                                                                               @class = "easyui-validatebox",
+                                                                               @data_options = "validType:['chineseLength[40]','trim','riskStr']",
+                                                                               @style = "width:140px;"
+                                                                           })
+                    </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.WStatus)：</td>
+                    <th>
+                        @Html.DropDownListFor(model => Model.WStatus, Model.WProductStatusList, new { @class = "easyui-combobox  cls w250", @editable = false })
+                    </th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <th><a id="aSubmit" class="aSearch">确认</a>
+                    </th>
+                </tr>
+            </table>
+            @Html.HiddenFor(model => Model.ProductId)
+            @Html.HiddenFor(model => Model.AddOrEdit)
+            @Html.HiddenFor(model => Model.DeliveryUnitID)
+            }
+        }
+
+    </div>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/wProduct/wProductAdd.js")"></script>

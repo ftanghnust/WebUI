@@ -1,0 +1,41 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.WStationNumberModel
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<html>
+<head>
+    <meta charset="UTF-8">       
+    <link href="@Url.Content("~/Style/themes/blue/easyui.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Style/themes/icon.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Style/themes/demo.css")" rel="stylesheet" type="text/css" /> 
+    <link href="@Url.Content("~/Style/themes/new/css.css")" rel="stylesheet" type="text/css" />
+    
+    
+</head>
+<body style="width:100%;" > 	
+    <div class="dialogMainbody" style="width:270px;">
+        <div class="box">
+         @{
+             using (Html.BeginForm("WStationNumberHandle", "WStationNumber", FormMethod.Post))
+             {                 
+                <table border="0" class="xstable">
+                  <tr>
+                    <td ><span class="red">* </span>@Html.LabelFor(model => Model.StartID)：</td>
+                    <th>@Html.TextBoxFor(model => Model.StartID, new { @class = "easyui-validatebox cls jump onlymath",@maxlength="6" }) </th>     
+                  </tr>
+                  <tr>
+                    <td><span class="red">* </span>@Html.LabelFor(model => Model.EndID)：</td>
+                    <th>@Html.TextBoxFor(model => Model.EndID, new { @class = "easyui-validatebox cls jump onlymath",@maxlength="6" }) </th>     
+                  </tr>               
+                 
+               </table> 
+             }
+             }
+             </div>  
+               
+            </div>   
+      
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/wstationnumber/wstationnumberAdd.js")"></script>
+</body>
+</html>

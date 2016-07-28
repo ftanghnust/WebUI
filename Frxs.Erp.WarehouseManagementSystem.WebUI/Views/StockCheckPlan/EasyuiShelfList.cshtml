@@ -1,0 +1,235 @@
+﻿@{
+    ViewBag.Title = "芙蓉兴盛ERP管理系统";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north'" class="toolDIV" style="height: 28px">
+        <table cellpadding="0" cellspacing="0" style="width: 100%">
+            <tr>
+                <td >货位编号：</td>
+                <td style="text-align: left; padding-left: 2px; width: 195px">
+                    <input type="text" name="ShelfCode" id="ShelfCode">
+                </td>
+                <td>所属货区：</td>
+                <td>
+                    <select name="ShelfAreaID" id="ShelfAreaID" class="easyui-combobox" panelheight="auto" editable="false" style="width:120px"></select>
+                </td>
+                <td>状态：</td>
+                <td>
+                    <select name="Status" id="Status" class="easyui-combobox" panelheight="auto" editable="false" style="width:120px">
+                        <option value="">-请选择-</option>
+                        <option value="0">正常</option>
+                        <option value="1">冻结</option>
+                    </select>
+                </td>
+                <td style="padding-left: 2px; text-align: left">
+                    <input type="button" id="aSearch" class="aSearch" onclick="search()" value="查询">
+                    <input type="button" onclick="resetSearch()" class="reset" value="重置">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div data-options="region:'east',split:true" style="width: 50%; padding: 3px">
+        <table style="width: 100%; height: 100%" id="sub_datagrid">
+        </table>
+    </div>
+    <div data-options="region:'center'" style="padding: 3px">
+        <table style="width: 100%; height: 100%" id="main_datagrid">
+        </table>
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            //grid绑定
+            initGrid();
+            initSubGrid();
+            //下拉绑定
+            initDDL();
+            //select下拉框自适应高度    
+            $('.easyui-combobox').combobox({
+                panelHeight: 'auto'
+            });
+        });
+
+        //查询
+        function search() {
+            initGrid();
+        }
+
+        function resetSearch() {
+            $("#ShelfCode").attr("value", "");
+            $('#ShelfAreaID').combobox('setValue', '');
+            $('#Status').combobox('setValue', '');
+        }
+
+        function initGrid() {
+            $('#main_datagrid').datagrid({
+                title: '',                      //标题
+                iconCls: 'icon-view',               //icon
+                methord: 'get',                    //提交方式
+                url: '../Shelf/GetShelfList',          //Aajx地址
+                sortName: 'ShelfID',                 //排序字段
+                sortOrder: 'asc',                  //排序方式
+                idField: 'ShelfID',                  //主键
+                pageSize: 30,                       //每页条数
+                pageList: [10, 30, 50, 100],//可以设置每页记录条数的列表 
+                fit: false,                         //分页在最下面
+                pagination: true,                   //是否显示分页
+                rownumbers: true,                   //显示行编号
+                fitColumns: false,                   //列均匀分配
+                striped: false,                     //奇偶行是否区分
+                //设置点击行为单选，点击行中的复选框为多选
+                checkOnSelect: true,
+                selectOnCheck: true,
+                onClickRow: function (rowIndex, rowData) {
+                    MainGridClickRow(rowIndex, rowData);
+                    $(this).datagrid('unselectRow', rowIndex);
+                },
+                onLoadSuccess: function () {
+                    $('#main_datagrid').datagrid('clearSelections');
+                },
+                queryParams: {
+                    //查询条件
+                    ShelfCode: $("#ShelfCode").val(),
+                    ShelfAreaID: $("#ShelfAreaID").combobox("getValue"),
+                    Status: $("#Status").combobox("getValue")
+                },
+                onDblClickRow: function (rowIndex) {
+
+                },
+                frozenColumns: [[
+                    //{ field: 'ck', checkbox: true }, //选择
+                    { title: 'ShelfID', field: 'ShelfID', hidden: true },
+                    { title: '货位编号', field: 'ShelfCode', width: 130, align: 'center' }
+                    //冻结列
+                ]],
+                columns: [[
+                    { title: '仓库名称', field: 'WName', width: 260, align: 'center' },
+                    { title: '货区', field: 'ShelfAreaName', width: 180, align: 'center' },
+                    { title: '货位类型', field: 'ShelfType', width: 160, align: 'center' },
+                    {
+                        title: '状态', field: 'Status', width: 60, align: 'center', formatter: function (value, rec) {
+                            if (value == "1") {
+                                return "<span class='freeze_text'>冻结</span>";
+                            }
+                            else {
+                                return "正常";
+                            }
+                        }
+                    }
+                ]]
+                //,toolbar: toolbarArray
+            });
+        }
+
+        function initSubGrid() {
+            $('#sub_datagrid').datagrid({
+                title: '',                      //标题
+                iconCls: 'icon-view',               //icon
+                methord: 'get',                    //提交方式
+                //url: '../Shelf/GetShelfList',          //Aajx地址
+                sortName: 'ShelfID',                 //排序字段
+                sortOrder: 'asc',                  //排序方式
+                idField: 'ShelfID',                  //主键
+                pageSize: 30,                       //每页条数
+                pageList: [10, 30, 50, 100],//可以设置每页记录条数的列表 
+                fit: false,                         //分页在最下面
+                pagination: false,                   //是否显示分页
+                rownumbers: true,                   //显示行编号
+                fitColumns: false,                   //列均匀分配
+                striped: false,                     //奇偶行是否区分
+                //设置点击行为单选，点击行中的复选框为多选
+                checkOnSelect: true,
+                selectOnCheck: true,
+                onClickRow: function (rowIndex, rowData) {
+                    SubGridClickRow(rowIndex, rowData);
+                    $(this).datagrid('unselectRow', rowIndex);
+                },
+                onDblClickRow: function (rowIndex) {
+
+                },
+                columns: [[
+                    { title: 'ShelfID', field: 'ShelfID', hidden: true },
+                    { title: '货位编号', field: 'ShelfCode', width: 130, align: 'center' },
+                    { title: '仓库名称', field: 'WName', width: 260, align: 'center' },
+                    { title: '货区', field: 'ShelfAreaName', width: 180, align: 'center' },
+                    { title: '货位类型', field: 'ShelfType', width: 160, align: 'center' },
+                    {
+                        title: '状态', field: 'Status', width: 60, align: 'center', formatter: function (value, rec) {
+                            if (value == "1") {
+                                return "<span class='freeze_text'>冻结</span>";
+                            }
+                            else {
+                                return "正常";
+                            }
+                        }
+                    }
+                ]]
+                //,toolbar: toolbarArray
+            });
+        }
+
+        function initDDL() {
+            $.ajax({
+                url: '../ShelfArea/GetShelfAreaSelectList',
+                type: 'get',
+                dataType: 'json',
+                async: false,
+                data: {},
+                success: function (data) {
+                    //data = $.parseJSON(data);
+                    //在第一个Item加上请选择
+                    data.unshift({ "ShelfAreaID": "", "ShelfAreaName": "-请选择-" });
+                    //创建控件
+                    $("#ShelfAreaID").combobox({
+                        data: data,                       //数据源
+                        valueField: "ShelfAreaID",       //id列
+                        textField: "ShelfAreaName"       //value列
+                    });
+                }, error: function (e) {
+                    debugger;
+                }
+            });
+        }
+
+        function saveData() {
+            window.frameElement.wapi.loadShelf($('#sub_datagrid'));
+            window.frameElement.wapi.focus();
+            frxs.pageClose();
+        }
+
+
+        function MainGridClickRow(rowIndex, rowData) {
+            var subselect = false;
+            var rows = $('#sub_datagrid').datagrid('getRows');
+            if (rows != null && rows.length > 0) {
+                for (var i = 0; i < rows.length; i++) {
+                    if (rowData.ShelfID == rows[i].ShelfID) {
+                        DeleteData($('#sub_datagrid'), $('#sub_datagrid').datagrid('getRowIndex', rows[i]));
+                        subselect = true;
+                        //break;
+                    }
+                }
+            }
+            if (!subselect) {
+                AddData($('#sub_datagrid'), rowData);
+            }
+        }
+
+        function SubGridClickRow(rowIndex, rowData) {
+            var indexTag = $('#sub_datagrid').datagrid('getRowIndex', rowData);
+            DeleteData($('#sub_datagrid'), indexTag);
+        }
+
+        function AddData(grid, rowdata) {
+            grid.datagrid('appendRow', rowdata);
+        }
+
+        function DeleteData(grid, rowIndex) {
+            grid.datagrid('deleteRow', rowIndex);
+        }
+    </script>
+}

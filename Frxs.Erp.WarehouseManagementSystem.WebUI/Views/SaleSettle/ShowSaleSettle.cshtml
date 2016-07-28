@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "芙蓉兴盛ERP管理系统";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<form id="ShowSaleSettleForm">
+    <fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+        <legend style="color: #416AB7; font-weight: bold">信息查看</legend>
+        <table id="tab" class="xstable">
+            <tr>
+                <td>结算单号：</td>
+                <th>
+                    <input type="text" name="SettleID" readonly="readonly" style="width: 250px" id="SettleID">
+                </th>
+                <td>门店编号：</td>
+                <th>
+                    <input type="text" name="ShopCode" readonly="readonly" style="width: 250px" id="ShopCode"></th>
+            </tr>
+            <tr>
+                <td>门店名称：</td>
+                <th colspan="3">
+                    <input type="text" name="ShopName" readonly="readonly" style="width: 250px" id="ShopName"></th>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div id="grid"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>结算单金额：</td>
+                <th colspan="3">
+                    <input type="text" name="SettleAmt" readonly="readonly" style="width: 250px" id="SettleAmt"></th>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/saleSettle/showSaleSettle.js")" type="text/javascript"></script>
+}

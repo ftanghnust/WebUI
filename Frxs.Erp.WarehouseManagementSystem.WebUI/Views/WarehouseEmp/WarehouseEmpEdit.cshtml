@@ -1,0 +1,70 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.WarehouseEmpModel
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<style>
+    span.red {
+        color: #f00;
+    }
+    table.xstable td { padding-top:10px; padding-bottom:10px
+    }
+</style>
+
+<div class="dialogMainbody" style="width: 320px; padding: 10px">
+    <div class="box">
+        @{
+            using (Html.BeginForm("WarehouseEmpHandle", "WarehouseEmp", FormMethod.Post))
+            {
+            @Html.HiddenFor(model => Model.EmpID)
+            <table style="width: 320px" class="xstable">
+                <tr>
+                    <td><span class="red">*</span>@Html.LabelFor(model => Model.WName)：</td>
+                    <th>@Html.DropDownListFor(model => Model.WID, Model.WCList, new { @class = "easyui-combobox  cls w250", @editable = false, @style = "width:180px" }) </th>
+                </tr>
+                <tr>
+                    @if (Model.EmpID == 0)
+                    {
+                        <td><span class="red">*</span>@Html.LabelFor(model => Model.UserAccount)：</td>
+                        <th>@Html.TextBoxFor(model => Model.UserAccount, new { @class = "easyui-validatebox cls jump onlymath", @maxlength = "12", @style = "width:178px" })</th>   
+                    }
+                    else
+                    {
+                        <td><span class="red"></span>@Html.LabelFor(model => Model.UserAccount)：</td>
+                        <th>@Html.TextBoxFor(model => Model.UserAccount, new { @class = "cls jump", @readonly = true, @style = "width:178px" })</th>   
+                    }
+                </tr>
+                <tr>
+                    <td><span class="red">*</span>@Html.LabelFor(model => Model.EmpName)：</td>
+                    <th>@Html.TextBoxFor(model => Model.EmpName, new { @class = "easyui-validatebox cls jump", @maxlength = "12" ,@style = "width:178px"}) </th>
+                </tr>
+                <tr>
+                    <td><span class="red">*</span>@Html.LabelFor(model => Model.UserType)：</td>
+                    <th>@Html.DropDownListFor(model => Model.UserType, Model.UserTypeList, new { @class = "easyui-combobox  cls w250", @editable = false }) </th>
+                </tr>
+                <tr>
+                    <td><span class="red">*</span>@Html.LabelFor(model => Model.IsMaster)：</td>
+                    <th>@Html.DropDownListFor(model => Model.IsMaster, Model.IsMasterList, new { @class = "easyui-combobox  cls w250", @editable = false }) </th>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => Model.UserMobile)：</td>
+                    <th>@Html.TextBoxFor(model => Model.UserMobile, new { @class = "easyui-validatebox cls jump easyui-numberbox onlymath", @maxlength = "14",@style = "width:182px" }) </th>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    @* <td class="space ">
+                        <a id="aSubmit" >确认</a>   
+                        <a id="cancel"  >取消</a>                
+                    </td>*@
+                </tr>
+            </table> 
+            }
+        }
+
+    </div>
+</div>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/WarehouseEmp/WarehouseEmpAddOrEdit.js")"></script>
+
+

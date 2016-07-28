@@ -1,0 +1,116 @@
+/*公共样式*/
+*:focus {outline: none;}
+body{padding:0px;margin:0px;font-size:14px;font-family:"微软雅黑",arial,helvetica,clean,sans-serif;line-height:150%;  color:#555; background:#F9F9F9 }
+div,span,h1,h2,h3,h4,h5,h6,ul,li,img,p,strong,b,textarea,input,button,select,form,a,table,tr,td,dl,dt,dd{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+ul,ol,li{list-style-type:none;}
+input,button,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;vertical-align:middle;}
+img{border:0; vertical-align:baseline}
+.clear{clear:both}
+a{ color:#404040; text-decoration:none}
+a:hover{ color:#E70014; text-decoration: underline}
+.left{ float:left}
+.right{ float:right}
+i{ font-style:normal}
+.orgren{ color:#FF5959}
+.footer{ margin:0 auto; clear:both; padding:0; width:100%;margin-top:30px;}
+.footer p{ text-align:center; color:#565656; padding:0px; line-height:180%; font-size:12px}
+/*首页样式文件*/
+.head{ margin:0 auto; padding:0; width:100%; background:#EEEEEE; height:48px; border-bottom:1px solid #AEAEAE; }
+.head .box{ margin:0  auto; padding:0; width:1250px; clear:both; line-height:48px; font-size:16px}
+.maintop{ clear:both; width:1250px; margin:0 auto; padding:0px; height:107px; background:#FFF  }
+.maintop .left{ width:770px; padding-left:15px; padding-top:12px; position:relative; height:90px}
+.maintop .left .searchDiv{ position:absolute; right:0px; top:15px; width:410px; z-index:55;}
+.maintop .left .searchDiv dt{ float:left}
+.maintop .left .searchDiv dt input{ padding:5px; width:313px; height:24px; border:1px solid  #E70014; line-height:24px}
+.maintop .left .searchDiv dd{ float:left;}
+.maintop .left .searchDiv dd input{ background:#E70014; padding:0px 10px; height:36px; border:none 0px; color:#FFF; line-height:34px; overflow:hidden; margin:0px;*padding:0px 3px;*height:38px;}
+.maintop .left .meun{ clear:both; width:100%; font-size:14px;  padding-top:12px; position:absolute; left:0px; bottom:5px}
+.maintop .left .meun a{ padding:0px 20px}
+.maintop .logo{ background:url(../images/logo.jpg); width:203px; height:46px; display:block;margin-left:16px;}
+.maintop .right{ width:154px; padding-top:22px; padding-right:10px}
+.maintop .right .contact{ height:45px; width:100%}
+.maintop .right .contact .qq{ font-size:14px; padding:5px 0px 5px 25px; background: url(../images/qq.jpg) center left no-repeat; float:left; }
+.maintop .right .contact .quit{ float:right; margin-right:5px; color:#E60014; padding-top:5px}
+.maintop .right .cart{ background:url(../images/index_r13_c12.jpg) no-repeat; width:154px; height:31px; }
+.maintop .right .cart a.a1{position:relative; display:block; width:117px; height:20px; background:url(../images/index_r14_c15.jpg) center left no-repeat; margin-left:19px; margin-top:7px; float:left; *margin-left:10px}
+.maintop .right .cart a.a1 .text{ color:#FFF; float:right; line-height:16px; padding:0px}
+.maintop .right .cart a.a1 span{ display:block; width:20px; height:20px; overflow:hidden; background:url(../images/index_r14_c19.jpg); position:absolute; z-index:1; left:24px; top:-5px; color:#FFF; line-height:18px; font-size:12px; text-align:center}
+.maintop .right .cart a.a1 span.small{ font-size:9px}
+.mainbody{ margin:0 auto; padding:0; width:1000px;  clear:both}
+
+/*首页主体*/
+.index_box{ clear:both; width:100%;; margin-bottom:10px}
+.index_box .Column_title{ clear:both; width:100%}
+.index_box .Column_content{ clear:both; width:100%; background:#060}
+.index_box .Column_content ul{ margin-left:-10px}
+.index_box .Column_content li{ float:left; display:inline; margin-left:10px; width:240px; height:300px;  margin-bottom:10px}
+.index_box .Column_content li h1{ width:100%}
+.index_box .Column_content li dl{ width:100%; height:200px; position:relative}
+.index_box .Column_content li dt{ width:100%; height:200px; background:#060}
+.index_box .Column_content li dd{ position:absolute; z-index:1; right:0px; top:0px; color:#FFF}
+.index_box .Column_content li .bottom{ width:100%; clear:both}
+.index_box .Column_content li .bottom .left{ width:120px}
+.index_box .Column_content li .bottom .right{ width:60px; display:block; background:#fff; height:60px}
+.index_box .Column_content li .
+.index_box .Column_content li h2{}
+.index_box .Column_content li h2 span{ text-decoration:line-through; color:#999; margin-left:15px}
+.index_banner{ clear:both; width:1250px; margin:0 auto; padding:0px; height:230px}
+
+.bannerbox { width: 1250px; height: 230px; overflow: hidden; margin: 0px auto; position:relative }
+.index_banner #focus { width: 1250px; height: 230px; clear: both; overflow: hidden; position: relative; float: left; }
+.index_banner #focus ul { width: 1250px; height: 230px; float: left; position: absolute; clear: both; padding: 0px; margin: 0px; }
+.index_banner #focus ul li { float: left; width: 1250px; height: 230px; overflow: hidden; position: relative; padding: 0px; margin: 0px; }
+.index_banner #focus .preNext { width: 450px; height: 200px; position: absolute; top: 0px; cursor: pointer; }
+.index_banner #focus .pre { left: 0; background: url(../images/sprite.png) no-repeat left center; }
+.index_banner #focus .next { right: 0; background: url(../images/sprite1.png) no-repeat right center; }
+.index_banner #focus ul li img{ width:1250px; height:230px}
+
+.index_banner img{ width:1000px; height:200px}
+.indexwrap{ clear:both; margin:0 auto; padding:0; width:1250px;}
+.indexwrap .box{ width:100%; float:left; background:#FFF;  }
+.indexwrap .box .content{ margin-bottom:30px; float:left; width:100%}
+.indexwrap .box ul.ul1{ width:100%; padding-top:1px; }
+.indexwrap .box ul.ul1 li{ width:249px; height:378px; border:1px solid #EDEDED; margin-left:-1px; margin-top:-1px; display:inline; float:left; overflow:hidden}
+.indexwrap .box ul.ul1 li .picture{ margin:0 auto; padding:10px; width:229px; height:229px; margin-bottom:10px}
+.indexwrap .box ul.ul1 li .picture img{ width:229px; height:229px}
+.indexwrap .box ul.ul1 li h2{ padding:10px 0px; height:22px; font-size:14px; color:#E60211}
+.indexwrap .box ul.ul1 li h2 span{ color:#565656; text-decoration:line-through; margin-left:10px; font-size:13px}
+.indexwrap .box ul.ul1 li .bottom{ clear:both; width:100%; padding-top:8px}
+.indexwrap .box ul.ul1 li .bottom .erp{ float:left}
+.indexwrap .box ul.ul1 li .bottom .ording{ float:right; width:59px; height:24px; background:url(../images/ording.jpg) no-repeat}
+.indexwrap .box ul.ul1 li .bottom .ording a{ display:block; width:59px; height:24px}
+.indexwrap .box ul.ul1 li h1{ height:40px; padding:0px 0px; overflow:hidden; line-height:20px}
+.indexwrap .box .TabTitle{ width:100%; margin-top:10px; height:50px; border-bottom:2px solid #E70014; overflow:hidden; margin-bottom:13px}
+.indexwrap .box .TabTitle ul{ width:100%}
+.indexwrap .box .TabTitle ul li{ float:left; display:inline;  width:106px; line-height:39px; text-align:center; font-size:16px; overflow:hidden; cursor:pointer}
+.indexwrap .box .TabTitle ul li.normal{height:39px; line-height:39px}
+.indexwrap .box .TabTitle ul li.active{ background:url(../images/index_r8_c12.jpg);height:39px; line-height:39px; color:#FFF}
+/*分类页面开始*/
+
+/*分类页面结束*/
+/*登录页面*/
+.indexwrap .box ul.ul2{ width:100%; padding-top:1px; }
+.indexwrap .box ul.ul2 li{width:499px; height:225px; border:1px solid #EDEDED; margin-left:-1px; margin-top:-1px; display:inline; float:left}
+.indexwrap .box ul.ul2 li .c{ margin:0 auto; padding:0; width:470px; height:207px;  margin-top:10px}
+.indexwrap .box ul.ul2 li .c .left{ width:207px; height:207px; position:relative}
+.indexwrap .box ul.ul2 li .c .left img.img1{ width:207px; height:207px}
+.indexwrap .box ul.ul2 li .c .right{ width:245px; margin-top:5px}
+.indexwrap .box ul.ul2 li .c .right h1{ height:45px; overflow:hidden}
+.indexwrap .box ul.ul2 li .c .right h2{ margin-bottom:5px; font-size:13px}
+@media screen and (max-width : 1024px){
+	.head .box{ width:1000px}
+	.maintop{ width:1000px}
+	.indexwrap{ width:1000px}
+	.bannerbox{ width:1000px}
+	
+	.bannerbox { width: 1000px; height: 200px; overflow: hidden; margin: 0px auto; }
+.index_banner #focus { width: 1000px; height: 200px; clear: both; overflow: hidden; position: relative; float: left; }
+.index_banner #focus ul { width: 1000px; height: 200px; float: left; position: absolute; clear: both; padding: 0px; margin: 0px; }
+.index_banner #focus ul li { float: left; width: 1000px; height: 200px; overflow: hidden; position: relative; padding: 0px; margin: 0px; }
+.index_banner #focus ul li img{ width:1000px; height:200px}
+
+.index_banner{ clear:both; width:1000px; margin:0 auto; padding:0px; height:200px}
+	
+	}
+

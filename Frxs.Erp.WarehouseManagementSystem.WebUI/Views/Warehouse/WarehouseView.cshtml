@@ -1,0 +1,94 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.WarehouseModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+    ViewBag.Title = "仓库信息查看";
+}
+<style>
+    .red {
+        color: #f00;
+    }
+
+    table.xstable {
+        margin: 25px 25px;
+    }
+</style>
+
+<div class="basic">
+    @{
+        using (Html.BeginForm("WarehouseHandle", "Warehouse", FormMethod.Post))
+        {
+            @Html.HiddenFor(model => Model.WID)
+            @Html.HiddenFor(model => model.ProvinceID)
+            @Html.HiddenFor(model => model.CityID)
+            @Html.HiddenFor(model => model.RegionID)
+            <table border="0" style="width:600px" class="xstable">
+                <tr>
+                    <td><span class="red">*</span>@Html.LabelFor(model => Model.WCode)：</td>
+                    <th>@Html.TextBoxFor(model => Model.WCode, new { @class = "easyui-validatebox cls jump readonly", Readonly = "true", @missingmessage = "请输入仓库编号" }) </th>
+                    <td><span class="red">*</span>@Html.LabelFor(model => Model.WName)：</td>
+                    <th>@Html.TextBoxFor(model => Model.WName, new { @class = "easyui-validatebox cls jump readonly", Readonly = "true" }) </th>
+                </tr>
+                <tr>
+                    <td><span class="red">*</span>@Html.LabelFor(model => Model.WContact)：</td>
+                    <th>@Html.TextBoxFor(model => Model.WContact, Model.WContact, new { @class = "easyui-validatebox  cls w250 readonly", Readonly = "true" }) </th>
+                    <td class="textright">@Html.LabelFor(model => Model.WTel)：</td>
+                    <th>@Html.TextBoxFor(model => Model.WTel, Model.WTel, new { @class = "easyui-validatebox  cls w250 readonly", Readonly = "true" }) </th>
+                </tr>
+                <tr>
+                    <td>地区：</td>
+                    <th colspan="3">
+                        <div id="regionDdl">
+                            <select id="ddlProvince" name="ddlProvince" style="width:100px;" disabled="disabled"></select>
+                            <select id="ddlCity" name="ddlCity" style="width:100px;" disabled="disabled"></select>
+                            <select id="ddlCountry" name="ddlCountry" style="width:80px;" disabled="disabled"></select>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="textright">@Html.LabelFor(model => Model.WAddress)：</td>
+                    <th colspan="3">
+                        @Html.TextBoxFor(model => Model.WAddress, Model.WAddress, new { @class = "easyui-validatebox  cls w250 all readonly", @style = "width: 447px;", Readonly = "true" })
+                    </th>
+                </tr>
+                <tr>
+                    <td class="textright"><span class="red">*</span>投诉电话@*@Html.LabelFor(model => Model.WCustomerServiceTel)*@：</td>
+                    <th>@Html.TextBoxFor(model => Model.WCustomerServiceTel, Model.WCustomerServiceTel, new { @class = "easyui-validatebox  cls w250", data_options = "validType:['telFormat']" }) </th>
+                    <td class="textright">@Html.LabelFor(model => Model.CWTel)：</td>
+                    <th>@Html.TextBoxFor(model => Model.CWTel, Model.CWTel, new { @class = "easyui-validatebox  cls w250", data_options = "validType:['telFormat']" }) </th>
+                </tr>
+                <tr>
+                    <td class="textright">@Html.LabelFor(model => Model.YW1Tel)：</td>
+                    <th>@Html.TextBoxFor(model => Model.YW1Tel, Model.YW1Tel, new { @class = "easyui-validatebox  cls w250", data_options = "validType:['telFormat']" }) </th>
+                    <td class="textright">@Html.LabelFor(model => Model.YW2Tel)：</td>
+                    <th>@Html.TextBoxFor(model => Model.YW2Tel, Model.YW2Tel, new { @class = "easyui-validatebox  cls w250", data_options = "validType:['telFormat']" }) </th>
+                </tr>
+                <tr>
+                    <td class="textright">@Html.LabelFor(model => Model.Remark)：</td>
+                    <th colspan="3"> @Html.TextAreaFor(model => Model.Remark, new { @class = "easyui-validatebox", @style = "width: 447px; height: 60px;", @maxlength = "500", @cols = "60", rows = "3", data_options = "validType:['trim','riskStr']" })</th>
+                </tr>
+                <tr>
+                    <td class="textright"><span class="red">*</span>@Html.LabelFor(model => Model.FreezeStatus)：</td>
+                    <th>@Html.TextBoxFor(model => Model.FreezeStatus, new { @class = "easyui-validatebox cls jump", Readonly = "true" }) </th>
+                    <td></td>
+                    <th></th>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <th colspan="3">
+                        <input type="button" id="aSubmit" class="aSearch" value="保存" />
+                        <input type="button" id="cancel" class="reset" value="关闭" />
+                    </th>
+                </tr>
+            </table>
+        }
+    }
+</div>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/region/selectRegion.js")"></script>
+<script type="text/javascript">
+    //修改仓库权限信息 只有该变量为true才会有提交按键，否则只有查看权限
+    var editPermission = "@Authorize(520110, 52011001)".toLocaleLowerCase() == "true" ? true : false;
+</script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/Warehouse/WarehouseAddOrEdit.js")"></script>

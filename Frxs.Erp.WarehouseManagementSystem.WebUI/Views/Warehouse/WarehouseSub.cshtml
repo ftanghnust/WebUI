@@ -1,0 +1,39 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.WarehouseSubListModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<style>
+   .myTable,.myTable td,th {   
+    border:1px solid #cccccc;   
+    border-collapse:collapse;  
+}
+    .myTable th, td { padding:5px; font-weight:normal
+    }
+
+</style>
+
+    <div>
+        @*<a href="javascript:frxs.pageClose();">关闭</a>*@
+        <table id="warehouseTalbeList" class="myTable" align="center"   style="width:100%; " border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <th>序号</th>
+                <th>子机构编码</th>
+                <th>子机构名称</th>
+                <th>仓库编号</th>
+                <th>所属仓库</th>
+            </tr>
+            @for (int i = 0; i < Model.SubList.Count; i++)
+            {
+                <tr>
+                    <td align="center" style="width:80px">@(i+1)</td>
+                    <td align="center"  style="width:120px">@Model.SubList[i].SubWCode</td>
+                    <td align="center">@Model.SubList[i].SubWName</td>
+                    <td align="center">@Model.SubList[i].ParentWCode</td>
+                    <td align="center">@Model.SubList[i].ParentWName</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/region/selectRegion.js")"></script>  

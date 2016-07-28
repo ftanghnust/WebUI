@@ -1,0 +1,136 @@
+﻿*{font-size:12px; font-family:Tahoma,Verdana,微软雅黑,新宋体}
+a{ color:Black; text-decoration:none;}
+a:hover{ color:Red; text-decoration:underline;}
+.txt {border: #878787 1px solid;padding: 4px 3px;font:Verdana, Geneva, sans-serif,宋体;line-height: 14px; background-color: #fff;  height: auto; font-size: 14px;}
+.footer{text-align:center;color:#15428B; margin:0px; padding:0px;line-height:23px; font-weight:bold;}
+.head a{color:White;text-decoration:underline;}
+
+
+.easyui-accordion ul{list-style-type:none;margin:0px; padding:8px;}
+.easyui-accordion ul li{ padding:0px;}
+.easyui-accordion ul li a{line-height:24px;display: inline-block;width: 100%}
+.easyui-accordion ul li div{margin:2px 0px;padding-left:10px;padding-top:2px;border:1px solid #ffffff;}
+.easyui-accordion ul li div.hover{border:1px dashed #99BBE8; background:#E0ECFF;cursor:pointer;}
+.easyui-accordion ul li div.hover a{color:#416AA3;}
+.easyui-accordion ul li div.selected{border:1px solid #99BBE8; background:#E0ECFF;cursor:default;}
+.easyui-accordion ul li div.selected a{color:#416AA3; font-weight:bold;}
+
+
+.icon{ background:url(../images/tabicons.png) no-repeat;width:18px; line-height:18px; display:inline-block;}
+.icon-sys{ background-position:0px -200px;}
+.icon-set{ background-position:-380px -200px;}
+.icon-add{background-position: -20px 0px;}
+.icon-nav{background-position: -100px -20px; }
+.icon-users{background-position: -100px -480px;}
+.icon-usersb{background-position: -200px -480px;}
+.icon-ng{background-position: -220px -480px;}
+.icon-yy{background-position: -180px -480px;}
+.icon-role{background-position: -360px -200px;}
+.icon-set{background-position: -380px -200px;}
+.icon-log{background-position: -380px -80px;}
+.icon-delete{ background-position:-140px -120px;}
+.icon-edit{ background-position:-380px -320px;}
+.icon-magic{ background-position:0px -500px;}
+.icon-database{ background-position:-20px -140px;}
+.icon-page{ background-position:-160px -280px;}
+.icon-page2{ background-position:-140px -160px;}
+
+.rowbtn {
+    cursor: pointer;
+    padding: 2px 6px 2px 6px; color:#416AA3
+}
+.rowbtn:hover {
+    background: #eaf2ff;
+    border: 1px solid #b7d2ff;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    display: inline-block;
+    padding: 2px 5px 2px 5px;
+    text-decoration:none;
+    color: #000000;
+}
+
+
+.table{ margin-top: 10px;margin-left: 20px;}
+.table tr td{ height: 26px;}
+
+
+
+.xstable td{ padding: 5px}
+.xstable th{ padding: 5px; font-weight: normal; text-align:left}
+.xstable td{ text-align: right}
+.aSearch{ background: #3B73E0;color: #fff;padding: 3px 15px;border: none; margin-right: 5px; cursor:pointer}
+.reset{ background: #f30;color: #fff;padding: 3px 15px;border: none; margin-right: 5px;cursor:pointer}
+.combo { border:1px solid #666; border-radius:0px;-moz-border-radius:0px; -webkit-border-radius:0px
+}
+.xstable i { color:#f00; font-style:normal
+}
+span.textbox { border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px; border:1px solid #999
+}
+a.combo-arrow { background-color:#fff
+}
+.freeze_text { color:#f00}
+
+.reset:hover { background:#f63}
+.aSearch:hover { background:#5889E4}
+
+.readonly{ background:#eee;border: 1px solid #ddd;height: 16px;}
+.icon-freeze{background: url('../easyui-1.4.3/themes/icons/freeze.png') no-repeat center center;}
+.icon-thaw{ background: url('../easyui-1.4.3/themes/icons/thaw.png') no-repeat center center;}
+.icon-repassword{ background: url('../easyui-1.4.3/themes/icons/re_password.png') no-repeat center center;}
+.icon-audit{ background: url('../easyui-1.4.3/themes/icons/Audit.png') no-repeat center center;}
+.icon-upf{ background: url('../easyui-1.4.3/themes/icons/up_f.png') no-repeat center center;}
+.icon-tao{ background: url('../easyui-1.4.3/themes/icons/tao.png') no-repeat center center;}
+.icon-wait{ background: url('../easyui-1.4.3/themes/icons/waiting.png') no-repeat center center;}
+.icon-dict{ background: url('../easyui-1.4.3/themes/icons/dict.png') no-repeat center center;}
+.icon-copy{ background: url('../easyui-1.4.3/themes/icons/copy.png') no-repeat center center;}
+.icon-up{ background: url('../easyui-1.4.3/themes/icons/up.png') no-repeat center center;}
+.icon-down{ background: url('../easyui-1.4.3/themes/icons/down.png') no-repeat center center;}
+.icon-daochu{ background: url('../easyui-1.4.3/themes/icons/daochu.png') no-repeat center center;}
+.icon-daoru{ background: url('../easyui-1.4.3/themes/icons/daoru.png') no-repeat center center;}
+.icon-shengxiao{ background: url('../easyui-1.4.3/themes/icons/shengxiao.png') no-repeat center center;}
+.icon-xiangqing{ background: url('../easyui-1.4.3/themes/icons/xiangqing.png') no-repeat center center;}
+.icon-updataxl{ background: url('../easyui-1.4.3/themes/icons/updatexianlu.png') no-repeat center center;}
+
+/*订单详情页面*/
+.detailes1 { margin:0 auto; padding:0px; width:755px; height:405px; margin-top:10px }
+.detailes1 .left { float:left; width:370px; height:405px;}
+
+
+
+
+.detailes1  .tabledetailes { border-width: 1px ; border-style: dotted;  border-color:#ddd;  margin-bottom:10px;border-collapse:collapse }
+.detailes1 .tabledetailes td {   border-width:1px; border-style: dotted;margin: 0; padding: 0; border-color:#ddd; padding:5px ;border-collapse:collapse}
+.detailes1 .left .liuyan { width:100%    }
+
+
+
+
+
+
+.detailes1 .right { float:right; width:370px; height:405px;}
+.detailes1 .right .t{ height:30px; line-height:30px; width:362px; margin-bottom:10px; background:#eee; padding-left:8px}
+.detailes1 .right .c { width:100%; height:360px; overflow:auto}
+.detailes1 .right .c ul { margin:0px auto; padding:0px; margin-left:10px; border-left:2px solid #999;} 
+.detailes1 .right .c ul li{ margin:0px auto;padding:0px;margin-left:-7px; list-style:none; background:url(../images/dot.png)  top left no-repeat; padding-left:15px; line-height:20px; margin-bottom:3px}
+.detailes1 .right .c ul li span { margin-right:15px    }
+/*自定义对话框样式*/
+.dialog-button .l-btn:focus {
+  border: solid 1px #93c5f7;
+  background: -webkit-linear-gradient(top,#ffffff 0,#E0ECFF 100%);
+  background: -moz-linear-gradient(top,#ffffff 0,#E0ECFF 100%);
+  background: -o-linear-gradient(top,#ffffff 0,#E0ECFF 100%);
+  background: linear-gradient(to bottom,#ffffff 0,#E0ECFF 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#E0ECFFs,GradientType=0);
+}
+
+span.textbox-readonly { background:#eee}
+span.textbox-readonly .textbox-text {background:#eee;     }
+span.red { color:#f00}
+.thaw_text{ color:#090}
+.history_Button { background:  url('../easyui-1.4.3/themes/icons/history.png') no-repeat center left; padding:5px 10px 5px 25px; border:1px solid #BBBBBB; border-radius:5px; -moz-border-radius:5px;-webkit-border-radius:5px; cursor:pointer; background-color: -webkit-linear-gradient(top,#ffffff 0,#eeeeee 100%);
+  background-color: -moz-linear-gradient(top,#ffffff 0,#eeeeee 100%);
+  background-color: -o-linear-gradient(top,#ffffff 0,#eeeeee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#eeeeee,GradientType=0); background-position-x:5px}
+

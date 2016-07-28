@@ -1,0 +1,67 @@
+﻿@using Frxs.Erp.WarehouseManagementSystem.WebUI
+@{
+    ViewBag.Title = "主供应商最后一次进价查询";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+    <legend style="color: #416AB7; font-weight: bold">报表查询</legend>
+    <table id="tab" class="xstable" border="0">
+        <tr>
+            <td>基本分类：</td>
+            <th>
+                <select id="CategoriesId1" name="CategoriesId1" class="easyui-combobox" style="width: 120px" editable="false" panelheight="auto">
+                </select>
+                <select id="CategoriesId2" name="CategoriesId2" class="easyui-combobox" style="width: 120px" editable="false" panelheight="auto">
+                </select>
+                <select id="CategoriesId3" name="CategoriesId3" class="easyui-combobox" style="width: 120px" editable="false" panelheight="auto">
+                </select>
+            </th>
+            <td>商品编码：</td>
+            <th>
+                <input type="text" name="SKU" id="SKU" style="width: 170px" />
+            </th>
+            <td>仓库：</td>
+            <th colspan="2">
+                <select id="WID" name="WID" class="easyui-combobox" style="width: 175px" panelheight="auto" editable="false">
+                    <option value="@WorkContext.CurrentWarehouse.WarehouseId">@WorkContext.CurrentWarehouse.WarehouseName</option>
+                </select>
+            </th>
+        </tr>
+        <tr>
+           <td>供应商：</td>
+            <th>
+                <input type="hidden" name="VendorID" id="VendorID" />
+                <input type="text" name="VendorCode" id="VendorCode" style="width: 100px;">
+                <input type="button" value="..." onclick="selVendor()" />
+                <input type="text" name="VendorName" id="VendorName" style="width: 220px" readonly="readonly" />
+            </th>
+            
+            <td>商品名称：</td>
+            <th>
+                <input type="text" name="ProductName" id="ProductName" style="width: 170px" />
+            </th>
+            <td>商品状态：</td>
+            <th>
+                <select id="WStatus" class="easyui-combobox" style="width: 175px" panelheight="auto" editable="false">
+                    <option value="">-请选择-</option>
+                    <option value="0">已移除</option>
+                    <option value="1">正常</option>
+                    <option value="2">淘汰</option>
+                    <option value="3">冻结</option>
+                </select>
+            </th>
+            
+            <td style="text-align: left" colspan="2">
+                <input type="button" id="aSearch" class="aSearch" onclick="search()" value="查询"><input type="reset" onclick="    resetSearch()" class="reset" value="重置">
+            </td>
+        </tr>
+
+    </table>
+</fieldset>
+<div id="grid"></div>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/plugin/uploadify/FileSaver.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bussiness/report/mainvendorlastbuyprice.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bussiness/product/getCategoriesCom.js")" type="text/javascript"></script>
+}

@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "WadvertisementAddOrEdit";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<form id="formAdd">
+    <fieldset style="margin: 0px 0px 2px 0px; border: 1px solid #999">
+        <legend>橱窗推荐</legend>
+        <table id="tab" class="xstable">
+            <tr>
+                <td>橱窗名称：</td>
+                <th>
+                    <input type="hidden" name="AdvertisementID" id="AdvertisementID"/>
+                    <input type="hidden" name="AdvertisementType" id="AdvertisementType" value="3"/>
+                    <input type="text" name="AdvertisementName" id="AdvertisementName" style="width: 200px" panelheight="auto" class="easyui-validatebox" required="true" data-options="validType:['chineseLength[6]','trim']"/>
+                </th>
+            </tr>
+            <tr style="display:none;">
+                <td style="vertical-align:top">橱窗图标：</td>
+                <th>
+                    <div id="uploader" class="wu-example">
+                        <!--用来存放文件信息-->
+                        <div id="thelist" class="uploader-list"></div>
+                        <div class="btns">
+                            <img id="upimg" style="width:100px;height:100px" src="../FileUpload/frxs.jpg"/><br />
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td><div id="picker">选择文件</div></td>
+                                        <td><div id="ctlBtn" class="webuploader-pick" >开始上传</div></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <input type="hidden" name="ImagesSrc" id="ImagesSrc"/>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <td style="vertical-align:top">橱窗商品：</td>
+                <td>
+                    <input type="hidden" name="AdvertisementProduct" id="AdvertisementProduct"/>
+                    @*<input type="button" id="btnAddProduct" value="增加商品" />
+                    <input type="button" id="btnDelProduct" value="移除所选商品" />
+                    <input type="button" id="btnClearProduct" value="移除全部商品" />
+                    <br /><br />*@
+                    <div id="gridProduct"></div>
+                </td>
+            </tr>
+            <tr>
+                <td >橱窗位置：</td>
+                <th >
+                    <select id="Sort" name="Sort" style="width: 120px" panelheight="atuo" class="easyui-validatebox" required="true">
+                        @*<option selected="selected" value="1">轮播广告</option>
+                        <option value="2">底部广告</option>
+                        <option value="3">橱窗</option>*@
+                        <option selected="selected" value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </th>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+@section scripts
+{
+    <link href="@Url.Content("~/Scripts/plugin/webuploader/webuploader.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/plugin/webuploader/webuploader.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bussiness/wAdvertisement/wAdvertisementAddOrEdit.js")" type="text/javascript"></script>
+}
+

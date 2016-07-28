@@ -1,0 +1,178 @@
+﻿@model Frxs.Erp.WarehouseManagementSystem.WebUI.Models.ShopModel
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<style>
+    .red {color:#f00;
+    }
+    table.xstable {margin:2px 25px;
+    }
+    .all {width:300px;
+    }
+ 
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=APAdcwUtCBBlNpMsz0nPkMDI"></script>
+    <!--窗体结束-->
+    <div class="dialogMainbody">
+        <div class="box">
+        @{
+            using (Html.BeginForm("ShopHandle", "Shop", FormMethod.Post))
+            {
+            @Html.HiddenFor(model => Model.ShopID)
+            @Html.HiddenFor(model => model.ProvinceID)
+            @Html.HiddenFor(model => model.CityID)
+            @Html.HiddenFor(model => model.RegionID)
+
+            @Html.HiddenFor(model => model.Latitude)
+            @Html.HiddenFor(model => model.Longitude)
+            @Html.HiddenFor(model => model.FullAddress)
+
+              <table class="xstable" style="width:670px;">
+              <tr>
+                <td class="textright"><span class="red">*</span> @Html.LabelFor(model => Model.ShopCode)：</td>
+                <th class="width">
+                	@Html.TextBoxFor(model => Model.ShopCode, new
+            {
+                @class = "easyui-validatebox",
+                @maxlength = "8",
+                @onkeyup = "this.value=this.value.replace(/\\D/g,'')",
+                @onafterpaste = "this.value=this.value.replace(/\\D/g,'')",
+                @readonly = true
+            })
+                </th>
+                <td class="textright"><span class="red">*</span> @Html.LabelFor(model => Model.ShopType)：</td>
+                <th>
+                     @Html.DropDownListFor(model => Model.ShopType, Model.ShopTypeList, new { @class = "easyui-combobox",@readonly = true})
+                	
+                </th>
+              </tr>
+              <tr>
+                <td class="textright"><span class="red">*</span> @Html.LabelFor(model => Model.ShopName)：</td>
+                <th>	@Html.TextBoxFor(model => Model.ShopName, new { @class = "easyui-validatebox al", @maxlength = "18",@readonly = true })</th>
+                <td class="textright"><span class="red">*</span>  @Html.LabelFor(model => Model.SettleType)：</td>
+                <th>
+                    @Html.DropDownListFor(model => Model.SettleType, Model.SettleTypeList, new { @class = "easyui-combobox",@readonly = true })
+                	
+                </th>
+              </tr>           
+              <tr>
+                <td class="textright"><span class="red">*</span> @Html.LabelFor(model => Model.LinkMan)：</td>
+                <th>
+                    @Html.TextBoxFor(model => Model.LinkMan, new { @class = "easyui-validatebox ", @maxlength = "10",@readonly = true })
+                </th>
+                <td class="textright"><span class="red">*</span>  @Html.LabelFor(model => Model.LegalPerson)：</td>
+                <th> @Html.TextBoxFor(model => Model.LegalPerson, new { @class = "easyui-validatebox", @maxlength = "10",@readonly = true })</th>
+               </tr>
+               <tr> 
+                <td class="textright"><span class="red">*</span>  @Html.LabelFor(model => Model.Telephone)：</td>
+                <th> @Html.TextBoxFor(model => Model.Telephone, new { @class = "easyui-validatebox", @maxlength = "14",@readonly = true })</th>
+                <td class="textright"><span class="red">*</span>  @Html.LabelFor(model => Model.ShopArea)：</td>
+                <th>@Html.TextBoxFor(model => Model.ShopArea, new { @class = "easyui-validatebox", @maxlength = "8",@readonly = true })</th>
+              </tr>
+              <tr> 
+                <td class="textright"><span class="red">*</span>  @Html.LabelFor(model => Model.ShopAccount)：</td>
+                <th>@Html.TextBoxFor(model => Model.ShopAccount, new
+               {
+                   @class = "easyui-validatebox",
+                   @maxlength = "14",
+                   @onkeyup = "this.value=this.value.replace(/\\D/g,'')",
+                   @onafterpaste = "this.value=this.value.replace(/\\D/g,'')",@readonly = true
+               })</th>
+                <td class="textright"><span class="red">*</span>  @Html.LabelFor(model => Model.SettleTimeType)：</td>
+                <th> @Html.DropDownListFor(model => Model.SettleTimeType, Model.SettleTimeTypeList, new { @class = "easyui-combobox",@readonly = true})</th>
+              </tr>
+              <tr> 
+                <td class="textright"><span class="red">*</span> @Html.LabelFor(model => Model.CreditLevel)：</td>
+                <th>
+                     @Html.DropDownListFor(model => Model.CreditLevel, Model.CreditLevelList, new { @class = "easyui-combobox",@readonly = true})
+
+
+
+                    
+                	
+                </th>
+                <td class="textright"><span class="red">*</span> @Html.LabelFor(model => Model.CreditAmt)：</td>
+                <th>@Html.TextBoxFor(model => Model.CreditAmt, new
+               {
+                   @class = "easyui-validatebox",
+                   @maxlength = "14",
+                   @onkeyup = "this.value=this.value.replace(/\\D/g,'')",
+                   @onafterpaste = "this.value=this.value.replace(/\\D/g,'')",@readonly = true
+               })</th>
+              </tr>
+              <tr> 
+                <td class="textright">&nbsp;@Html.LabelFor(model => Model.BankAccount)：</td>
+                <th>@Html.TextBoxFor(model => Model.BankAccount, new { @class = "easyui-validatebox al", @maxlength = "20",@readonly = true })</th>
+                <td class="textright">&nbsp;@Html.LabelFor(model => Model.BankAccountName)：</td>
+                <th>@Html.TextBoxFor(model => Model.BankAccountName, new { @class = "easyui-validatebox al", @maxlength = "30" ,@readonly = true})</th>
+              </tr>
+              <tr> 
+                <td class="textright">&nbsp;@Html.LabelFor(model => Model.BankType)：</td>
+                <th>@Html.TextBoxFor(model => Model.BankType, new { @class = "easyui-validatebox all", @maxlength = "30",@readonly = true })</th>
+                <td class="textright">&nbsp;@Html.LabelFor(model => Model.CardID)：</td>
+                <th>@Html.TextBoxFor(model => Model.CardID, new { @class = "easyui-validatebox al", @maxlength = "18" ,@readonly = true})<span class="grey"></span></th>
+              </tr>
+              <tr> 
+                <td class="textright">&nbsp;@Html.LabelFor(model => Model.RegionMaster)：</td>
+                <th>@Html.TextBoxFor(model => Model.RegionMaster, new { @class = "easyui-validatebox", @maxlength = "18",@readonly = true })</th>
+                <td class="textright"></td>
+                <th> </th>
+              </tr>
+              <tr> 
+                <td class="textright" style="vertical-align:top"><span class="red">*</span> @Html.LabelFor(model => Model.Address)：</td>
+                <th colspan="3">
+                    <div id="regionDdl">
+                                <select id="ddlProvince" name="ddlProvince"  disabled  ></select>
+                                <select id="ddlCity" name="ddlCity" disabled ></select>
+                                <select id="ddlCountry" name="ddlCountry"  disabled></select>
+                        <input id="Butmap" style="color: #FF7000;" type="button" onclick="addressChange()" value="地图定位"  disabled/><br />
+                         @Html.TextBoxFor(model => Model.Address, new { @class = "easyui-validatebox all", @maxlength = "30",@readonly = true })
+                            </div>                	                   
+                </th>
+                
+              </tr>
+                <tr>
+                    <td class="textright"><span class="red">*</span> @Html.LabelFor(model => Model.LineID)：</td>
+                    <th>
+                        @Html.DropDownListFor(model => Model.LineID, Model.WarehouseLineList, new { @class = "easyui-combobox", @style = "width:140px;",@editable=false,panelheight="auto" ,@readonly = true})
+
+                    </th>
+                    <td class="textright"><span class="red">*</span> @Html.LabelFor(model => Model.SerialNumber)：</td>
+                    <th>@Html.TextBoxFor(model => Model.SerialNumber, new
+            {
+                @class = "easyui-validatebox",
+                @maxlength = "2",
+                @onkeyup = "this.value=this.value.replace(/\\D/g,'')",
+                @onafterpaste = "this.value=this.value.replace(/\\D/g"
+                ,@readonly = true
+
+            })
+
+                    </th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <th>
+                        <div style="width: 300px; height: 150px; border: #ccc solid 1px;" id="dituContent"></div>
+                    </th>
+                    <td></td>
+                    <th></th>
+                </tr>
+              <!--  <tr>
+                    <td></td>
+                    <td class="space ">
+                        <a id="aSubmit" >确认</a>   
+                        <a id="cancel" >取消</a>                
+                    </td>
+                </tr>-->
+            </table>
+            }
+        }
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/region/selectRegion.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bussiness/shop/shopAddOrEdit.js")"></script>
+

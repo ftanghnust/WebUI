@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "BatchRecommendList";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<form id="searchform">
+    <fieldset style="margin: 0px 0px 5px 0px; border: 1px solid #95B8E7">
+        <legend style="color: #416AB7; font-weight: bold">信息查询</legend>
+        <table id="tab" class="xstable">
+            <tr>
+                <td>单号：</td>
+                <th>
+                    <input type="text" name="EditID" id="EditID" style="width: 162px"></th>
+
+                <td>备注：</td>
+                <th>
+                    <input type="text" name="Remark" id="Remark" style="width: 162px"></th>
+                <td>状态：</td>
+                <th>
+                    <select id="Status" name="Status" class="easyui-combobox" style="width: 162px" panelheight="auto" editable="false">
+                        <option value=''>-全部-</option>
+                        <option value='0'>录单</option>
+                        <option value='1'>确认</option>
+                        <option value='2'>过账</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <td>仓库：</td>
+                <th>
+                    <select id="WName" name="WName" class="easyui-combobox" style="width: 162px" data-options="panelHeight:'auto',editable:false  "></select></th>
+                <th>录单时间：</th>
+                <td style="text-align: left" colspan="3">
+                    <input onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" class="Wdate" name="CreateTimeStart" id="CreateTimeStart" style="width: 162px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'#F{$dp.$D(\'CreateTimeStart\')}'})" class="Wdate" name="CreateTimeEnd" id="CreateTimeEnd" style="width: 162px"></td>
+                <td>录单人员：</td>
+                <th>
+                    <input type="text" name="CreateUserName" id="CreateUserName" style="width: 162px"></th>
+                <th>
+                    <input type="button" onclick="search()" id="aSearch" class="aSearch" value="查询"><input type="button" class="reset" value="重置" onclick="    resetSearch()"></th>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<div id="grid"></div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        //工具栏
+        var toolbarArray = new Array();
+        $(function () {
+            //添加
+            @if (Authorize(520313, 52031301))
+            {
+                @:toolbarArray.push({ id: 'btnAdd', text: '添加', iconCls: 'icon-add', handler: add });
+                                                                                            }
+            //移除
+            @if (Authorize(520313, 52031303))
+            {
+                @:toolbarArray.push({ id: 'btnDel', text: '删除', iconCls: 'icon-remove', handler: del });
+            }
+
+            //查看
+            toolbarArray.push({ id: 'btnQuery', text: '查看', iconCls: 'icon-search', handler: view });
+
+            //确认
+            @if (Authorize(520313, 52031304))
+            {
+                @:toolbarArray.push({ id: 'btnSure', text: '确认', iconCls: 'icon-ok', handler: sure });
+                                                                                            }
+            //反确认
+            @if (Authorize(520313, 52031306))
+            {
+                @:toolbarArray.push({ id: 'btnNosure', text: '反确认', iconCls: 'icon-upf', handler: noSure });
+                                                                                            }
+            //过帐
+            @if (Authorize(520313, 52031305))
+            {
+                @:toolbarArray.push({ id: 'btnPost', text: '过账', iconCls: 'icon-cut', handler: posting });
+                                                                                            }
+            });
+    </script>
+    <script src="@Url.Content("~/Scripts/bussiness/batchRecommend/batchRecommendList.js")" type="text/javascript"></script>
+}
+

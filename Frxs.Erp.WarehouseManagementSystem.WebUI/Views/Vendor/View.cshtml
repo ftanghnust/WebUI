@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "AddOrEditNew";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+<form id="formAdd">
+    <fieldset style="margin: 0px 0px 2px 0px; border: 1px solid #999">
+        <legend>供应商信息</legend>
+        <input type="hidden" name="VendorID" id="VendorID" />
+        <input type="hidden" name="ProvinceID" id="ProvinceID"/>
+        <input type="hidden" name="CityID" id="CityID"/>
+        <input type="hidden" name="RegionID" id="RegionID" />
+        <input type="hidden" name="FullAddress" id="FullAddress"/>
+         <input type="hidden" name="Status" id="Status"/>
+        <input type="hidden" name="IsDeleted" id="IsDeleted"/>
+        <input type="hidden" name="CreateUserID" id="CreateUserID"/>
+        <input type="hidden" name="CreateUserName" id="CreateUserName"/>
+        <input type="hidden" name="ModifyUserID" id="ModifyUserID"/>
+        <input type="hidden" name="ModifyUserName" id="ModifyUserName"/>
+        <table id="tab" class="xstable">
+            <tr>
+                <td><i>*</i>供应商编码：</td>
+                <th>
+                    <input type="text" name="VendorCode" id="VendorCode" required="true" /></th>
+                <td><i>*</i>供应商类型：</td>
+                <th>
+                    <select id="VendorTypeID" name="VendorTypeID" class="easyui-combobox" style="width: 145px" panelheight="atuo" ></select>
+                </th>
+            </tr>
+            <tr>
+                <td><i>*</i>供应商名称：</td>
+                <th colspan="3">
+                    <input type="text" name="VendorName" id="VendorName" required="true" style="width:380px"  maxlength="10"/></th>
+               
+            </tr>
+            <tr>
+                <td><i>*</i>供应商简称：</td>
+                <th  ><input type="text" id="VendorShortName" name="VendorShortName" /></th>
+                <td>企业法人：</td>
+                <th>
+                    <input type="text" name="LegalPerson" id="LegalPerson" required="true" /></th>
+            </tr>
+            <tr>
+                <td><i>*</i>结算方式：</td>
+                <th>
+                    <select id="SettleTimeType" name="SettleTimeType" class="easyui-combobox" style="width: 145px" panelheight="atuo"></select>
+                </th>
+                <td><i>*</i>供应商级别：</td>
+                <th>
+                    <select id="CreditLevel" name="CreditLevel" class="easyui-combobox" style="width: 145px" panelheight="atuo"></select>
+                </th>
+            </tr>
+            <tr>
+                <td><i>*</i>联系人姓名：</td>
+                <th>
+                    <input type="text" name="LinkMan" id="LinkMan" required="true" maxlength="4" /></th>
+                <td><i>*</i>联系人电话：</td>
+                <th>
+                    <input type="text" name="Telephone" id="Telephone" required="true" maxlength="20" /></th>
+            </tr>
+            <tr>
+                <td>传真：</td>
+                <th colspan="3">
+                    <input type="text" name="Fax" id="Fax" required="true" style="width:380px" /></th>
+               
+            </tr>
+            <tr>
+                 <td>电子邮箱：</td>
+                <th colspan="3">
+                    <input type="text" name="Email" id="Email" required="true"  style="width:380px"/></th>
+
+            </tr>
+            <tr>
+                
+                <td>公司网址：</td>
+                <th colspan="3">
+                    <input type="text" name="WebUrl" id="WebUrl" required="true"  style="width:380px"/></th>
+            </tr>
+            <tr>
+                <td valign="top"><i>*</i>地址：</td>
+                <th colspan="3">
+                    <div id="regionDdl" style="float: left">
+                        <select id="ddlProvince" name="ddlProvince"></select>
+                        <select id="ddlCity" name="ddlCity" ></select>
+                        <select id="ddlCountry" name="ddlCountry" ></select>
+                        <p><input type="text" name="Address" id="Address" required="true" style="width:380px"/></p>
+                    </div>
+                </th>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/vendor/addOrEditNew.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bussiness/region/selectRegion.js")" type="text/javascript"></script>
+}

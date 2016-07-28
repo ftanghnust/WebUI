@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "芙蓉兴盛ERP管理系统";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<fieldset style="margin:0px 0px 5px 0px; border: 1px solid #95B8E7">
+    <legend style="color:#416AB7; font-weight:bold">信息查询</legend>
+    <table id="tab" class="xstable">
+        <tr>
+            <td >用户名称：</td>
+            <th><input type="text" name="EmpName" id="EmpName"></th>
+            <td >帐户：</td>
+            <th><input type="text" name="UserAccount" id="UserAccount"></th>
+            <td>职位：</td>
+            <th>
+                <select name="UserType" id="UserType" class="easyui-combobox"  panelheight="auto" editable="false" style="width:120px">
+                    <option value="">-请选择-</option>
+                    <option value="1">拣货员</option>
+                    <option value="2">配送员</option>
+                    <option value="3">装箱员</option>
+                    <option value="4">采购员</option>
+                </select>
+            </th>
+            <td>状态：</td>
+            <th>
+                <select name="IsFrozen" id="IsFrozen" class="easyui-combobox"  panelheight="auto" editable="false" style="width:120px">
+                    <option value="">-请选择-</option>
+                    <option value="0">正常</option>
+                    <option value="1">冻结</option>
+                </select>
+            </th>
+            <td>
+                <input type="button" id="aSearch" class="aSearch" onclick="search()" value="查询"><input type="reset"  onclick="resetSearch()" class="reset" value="重置"></td>
+        </tr>    
+    </table>
+</fieldset>
+<div id="grid"></div>
+@section scripts
+{
+    <script type="text/javascript">
+        //双击快捷编辑打开的窗口中，只有该变量为true才会有提交按键，否则只有查看权限
+        var quickEditKey = "@Authorize(520117, 52011702)".toLocaleLowerCase() == "true" ? true : false;
+        //工具栏
+        var toolbarArray = new Array();
+        //权限配置初始化
+        $(function () {
+            toolbarArray.push({ id: 'btnReload', text: '刷新', iconCls: 'icon-reload', handler: function () { $("#grid").datagrid("reload"); } });
+        @if (Authorize(520117, 52011701))
+        {
+        @:toolbarArray.push({ id: 'btnAdd', text: '新增', iconCls: 'icon-add', handler: add });
+                            }
+        @if (Authorize(520117, 52011702))
+        {
+            @:toolbarArray.push({ id: 'btnEdit', text: '编辑', iconCls: 'icon-edit', handler: edit });
+                            }
+        @if (Authorize(520117, 52011703))
+        {
+            @:toolbarArray.push({ id: 'btnDelete', text: '删除', iconCls: 'icon-remove', handler: del });
+                            }
+        @if (Authorize(520117, 52011704))
+        {
+            @:toolbarArray.push({ id: 'btnFreeze', text: '冻结', iconCls: 'icon-freeze', handler: IsFrozen });
+                            }
+        @if (Authorize(520117, 52011705))
+        {
+            @:toolbarArray.push({ id: 'btnThaw', text: '解冻', iconCls: 'icon-thaw', handler: Frozen });
+                            }
+        @if (Authorize(520117, 52011702))
+        {
+            @:toolbarArray.push({ id: 'btnReset', text: '密码重置', iconCls: 'icon-repassword', handler: ResetPassword });
+                            }
+        });
+</script>
+
+    <script src="@Url.Content("~/Scripts/bussiness/WarehouseEmp/WarehouseEmp.js")" type="text/javascript"></script>
+}

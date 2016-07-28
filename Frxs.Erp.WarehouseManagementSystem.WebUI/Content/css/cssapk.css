@@ -1,0 +1,27 @@
+body{width:100%;  margin:0; padding:0px; background:#F2F2F2 }
+a{ color:#666; text-decoration:none}
+a:hover{ text-decoration:none}
+*:focus {outline: none;} 
+ul,li,dl,dd,dt,span,a,p,h1,h2,h3,h4,h5,h6{ margin:0; padding:0}
+h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:normal}
+li,dl,dd,dt{ list-style:none}
+i{ font-style:normal}
+em{ font-style:normal}
+img{ border:none; vertical-align:baseline}
+input{outline:0px;}
+/*做一个沙盒布局模式*/
+.head_top {display: -moz-box; display: -webkit-box; display: box; width:100%}
+.head_top .list {padding: 1rem 1rem; }
+.head_top .l {-moz-box-flex: 1;-webkit-box-flex: 1; box-flex: 1; text-align:left}
+.head_top .m {-moz-box-flex: 10; -webkit-box-flex:10;box-flex: 10; text-align:center}
+.head_top .r {-moz-box-flex: 1; -webkit-box-flex: 1;box-flex:1; text-align:right }
+header{ width:100%}
+header img{ width:100%; height:auto}
+footer{ position:fixed; z-index:5; bottom:0px; left:0px;  background:#f2c40f; text-align:center; color:#666; width:100%; line-height:2.2rem}
+img.down{ position:fixed; bottom:3.5rem; right:2rem; width:8rem; height:auto; z-index:5}
+div.c{ width:100%}
+.c img{ width:100%; height:auto}
+
+.bg{ position: fixed; z-index:6; width:100%;top:0px;left:0px;background: rgba(52, 52, 52, 0.5);display:none}
+.pop{position: fixed; z-index:7; width:100%; top:0px; left:0px; display:none}
+.pop img{ width:100%; height:auto}

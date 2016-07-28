@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "芙蓉兴盛ERP管理系统";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<fieldset style="margin:0px 0px 5px 0px; border: 1px solid #95B8E7">
+    <legend style="color:#416AB7; font-weight:bold">信息查询</legend>
+    <table id="tab" class="xstable">
+        <tr>
+            <td >货位编号：</td>
+            <th><input type="text" name="ShelfCode" id="ShelfCode"></th>
+            <td >所属货区：</td>
+            <th><select name="ShelfAreaID" id="ShelfAreaID" class="easyui-combobox" panelheight="auto" editable="false" style="width:120px"></select></th>
+            <td>状态：</td>
+            <th>
+                <select name="Status" id="Status" class="easyui-combobox" panelheight="auto" editable="false" style="width:120px">
+                    <option value="">-请选择-</option>
+                    <option value="0">正常</option>
+                    <option value="1">冻结</option>
+                </select>
+            </th>
+            <td>
+                <input type="button" id="aSearch" class="aSearch" onclick="search()" value="查询"><input type="reset"  onclick="    resetSearch()" class="reset" value="重置"></td>
+        </tr>    
+    </table>
+</fieldset>
+<div id="grid"></div>
+@section scripts
+{
+      <script type="text/javascript">
+          //双击快捷编辑打开的窗口中，只有该变量为true才会有提交按键，否则只有查看权限
+          var quickEditKey = "@Authorize(520116, 52011602)".toLocaleLowerCase() == "true" ? true : false;
+          //工具栏
+          var toolbarArray = new Array();
+          //权限配置初始化
+          $(function () {
+              toolbarArray.push({ id: 'btnReload', text: '刷新', iconCls: 'icon-reload', handler: function () { $("#grid").datagrid("reload"); } });
+        @if (Authorize(520116, 52011601))
+        {
+        @:toolbarArray.push({ id: 'btnAdd', text: '新增', iconCls: 'icon-add', handler: add });
+                                        }
+         @if (Authorize(520116, 52011603))
+        {
+            @:toolbarArray.push({ id: 'btnDel', text: '删除', iconCls: 'icon-remove', handler: del });
+                                                                    }        
+        @if (Authorize(520116, 52011602))
+        {
+            @:toolbarArray.push({ id: 'btnEdit', text: '编辑', iconCls: 'icon-edit', handler: edit });
+                                        }
+       
+              @if (Authorize(520116, 52011601))
+        {
+            @:toolbarArray.push({ id: 'btnShowImport', text: '导入', iconCls: 'icon-daoru', handler: showImport });
+                                        }
+        });
+</script>
+
+    <script src="@Url.Content("~/Scripts/bussiness/shelf/shelf.js")" type="text/javascript"></script>
+}

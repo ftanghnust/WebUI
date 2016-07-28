@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "PrintChoose";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<style>
+    .xstable .aSearch {
+        font-size: 18px;
+         width:200px
+    }
+   
+    .xstable .reset {
+        font-size: 18px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+</style>
+<center>
+<table id="tab" class="xstable" style="width:202px; padding-top:40px">
+    <tr>
+        <th>
+            <input type="button" value=" A4纸打印无价格 " id="btPrintA4No" onclick="printA4No()" class="aSearch"/></th>
+    </tr>
+    <tr>
+         <th>
+            <input type="button" value=" A4纸打印有价格 " id="btPrintA4Yes" onclick="printA4Yes()" class="aSearch"/></th>
+    </tr>
+      <tr>
+           <th>
+            <input type="button" value="三联纸打印无价格" id="btPrintThreeNo" onclick="printThreeNo()" class="aSearch"/></th>
+    </tr>
+      <tr>
+ <th>
+            <input type="button" value="三联纸打印有价格" id="btPrintThreeYes" onclick="printThreeYes()" class="aSearch"/></th>
+    </tr>
+</table>
+</center>
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/bussiness/buyorder/printChoose.js")" type="text/javascript"></script>
+}

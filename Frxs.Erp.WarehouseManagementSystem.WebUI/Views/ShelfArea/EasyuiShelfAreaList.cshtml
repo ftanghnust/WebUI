@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "芙蓉兴盛ERP管理系统";
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+<div id="grid"></div>
+@section scripts
+{
+    <script type="text/javascript">
+        //双击快捷编辑打开的窗口中，只有该变量为true才会有提交按键，否则只有查看权限
+        var quickEditKey = "@Authorize(520115, 52011502)".toLocaleLowerCase() == "true" ? true : false;
+        //工具栏
+        var toolbarArray = new Array();
+        //权限配置初始化
+        $(function () {
+            toolbarArray.push({ id: 'btnReload', text: '刷新', iconCls: 'icon-reload', handler: function () { $("#grid").datagrid("reload"); } });
+        @if (Authorize(520115, 52011501))
+        {
+        @:toolbarArray.push({ id: 'btnAdd', text: '新增', iconCls: 'icon-add', handler: add });
+                            }
+        @if (Authorize(520115, 52011502))
+        {
+            @:toolbarArray.push({ id: 'btnEdit', text: '编辑', iconCls: 'icon-edit', handler: edit });
+                            }
+        @if (Authorize(520115, 52011503))
+        {
+            @:toolbarArray.push({ id: 'btnDel', text: '删除', iconCls: 'icon-remove', handler: del });
+                            }       
+        });
+</script>
+
+    <script src="@Url.Content("~/Scripts/bussiness/shelfarea/shelfarea.js")" type="text/javascript"></script>
+}
